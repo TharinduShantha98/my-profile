@@ -1,8 +1,8 @@
-#this is my profile
+#This is my profile
 ##institute of **IJSE**
 
-in this repository, I create Portfolio. as a first,  I created  site map.
+in This repository, I create Portfolio. As a first,  I created  site map.
   
-as the   second and third, I created Wireframe  and mock up
+As The second and third, I created Wireframe  and mock up✔✔🤞
 
 ![git hub logo](/assets/images/sitemap.png)
