@@ -15,8 +15,9 @@ This is site map https://www.gloomaps.com/fQowCwK2QR
 This is wireframe and mockup 
 
 
-
-<img src="assets\images\mockup.jpeg" width="1000" height="350">
+<p align="center">
+    <img src="assets\images\mockUp2.jpeg" width="400" height="4000">
+</p>
 
 
 wireframe - https://wireframe.cc/pro/pp/90f419222489578
