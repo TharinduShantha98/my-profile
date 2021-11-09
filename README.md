@@ -16,6 +16,6 @@ This is wireframe and mockup
 
 
 <p align="center">
-    <img src="assets\images\mockUpAndWireframe.jpeg" width="324" height="324">
+    <img src="assets\images\mockup.jpeg" width="600" height="200">
 
 </p>
