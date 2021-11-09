@@ -15,6 +15,6 @@ This is site map https://www.gloomaps.com/fQowCwK2QR
 This is wireframe and mockup 
 
 
-![git hub logo](/assets/images/mockUpAndWireframe.jpeg)
+![git hub logo](/assets/images/mockUpAndWireframe.jpeg {width = "100" height = "100"})
 
 
