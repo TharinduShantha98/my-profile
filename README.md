@@ -16,6 +16,13 @@ This is wireframe and mockup
 
 
 
-<img src="assets\images\mockup.jpeg" width="600" height="200">
+<img src="assets\images\mockup.jpeg" width="1000" height="350">
+
+
+wireframe - https://wireframe.cc/pro/pp/90f419222489578
+
+
+Mock up - https://www.figma.com/file/mB3bsezhSKq7eKghW72Jau/Untitled?node-id=0%3A1
+
 
 
