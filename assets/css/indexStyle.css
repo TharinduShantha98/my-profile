@@ -1,0 +1,28 @@
+/*----------------common styles--------------------*/
+.headingOfPart{
+    font-size: 100px;
+    font-weight: bold;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+    border-style: solid;
+
+}
+
+
+
+
+
+
+/*-------------------about ME part------------------------------*/
+
+.aboutMeH1{
+    font-size: 100px;
+    font-weight: bold;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding-left: 10px;
+    border-style: solid;
+
+
+}
