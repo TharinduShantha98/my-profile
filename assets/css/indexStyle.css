@@ -1,6 +1,17 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+
+
+
 body{
     background-color: #0F0E0B;
     color: #f6f4f4;
+
+
 }
 /*----------------common styles--------------------*/
 .headingOfPart{
@@ -17,8 +28,6 @@ body{
 header nav{
     width: 100%;
     height: 100px;
-    border-style: solid;
-    border-color: #0F0E0B;
     text-align: right;
 }
 header nav ol{
@@ -31,10 +40,108 @@ header nav ol li{
     font-weight: bold;
     margin-right: 15px;
     margin-left: 15px;
+    margin-top: 5px;
 }
 header nav ol li:hover{
     color: #870642;
 }
+/*///////////////////// picture and name in home part////////////////////*/
+
+
+header{
+    background-color: black;
+
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.container_part{
+    margin: 0px;
+    /* background-color: #870642;*/
+}
+.container_part_item2{
+    padding: 0;
+    margin: 0;
+    width: 600px;
+
+}
+.container_part_item2 img{
+    position: relative;
+
+}
+.container_part_item1{
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.part1{
+    position: relative;
+    bottom: 80px;
+    margin: 0;
+    /* border: 3px solid #7dac3a;*/
+    /*  background-color: #131cd5;*/
+}
+
+.part1_hello{
+    text-align: center;
+    font-size: 350px;
+    padding: 0;
+    margin: 0;
+}
+.part2{
+    position: relative;
+    bottom: 75px;
+    height: 180px;
+    /* background-color: #7dac3a;*/
+}
+
+.part2_im{
+    position: relative;
+    font-size: 80px;
+    font-weight: bold;
+    color: #F99909;
+    left: 40px;
+
+}
+.part3{
+    position: relative;
+    /*  background-color: blue;*/
+    height: 90px;
+    text-align: center;
+    font-size: 50px;
+    bottom: 70px;
+
+
+}
+.part3 span {
+    position: relative;
+    font-size: 20px;
+    color: aliceblue;
+    display: inline-block;
+    text-transform: uppercase;
+
+
+    animation: animate 2s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+
+
+}
+@keyframes animate {
+    0%,40%,100%{
+        transform: translateY(0);
+    }
+    20%{
+        transform: translateY(-10px);
+    }
+}
+
+
 
 
 
