@@ -5,8 +5,6 @@
 
 }
 
-
-
 body{
     background-color: #0F0E0B;
     color: #f6f4f4;
@@ -45,6 +43,7 @@ header nav ol li{
 header nav ol li:hover{
     color: #870642;
 }
+
 /*///////////////////// picture and name in home part////////////////////*/
 
 
@@ -61,12 +60,13 @@ header{
 
 .container_part{
     margin: 0px;
-    /* background-color: #870642;*/
+    /*  */
 }
 .container_part_item2{
     padding: 0;
     margin: 0;
     width: 600px;
+    /* background-color: #870642;*/
 
 }
 .container_part_item2 img{
@@ -137,7 +137,7 @@ header{
         transform: translateY(0);
     }
     20%{
-        transform: translateY(-10px);
+        transform: translateY(-5px);
     }
 }
 
@@ -146,15 +146,15 @@ header{
 
 
 /*-------------------about ME part------------------------------*/
+
 .about_me{
-    border-style: solid;
+    /*  border-style: solid;*/
     width: 100%;
-    height: 100%;
+    height: 900px;
+    /*height: 100%;*/
     background: #0F0E0B;
     color: #f6f4f4;
 }
-
-
 
 .span1_AboutMe{
     font-weight: bold;
@@ -170,7 +170,8 @@ header{
     left: 100px;
     width: 800px;
     height: 400px;
-    bottom: 80px;
+    top: 125px;
+    bottom: 40px;
     border-radius: 12px;
 }
 
@@ -183,8 +184,40 @@ header{
     height: 500px;
     width: 300px;
     float: right;
-    bottom: 680px;
+    bottom: 520px;
 }
+
+#download{
+    position: relative;
+    color: black;
+    border-radius: 12px;
+    width: 280px;
+    height: 60px;
+    left: 1127px;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 30px;
+    background-image: linear-gradient(#283CF5 40%, #0F0E0B );
+
+}
+
+main section:nth-child(1) section:nth-child(4) address ol{
+    width: 500px;
+    left: 950px;
+    position: relative;
+    top: 20px;
+    text-align: right;
+}
+
+main section:nth-child(1) section:nth-child(4) address ol li{
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+    top: 100px;
+}
+
+
 
 
 
