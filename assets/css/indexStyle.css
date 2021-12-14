@@ -1,12 +1,12 @@
-*{
+/**{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 
-}
+}*/
 
 body{
-    background-color: #0F0E0B;
+    background-color: #21201f;
     color: #f6f4f4;
 
 
@@ -48,6 +48,7 @@ header nav ol li:hover{
 
 
 header{
+
     background-color: black;
 
 }
@@ -152,7 +153,8 @@ header{
     width: 100%;
     height: 900px;
     /*height: 100%;*/
-    background: #0F0E0B;
+   /* background: #0F0E0B;*/
+    background: #21201f;
     color: #f6f4f4;
 }
 
