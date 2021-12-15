@@ -16,6 +16,7 @@
     <style>
         body{
             color: #c63333;
+            background-color: #21201f
         }
 
         header{
@@ -33,6 +34,7 @@
             right: 0;
           /*  border: solid 1px red;*/
             font-size: 1px;
+            z-index: 3;
         }
 
         header>nav>ol{
@@ -52,6 +54,12 @@
             font-size: 30em;
             padding-left: 1%;
             padding-right: 1%;
+        }
+
+
+        header>nav>ol>li:hover{
+            color: gold;
+            border-bottom: solid 1px goldenrod;
         }
 
 
@@ -75,42 +83,65 @@
         body>header>section>section:nth-child(1)>div:nth-child(1){
             position: relative;
             z-index: 2;
-
         }
 
         body>header>section>section:nth-child(1)>div:nth-child(1)>h1{
             margin: 0;
-            font-size: 19em;
-          /*  border: solid 1px white;*/
+            /*font-size: 19em;*/
+            font-size: 26vw;
+         /*   border: solid 1px white;*/
             line-height: 0.7;
         }
 
         body>header>section>section:nth-child(1)>div:nth-child(2){
+
             position: relative;
+            top: 2vh;
             z-index: 3;
-            margin-top: 2vh;
+            margin-top: 4vh;
             left: 2vw;
 
         }
         body>header>section>section:nth-child(1)>div:nth-child(2)>p{
             margin: 0;
             color: gold;
-            font-size: 5em;
+            font-size: 14vh;
             font-weight: bold;
             line-height: 0.9;
         }
         body>header>section>section:nth-child(1)>div:nth-child(3){
             position: relative;
+            height: 10vh;
             font-size: 1em;
             font-weight: bold;
             left: 2vw;
-
+            top: 4vh;
+            text-align: center;
+            z-index: 2;
         }
+        body>header>section>section:nth-child(1)>div:nth-child(3)>span{
+            position: relative;
+            color: aliceblue;
+            display: inline-block;
+            animation: animate 2s ease-in-out infinite;
+            animation-delay: calc(0.1s * var(--i));
+        }
+        @keyframes animate {
+            0%,40%,100%{
+                transform: translateY(0);
+            }
+            20%{
+                transform: translateY(-10px);
+            }
+        }
+
+
+
         body>header>section>section:nth-child(2){
             position: absolute;
             display: inline-block;
             width: 40%;
-            left: 59%;
+            left: 60%;
             height: 100%;
           /*  border: solid 1px red;*/
         }
@@ -121,10 +152,7 @@
         }
 
 
-        body>header>section>section:nth-child(3){
 
-
-        }
 
 
 
@@ -211,10 +239,7 @@
 
         </section>
         <section class="container_part  container_part_item2">
-
             <img src="assets/images/myImage2.jpg" alt="display my image">
-
-
         </section>
 
 
