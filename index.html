@@ -183,7 +183,6 @@
             letter-spacing: 15px;
             font-weight: bold;
             color: #f6f2f2;
-
         }
 
         body>main>section:nth-child(1)>section:nth-child(3){
@@ -200,14 +199,68 @@
 
         body>main>section:nth-child(1)>section:nth-child(2){
             position: absolute;
-            border: solid 1px yellow;
+            transform: translate(20%,30%);
             width: 50vw;
             height: 50vh;
-            top: 35vh;
-            left: 10vw;
+            /*top: 35vh;
+            left: 10vw;*/
             text-align: center;
+            transform-style: preserve-3d;
+            perspective: 2000px;
+            transition: 0.5s;
 
         }
+        body>main>section:nth-child(1)>section:nth-child(2):after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border-bottom: 20Px solid #fff;
+            border-right: 20Px solid #fff;
+            box-sizing: border-box;
+
+        }
+
+        body>main>section:nth-child(1)>section:nth-child(2):before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border-top: 20Px solid #fff;
+            border-left: 20Px solid #fff;
+            box-sizing: border-box;
+
+
+        }
+
+
+        body>main>section:nth-child(1)>section:nth-child(2)>div{
+            position: relative;
+            top: 2vh;
+            left: -30px;
+            background: #262626;
+            width: calc(100% + 60px);
+            height: calc(100% - 60px);
+            transition: 0.5s;
+        }
+
+
+        body>main>section:nth-child(1)>section:nth-child(2):hover{
+            transform: translate(20%,30%) rotateY(-30deg) skewY(5deg);
+
+        }
+
+        body>main>section:nth-child(1)>section:nth-child(2):hover>div{
+            transform: rotateY(30deg) skewY(-5deg);
+        }
+
+
 
         body>main>section:nth-child(1)>section:nth-child(4){
             position: absolute;
@@ -251,8 +304,6 @@
             color: black;
             font-weight: bolder;
             /*font-size: 2vh;*/
-
-
 
         }
 
@@ -383,16 +434,19 @@
 
 
         <section class="about_me_description">
-            <p><span class="span2_AboutMe">I'm</span> <span class="span1_AboutMe">full
+            <div>
+                <p><span class="span2_AboutMe">I'm</span> <span class="span1_AboutMe">full
                     stack developer and web designer </span>in #Sri lanka. <br><br>
-                I'm 23 years old. <br>
-                I'm studying first year undergraduate of <br>
-                institute of software engineering following the
-                <abbr title="Graduate Diploma in Software Engineering"> <b> GDSE </b> </abbr>.<br>
-                After, i will entry university of bolton for <br>
-                complete for <b> BSc (honors) in computer science</b>
+                    I'm 23 years old. <br>
+                    I'm studying first year undergraduate of <br>
+                    institute of software engineering following the
+                    <abbr title="Graduate Diploma in Software Engineering"> <b> GDSE </b> </abbr>.<br>
+                    After, i will entry university of bolton for <br>
+                    complete for <b> BSc (honors) in computer science</b>
 
-            </p>
+                </p>
+
+            </div>
 
         </section>
         <section class="about_me_styleImage">
