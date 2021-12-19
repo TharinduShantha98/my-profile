@@ -13,7 +13,7 @@
 
         }
 
-        body>section:nth-child(1)>div{
+        body>section:nth-child(1)>div:nth-child(1){
             position: fixed;
             width: 200px;
             height: 200px;
@@ -23,11 +23,25 @@
             bottom: 0;
             margin: auto;
             border-radius: 50%;
-            border: solid 10px black;
-            animation: move infinite;
-            animation-duration: 3s;
+            border: solid 20px gray;
+
         }
 
+
+        body>section:nth-child(1)>div:nth-child(2){
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 50%;
+            border: solid 10px #990000;
+
+
+        }
 
         body>section:nth-child(2){
             position: relative;
@@ -110,7 +124,6 @@
             position: absolute;
             font-size: 30px;
             bottom: 18%;
-
             color: white;
             font-weight: bold;
 
@@ -137,8 +150,31 @@
             top: 0;
             margin: auto;
             border-radius: 50%;
-            background-color: #cb431b;
+            background-color: #d9681e;
         }
+
+        body>section:nth-child(4)>div:nth-child(1)>div{
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+
+        }
+        body>section:nth-child(4)>div:nth-child(1)>div>p{
+            position: absolute;
+            font-size: 30px;
+           top: 3%;
+            color: white;
+            font-weight: bold;
+
+
+
+        }
+
 
 
 
@@ -151,6 +187,7 @@
 
 <body>
     <section>
+            <div></div>
             <div></div>
     </section>
 
