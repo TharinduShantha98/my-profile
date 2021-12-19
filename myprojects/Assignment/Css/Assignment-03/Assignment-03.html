@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <style>
+        body>section:nth-child(1){
+            position: relative;
+            height: 100vh;
+            background-color: #5f65e8;
+            z-index: 3;
+
+        }
+
+        body>section:nth-child(1)>div{
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 50%;
+            border: solid 10px black;
+            animation: move infinite;
+            animation-duration: 3s;
+        }
+
+        body>section:nth-child(2){
+            position: relative;
+            background-color: #870642;
+            height: 100vh;
+        }
+
+
+        body>section:nth-child(2)>div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            border-radius: 50%;
+            background-color: #1d6baf;
+        }
+
+        body>section:nth-child(3){
+            position: relative;
+            background-color: #870642;
+            height: 100vh;
+        }
+
+
+        body>section:nth-child(3)>div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            border-radius: 50%;
+            background-color: rgba(221, 58, 17, 0.73);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+
+
+</head>
+
+
+<body>
+    <section>
+            <div></div>
+    </section>
+
+    <section>
+            <div></div>
+    </section>
+
+   <!-- =================================-->
+    <section>
+        <div></div>
+    </section>
+
+    <section>
+        <div></div>
+    </section>
+
+    <section>
+        <div></div>
+    </section>
+
+
+</body>
+</html>
