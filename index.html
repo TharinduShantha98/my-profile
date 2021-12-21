@@ -826,34 +826,62 @@
             width: 30%;
             height: 85%;
 
+        }
+
+        body>main>section:nth-child(5){
+            position: relative;
+            height: 75vh;
+            border: solid 1px crimson;
 
         }
 
+        body>main>section:nth-child(5){
+            position: relative;
+            height: 75vh;
+            border: solid 1px crimson;
 
+        }
 
+        body>main>section:nth-child(5)>section:nth-child(1){
+            position: absolute;
+            background-color: #870642;
+            top: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            text-align: center;
+        }
 
+        body>main>section:nth-child(5)>section:nth-child(1)>h1{
+            margin: 0;
+            font-size: 18vh;
+            letter-spacing: 15px;
+            font-weight: bold;
+            color: #f6f2f2;
 
+        }
 
+        body>main>section:nth-child(5)>section:nth-child(2){
+            position: absolute;
+            top: 28%;
+            height: 72%;
+            width: 100%;
+            border: #283CF5 1px solid;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        body>main>section:nth-child(5)>section:nth-child(2)>div{
+            background-image: url('assets/images/three.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border:solid 1px blueviolet;
+            border-radius: 12%;
+            text-align: center;
+            color: white;
+        }
 
 
 
@@ -1245,7 +1273,10 @@
         <section>
             <!--three.png need this for div-->
             <h1 class="headingOfPart">Services</h1>
-            <div style="background-image: url('assets/images/three.png')">
+
+        </section>
+        <section>
+            <div>
                 <figure>
                     <img src="assets/images/webApplication.png" alt="web development" width="200">
                     <figcaption>
@@ -1254,7 +1285,7 @@
                 </figure>
             </div>
 
-            <div style="background-image: url('assets/images/three.png')">
+            <div >
                 <figure>
                     <img src="assets/images/javaApplication.png" alt="web development" width="200">
                     <figcaption>
@@ -1263,7 +1294,7 @@
                 </figure>
             </div>
 
-            <div style="background-image: url('assets/images/three.png')">
+            <div>
                 <figure>
                     <img src="assets/images/uiUxDesign.png" alt="web development" width="200">
                     <figcaption>
@@ -1272,7 +1303,7 @@
                 </figure>
             </div>
 
-            <div style="background-image: url('assets/images/three.png')">
+            <div >
                 <figure>
                     <img src="assets/images/businessAnalysis.png" alt="web development" width="200">
                     <figcaption>
