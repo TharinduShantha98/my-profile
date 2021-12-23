@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>responsive</title>
-
+    <link rel="stylesheet" href="css/normalize.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
 
 
@@ -66,6 +67,7 @@
         body>main{
             position: relative;
 
+
         }
 
         body>main>section:nth-child(1){
@@ -105,10 +107,9 @@
             width: 70vw;
             background-color: #fcfbfb;
             margin-left: 26vw;
-            border: solid 1px black;
+          /*  border: solid 1px black;*/
             height: 250px;
         }
-
 
         body>main>section:nth-child(2)>section>div{
             position: absolute;
@@ -163,6 +164,118 @@
             margin: 0;
             left: 0;
             right: 0;
+        }
+
+
+
+
+       /* ========================responsive part======================*/
+
+        @media all and (max-width: 425px){
+            header {
+               height: 100vw;
+            }
+
+            header > div:nth-child(1) {
+                position: absolute;
+                width: 44%;
+                height: 25%;
+                left: 0;
+                right: 0;
+                top: 0;
+                margin: auto;
+            }
+
+            header > div:nth-child(1)>img {
+            }
+
+            header > div:nth-child(2) {
+                position: absolute;
+                width: 100%;
+                height: 70%;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                top: 30%;
+                margin: auto;
+
+
+            }
+            header > div:nth-child(2) > ol {
+                right: 0;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+
+
+            }
+            header > div:nth-child(2) > ol > li {
+                font-size: 8vw;
+                display:block;
+                background-color: #b6b3b3;
+                margin-right: 40px;
+                margin-bottom: 5px;
+                border-radius: 5px;
+
+
+            }
+
+            body>main>section:nth-child(1){
+               display: none;
+
+            }
+            body>main>section:nth-child(2){
+                position: relative;
+                margin: 0;
+            }
+            body>main>section:nth-child(2)>section{
+                width: 100vw;
+                margin-left: 0vw;
+                left: 0;
+                height: 250px;
+
+            }
+            body>main>section:nth-child(2)>section>div{
+                position: absolute;
+             /*   display: block;*/
+                height: 25%;
+                width: 100%;
+                border: none;
+
+
+            }
+            body>main>section:nth-child(2)>section>div:nth-child(1){
+                background: url("images/oneImg.png") no-repeat center;
+                background-size: cover;
+
+                left: 0;
+                height: calc(100%/3);
+
+            }
+            body>main>section:nth-child(2)>section>div:nth-child(2){
+                background: url("images/oneImg.png") no-repeat center;
+                background-size: cover;
+                height: calc(100%/3);
+                left: 0;
+                bottom: 0;
+                top: 0;
+                right: 0;
+                margin: auto;
+            }
+            body>main>section:nth-child(2)>section>div:nth-child(3){
+                background: url("images/oneImg.png") no-repeat center;
+                background-size: cover;
+                height: calc(100%/3);
+                left: 0;
+                bottom: 0;
+            }
+            body>main>section:nth-child(2)>p{
+               margin: 15px;
+
+            }
+
+
         }
     </style>
 
