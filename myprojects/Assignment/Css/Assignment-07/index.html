@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment-07</title>
+    <style>
+        body>section{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            border-radius: 100%;
+
+
+        }
+        body>section>h1{
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            width: max-content;
+            height: max-content;
+            z-index: 3;
+        }
+
+        section::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            border-radius: 100%;
+            background-color: #4cd7cb;
+            border: solid 20px gray;
+            border-top: 20px solid red;
+
+        }
+
+
+        section:hover::after{
+            transform: rotate(360deg);
+            transition: all 2s;
+            cursor: pointer;
+        }
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+<section>
+    <h1>RWAD</h1>
+
+
+</section>
+
+
+
+</body>
+</html>
