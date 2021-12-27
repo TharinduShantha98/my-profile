@@ -6,7 +6,7 @@
     <meta name="keyword" content="Tharindu Shantha - Tharindu Shantha">
     <meta name="description" content="I'm studying software engineering of institute of software engineering and
             I am fullStack developer">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="gray">
     <link rel="stylesheet" href="assets/css/normalize.css">
 
@@ -21,6 +21,7 @@
 
         header{
             position: relative;
+
             height: 100vh;
             background-color: #000000;
             color: #f6f2f2;
@@ -829,6 +830,8 @@
 
         }
 
+
+     /*   =================services===============*/
         body>main>section:nth-child(5){
             position: relative;
             height: 75vh;
@@ -974,6 +977,113 @@
 
 
 
+        @media all and (max-width: 425px) {
+            header{
+                width: 100vw;
+                color: #870642;
+            }
+            header> nav{
+                height: 40%;
+
+            }
+            header>nav>ol{
+                height: 100%;
+                text-align: center;
+            }
+            header>nav>ol>li{
+                display: block;
+
+            }
+            header>section{
+                position: relative;
+                top: 40%;
+                /* border: solid 1px blue;*/
+                height: 60%;
+
+            }
+
+            body>header>section>section:nth-child(1)>div:nth-child(2)>p{
+                font-size: 5vh;
+
+            }
+
+            body>main>section:nth-child(1)>div:nth-child(1)>h1{
+                font-size: 6vh;
+
+            }
+
+
+
+            body>main>section:nth-child(3)>section:nth-child(1)>h1{
+                font-size: 6vh;
+            }
+
+            body>main>section:nth-child(4)>section:nth-child(1)>section:nth-child(1)>h1{
+                font-size: 3vh;
+
+            }
+
+            body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(1)>figure>figcaption>p:nth-child(1){
+                font-size: 3vh;
+
+
+            }
+
+            body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(2)>figure>figcaption>p:nth-child(1){
+                font-size: 3vh;
+
+            }
+
+            body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(3)>figure>figcaption>p:nth-child(1){
+                font-size: 3vh;
+
+
+            }
+
+            body>main>section:nth-child(5)>section:nth-child(1)>h1{
+
+                font-size: 6vh;
+
+
+            }
+
+            body>main>section:nth-child(5)>section:nth-child(2){
+
+                flex-direction: column;
+            }
+
+            footer>section>section:nth-child(1)>h1{
+
+                font-size: 6vh;
+            }
+
+            body>main>section:nth-child(2)>section:nth-child(1)>h1{
+
+                font-size: 6vh;
+
+
+            }
+
+            body>main>section:nth-child(4)>section:nth-child(1)>div:nth-child(2){
+                flex-direction: column;
+
+            }
+
+            footer>section>section:nth-child(3)>div>p{
+                font-size: 2vh;
+                margin: 0;
+            }
+
+            body>header>section>section:nth-child(1)>div:nth-child(3){
+                font-size: 0.5em;
+            }
+        }
+
+
+
+
+
+
 
 
 
@@ -991,7 +1101,7 @@
 
 </head>
 <body>
-<header>
+<header class ="ww">
 
     <nav>
         <ol>
