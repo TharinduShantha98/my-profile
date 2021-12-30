@@ -3,8 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <style>
+        body > section:nth-child(1) {
+            position: absolute;
+            background: url("images/sky.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            border: solid 2px crimson;
+        }
+
+
+
+        body > section:nth-child(1)  > div:nth-child(1) {
+            border: 1px solid green;
+
+        }
+
+        body > section:nth-child(1)  > div:nth-child(2) {
+            border: 1px solid green;
+
+        }
+
+        body > section:nth-child(1) > div:nth-child(1) > img:nth-child(1) {
+            width: 100%;
+
+        }
+
+        body > section:nth-child(1)  > div:nth-child(2) > img:nth-child(1) {
+            width: 100%;
+
+        }
+
+
+        body > section > div:nth-child(3) {
+            position: absolute;
+            width: 50%;
+            bottom: 0;
+            left: 0;
+
+        }
+
+        body > section > div:nth-child(3) > img {
+
+            width: 100px;
+
+        }
+
+
+    </style>
+
 </head>
 <body>
+
+<section>
+
+    <div>
+        <img src="images/city.png">
+    </div>
+
+    <div>
+        <img src="images/road.jpg">
+    </div>
+
+
+    <div>
+
+        <img src="images/car.png">
+        <img src="images/wheel.png">
+        <img src="images/wheel.png">
+
+    </div>
+
+
+</section>
+
 
 </body>
 </html>
