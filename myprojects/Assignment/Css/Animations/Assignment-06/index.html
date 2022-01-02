@@ -24,7 +24,7 @@
             border: solid #0d39c1 3px;
             display: flex;
             animation-name: backGround;
-            animation-duration: 10s;
+            animation-duration: 20s;
             animation-iteration-count: infinite;
 
 
@@ -76,7 +76,7 @@
             width: 400%;
             border: #870642 1px solid;
             animation-name: backGround;
-            animation-duration: 10s;
+            animation-duration: 20s;
             animation-iteration-count: infinite;
 
         }
@@ -123,11 +123,6 @@
 
         }
 
-        body > section > div:nth-child(3) > img {
-            width: 100px;
-
-        }
-
         body > section > div:nth-child(3) > img:nth-child(1){
             position: absolute;
             width: 48%;
@@ -146,6 +141,12 @@
             bottom: 0;
             top: 37%;
             margin: auto;
+            animation-name: wheel;
+            animation-duration: 10s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+
+
 
 
         }
@@ -158,6 +159,12 @@
             bottom: 0;
             top: 37%;
             margin: auto;
+            transform: rotate(360deg);
+            animation-name: wheel;
+            animation-duration: 10s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+
 
         }
 
@@ -179,6 +186,19 @@
 
 
         }
+
+
+        @keyframes wheel {
+
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+
 
 
 
