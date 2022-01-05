@@ -9,152 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="gray">
     <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/header.css">
 
 
 
 
     <style>
-        body{
-            color: #c63333;
-            background-color: rgba(7, 7, 7, 0.98)
-        }
-
-        header{
-            position: relative;
-
-            height: 100vh;
-            background-color: #000000;
-            color: #f6f2f2;
-        }
-/*================navigation part==========================*/
-        header> nav{
-            position: absolute;
-            height: 10%;
-            width: 100%;
-            top:0;
-            right: 0;
-          /*  border: solid 1px red;*/
-            font-size: 1px;
-            z-index: 3;
-        }
-
-        header>nav>ol{
-            position: absolute;
-            list-style: none;
-            height: 54%;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            padding: 0;
-            text-align: right;
-        }
-
-        header>nav>ol>li{
-            display: inline-block;
-            font-size: 30em;
-            padding-left: 1%;
-            padding-right: 1%;
-        }
-
-        header>nav>ol>li:hover{
-            color: gold;
-            border-bottom: solid 1px goldenrod;
-        }
-
-/*==================== (image hello name) text in session  ==========================*/
-        header>section{
-            position: relative;
-            top: 10%;
-           /* border: solid 1px blue;*/
-            height: 90%;
-
-        }
-/*==========================text part=============================*/
-        body>header>section>section:nth-child(1){
-            position: absolute;
-            display: inline-block;
-           /* width: 60%;*/
-            height: 100%;
-            left: 10px;
-           /* border: solid 1px yellow;*/
-        }
-     /*   ----------------hello---------------------*/
-        body>header>section>section:nth-child(1)>div:nth-child(1){
-            position: relative;
-            z-index: 2;
-        }
-
-        body>header>section>section:nth-child(1)>div:nth-child(1)>h1{
-            margin: 0;
-            /*font-size: 19em;*/
-            font-size: 26vw;
-         /*   border: solid 1px white;*/
-            line-height: 0.7;
-        }
-
-       /* ------------------tharindu shantha-----------------*/
-        body>header>section>section:nth-child(1)>div:nth-child(2){
-
-            position: relative;
-            top: 2vh;
-            z-index: 3;
-            margin-top: 4vh;
-            left: 2vw;
-
-        }
-        body>header>section>section:nth-child(1)>div:nth-child(2)>p{
-            margin: 0;
-            color: gold;
-            font-size: 14vh;
-            font-weight: bold;
-            line-height: 0.9;
-        }
-
-       /* ------------------professional full stack developer------------------*/
-        body>header>section>section:nth-child(1)>div:nth-child(3){
-            position: relative;
-            height: 10vh;
-            font-size: 1em;
-            font-weight: bold;
-            left: 2vw;
-            top: 4vh;
-            text-align: center;
-            z-index: 2;
-        }
-        body>header>section>section:nth-child(1)>div:nth-child(3)>span{
-            position: relative;
-            color: aliceblue;
-            display: inline-block;
-            animation: animate 2s ease-in-out infinite;
-            animation-delay: calc(0.1s * var(--i));
-        }
-        @keyframes animate {
-            0%,40%,100%{
-                transform: translateY(0);
-            }
-            20%{
-                transform: translateY(-10px);
-            }
-        }
-
-
-/*===================my image===============================*/
-        body>header>section>section:nth-child(2){
-            position: absolute;
-            display: inline-block;
-            width: 40%;
-            left: 60%;
-            height: 100%;
-          /*  border: solid 1px red;*/
-        }
-
-        body>header>section>section:nth-child(2)>img{
-                width: 100%;
-                height: 100%
-        }
-
 
        /* ***********************about me**********************/
 
@@ -1539,20 +1399,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             /* *********************************************************************************/
 
 
@@ -1565,7 +1411,175 @@
         }
 
 
+        @media all and (min-width: 425px) and (max-width: 768px){
 
+          /*  header>nav>ol{
+
+                padding: 0;
+                text-align: center;
+            }
+
+            header>nav>ol>li{
+                font-size: 30em;
+            }
+
+
+
+
+            body>main>section:nth-child(4)>article:nth-child(2)>div{
+                position: absolute;
+                width: 80%;
+                height: 29%;
+            }
+
+            body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(1){
+
+                left: 10%;
+                top: 1%;
+                right: 10%;
+
+            }
+
+
+            body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(2){
+
+                right: 0;
+                left: 0;
+                top: 34%;
+
+
+            }
+
+            body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(3){
+
+                right: 10%;
+                top: 67%;
+
+            }
+
+            body>main>section:nth-child(4)>section:nth-child(1)>section:nth-child(1)>h1{
+                font-size: 3vh;
+
+            }
+
+
+
+            body>main>section:nth-child(2)>section:nth-child(1)>h1{
+                font-size: 3vh;
+            }
+
+            body>main>section:nth-child(3)>section:nth-child(1)>h1{
+                font-size: 3vh;
+            }
+
+
+            body>main>section:nth-child(5)>section:nth-child(2){
+                flex-direction: column;
+
+
+            }
+
+
+
+            body>main>section:nth-child(5)>section:nth-child(1)>h1{
+                margin: 0;
+                font-size: 3vh;
+                letter-spacing: 15px;
+                font-weight: bold;
+                color: #f6f2f2;
+
+            }
+
+
+
+
+
+
+!*==============footer================*!
+            footer>section>section:nth-child(1)>h1{
+                font-size: 3vh;
+            }*/
+            header{
+                width: 100vw;
+               /* color: #870642;*/
+            }
+            header> nav{
+                height: 40%;
+                width: 30%;
+                left: 5vw;
+                top: 5vw;
+
+
+            }
+            header>nav>ol{
+                height: 100%;
+                text-align: left;
+                color: white;
+            }
+            header>nav>ol>li{
+                display: block;
+                font-size: 5vw;
+                font-weight: bold;
+
+            }
+            header>section{
+                position: relative;
+                top: 0%;
+                /* border: solid 1px blue;*/
+                height: 100%;
+
+            }
+            body>header>section>section:nth-child(1)>div:nth-child(2)>p{
+                font-size: 5vh;
+            }
+            body>header>section>section:nth-child(2){
+                width: 67%;
+                left: 33%;
+
+            }
+            body>header>section>section:nth-child(1){
+
+                left: 0px;
+                /* border: solid 1px yellow;*/
+            }
+            /*   ----------------hello---------------------*/
+            body>header>section>section:nth-child(1)>div:nth-child(1){
+                top: 56%;
+
+            }
+
+            body>header>section>section:nth-child(1)>div:nth-child(1)>h1{
+                margin: 0;
+                font-size: 26vw;
+            }
+
+            /* ------------------tharindu shantha-----------------*/
+            body>header>section>section:nth-child(1)>div:nth-child(2){
+                top: 58%;
+
+            }
+
+            body>header>section>section:nth-child(1)>div:nth-child(3){
+                left: 2vw;
+                top: 61%;
+            }
+
+            body>header>section>section:nth-child(1)>div:nth-child(3)>span{
+                top: 12%;
+            }
+
+            body>header>section>section:nth-child(1)>div:nth-child(3){
+                font-size: 2vw;
+            }
+
+
+            /*====================about_me=============================*/
+
+
+
+
+
+        }
 
 
 
