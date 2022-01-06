@@ -1,0 +1,283 @@
+/*  *********************start project part****************************** */
+
+body>main>section:nth-child(4){
+    position: relative;
+    height: 250vh;
+    /* border: solid 1px white;*/
+
+}
+/*======first, section area===============*/
+body>main>section:nth-child(4)>section:nth-child(1){
+    position: absolute;
+    height: calc(100%/4);
+    width: 100%;
+    /* border: solid 1px gold;*/
+
+}
+body>main>section:nth-child(4)>section:nth-child(1)>section:nth-child(1){
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    /*  background-color: #d93030;*/
+    text-align: center;
+}
+
+body>main>section:nth-child(4)>section:nth-child(1)>section:nth-child(1)>h1{
+    margin: 0;
+    font-size: 18vh;
+    letter-spacing: 15px;
+    font-weight: bold;
+    color: #f6f2f2;
+}
+body>main>section:nth-child(4)>section:nth-child(1)>div:nth-child(2){
+    position: absolute;
+    height: 66%;
+    width: 100%;
+    /* border: solid 1px blue;*/
+    top: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+body>main>section:nth-child(4)>section:nth-child(1)>div:nth-child(2)>div{
+    border: solid 1px #a230d2;
+    height: 90%;
+    width: 20%;
+    text-align: center;
+    border-radius: 10%;
+
+}
+
+body>main>section:nth-child(4)>section:nth-child(1)>div:nth-child(2)>div>figure{
+    position: relative;
+    margin: 0;
+
+
+}
+
+body>main>section:nth-child(4)>section:nth-child(1)>div:nth-child(2)>div>figure>img{
+    width: 50%;
+
+}
+body>main>section:nth-child(4)>section:nth-child(1)>div:nth-child(2)>div>figure>figcaption>p{
+    color: white;
+    margin: 0;
+
+}
+
+body>main>section:nth-child(4)>section:nth-child(1)>div:nth-child(2)>div>figure>figcaption>p:nth-child(1){
+    font-weight: bold;
+    font-size: 6vh;
+}
+
+/*======End, section area===============*/
+/*======second, start article area===============*/
+body>main>section:nth-child(4)>article:nth-child(2){
+    position: absolute;
+    height: calc((100%/4)*2);
+    width: 100%;
+    top: calc(100%/4);
+    /*border: solid 1px gold;*/
+}
+
+body>main>section:nth-child(4)>article:nth-child(2)>div{
+    position: absolute;
+    width: 25%;
+    height: 80%;
+}
+
+body>main>section:nth-child(4)>article:nth-child(2)>div>figure{
+    margin: 0;
+    text-align: left;
+}
+
+body>main>section:nth-child(4)>article:nth-child(2)>div>figure>img{
+    width: 100%;
+}
+
+body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(1){
+    border: solid 1px white;
+    left: 10%;
+    top: 10%;
+
+}
+
+body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(1)>figure>figcaption>p:nth-child(1){
+    font-size: 6vh;
+    margin: 0;
+    color: goldenrod;
+    font-weight: bold;
+
+}
+
+body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(2)>figure>figcaption>p:nth-child(1){
+    font-size: 6vh;
+    margin: 0;
+    color: #1A958D;
+    font-weight: bold;
+
+}
+
+body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(3)>figure>figcaption>p:nth-child(1){
+    font-size: 6vh;
+    margin: 0;
+    color:#3A7839 ;
+    font-weight: bold;
+
+}
+
+body>main>section:nth-child(4)>article:nth-child(2)>div>figure>figcaption>p{
+    color: #fffcf9;
+
+}
+
+
+
+
+body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(2){
+    border: solid 1px white;
+    right: 0;
+    left: 0;
+    top: 0;
+    /* bottom: 0;*/
+    margin: auto;
+}
+
+body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(3){
+    border: solid 1px white;
+    right: 10%;
+    top: 10%;
+
+
+
+}
+
+/*======second, End article area===============*/
+
+/*======second, section area===============*/
+
+body>main>section:nth-child(4)>section:nth-child(3){
+    position: absolute;
+    height: calc(100%/4);
+    width: 100%;
+    top:  calc((100%/4)*3);
+    background-color: #212020;
+    /* border: solid 1px gold;*/
+
+}
+
+body>main>section:nth-child(4)>section:nth-child(3)>section:nth-child(1){
+    position: absolute;
+    /*  background-color: #e80909;*/
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+body>main>section:nth-child(4)>section:nth-child(3)>section:nth-child(1)>h1{
+    color: white;
+    font-size: 8vh;
+    margin: 0;
+
+}
+
+body>main>section:nth-child(4)>section:nth-child(3)>div:nth-child(2){
+    position: absolute;
+    width: 50%;
+    height: 54%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /*  border: solid 1px green;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body>main>section:nth-child(4)>section:nth-child(3)>div:nth-child(2)>div{
+    position: relative;
+    width: 100%;
+    /* border: solid crimson;*/
+    display: flex;
+    font-size: 4vh;
+    color: white;
+
+}
+body>main>section:nth-child(4)>section:nth-child(3)>div:nth-child(2)>div>div{
+    position: absolute;
+    left: 10%;
+
+}
+
+body>main>section:nth-child(4)>section:nth-child(3)>div:nth-child(2)>div>div{
+    position: absolute;
+    width: 70%;
+    height: 30%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /* border: solid crimson;*/
+
+}
+
+body>main>section:nth-child(4)>section:nth-child(3)>div:nth-child(2)>div:nth-child(1)>div>div{
+    position: absolute;
+    background-color: goldenrod;
+    width: 90%;
+    height: 100%;
+}
+
+body>main>section:nth-child(4)>section:nth-child(3)>div:nth-child(2)>div:nth-child(2)>div>div{
+    position: absolute;
+    background-color: blue;
+    width: 80%;
+    height: 100%;
+}
+
+body>main>section:nth-child(4)>section:nth-child(3)>div:nth-child(2)>div:nth-child(3)>div>div{
+    position: absolute;
+    background-color: #0ae0ce;
+    width: 85%;
+    height: 100%;
+}
+
+body>main>section:nth-child(4)>section:nth-child(3)>div:nth-child(2)>div:nth-child(4)>div>div{
+    position: absolute;
+    background-color: green;
+    width: 90%;
+    height: 100%;
+}
+
+body>main>section:nth-child(4)>section:nth-child(3)>div:nth-child(2)>div:nth-child(5)>div>div{
+    position: absolute;
+    background-color: deeppink;
+    width: 70%;
+    height: 100%;
+}
+
+body>main>section:nth-child(4)>section:nth-child(3)>div:nth-child(2)>div:nth-child(6)>div>div{
+    position: absolute;
+    background-color: #b8190b;
+    width: 83%;
+    height: 100%;
+}
+
+body>main>section:nth-child(4)>section:nth-child(3)>img{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 30%;
+    height: 85%;
+
+}
