@@ -1,16 +1,21 @@
-# This is my profile
+
 
 
 ## institute of **IJSE**
 
 second semester CW for Internet technology module 
 
+## Description 
+This site is my first project for web technology. In this site, I created my portfolio.
+so in this site include my home , about me , skills , education , my project history and , services and contact me parts 
+  
 
+
+
+## Created step
 In This repository, I create Portfolio. As a first,  I created  site map.🗺✨
 
-
 As The second and third, I created Wireframe  and mock up✔✔🤞
-
 
 This is site map https://www.gloomaps.com/fQowCwK2QR
 
@@ -30,6 +35,9 @@ wireframe - https://wireframe.cc/pro/pp/90f419222489578
 
 
 Mock up - https://www.figma.com/file/mB3bsezhSKq7eKghW72Jau/Untitled?node-id=0%3A1
+
+
+
 
 
 
