@@ -37,6 +37,13 @@ wireframe - https://wireframe.cc/pro/pp/90f419222489578
 Mock up - https://www.figma.com/file/mB3bsezhSKq7eKghW72Jau/Untitled?node-id=0%3A1
 
 
+After, I implemented  project step by step. between learning HTML and CSS.
+
+<p align="center">
+    <img src="assets\images\work1.png" width="200" height="80" border="solid 1px green">
+    <img src="assets\images\work2.png" width="200" height="80" border="solid 1px green">
+</p>
+
 ## SetUp/Installation Requirements
 
 <ul>
