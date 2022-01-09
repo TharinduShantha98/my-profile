@@ -48,7 +48,6 @@ Mock up - https://www.figma.com/file/mB3bsezhSKq7eKghW72Jau/Untitled?node-id=0%3
     <li>open the HTML folder inside</li>
     
     
-    
 </ul>
 
 ## Used technologies
@@ -60,6 +59,12 @@ Only HTML And CSS
 000Webhost - https://tharindushantha.000webhostapp.com/
 
 gitHubpage -  https://tharindushantha98.github.io/my-profile/
+
+## Contact 
+Email - tharindushantha4@gmail.com
+Facebook - https://www.facebook.com/tharindu.gamlakshage
+
+
 
 
 
