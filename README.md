@@ -51,6 +51,19 @@ Mock up - https://www.figma.com/file/mB3bsezhSKq7eKghW72Jau/Untitled?node-id=0%3
     
 </ul>
 
+## Used technologies
+
+Only HTML And CSS
+
+##  Sites that can be view
+
+000Webhost - https://tharindushantha.000webhostapp.com/
+
+gitHubpage -  https://tharindushantha98.github.io/my-profile/
+
+
+
+
 
 
 
