@@ -37,6 +37,21 @@ wireframe - https://wireframe.cc/pro/pp/90f419222489578
 Mock up - https://www.figma.com/file/mB3bsezhSKq7eKghW72Jau/Untitled?node-id=0%3A1
 
 
+## SetUp/Installation Requirements
+
+<ul>
+    <li>Open terminal or a similar app on your computer </li>
+    <li>Change directory</li>
+    <li>Copy Link - https://github.com/TharinduShantha98/my-profile.git </li>
+    <li>use git clone and paste that link after it to clone the repository</li>
+    <li>Open the folder it provides </li>
+    <li>open the HTML folder inside</li>
+    
+    
+    
+</ul>
+
+
 
 
 
