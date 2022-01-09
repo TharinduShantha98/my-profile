@@ -1,7 +1,7 @@
 
 
 
-## institute of **IJSE**
+## Institute of **IJSE**
 
 second semester CW for Internet technology module 
 
@@ -62,8 +62,12 @@ gitHubpage -  https://tharindushantha98.github.io/my-profile/
 
 ## Contact 
 Email - tharindushantha4@gmail.com
+
 Facebook - https://www.facebook.com/tharindu.gamlakshage
 
+<p align="center">
+    <img src="assets\images\software-engineering.gif" width="400" height="400">
+</p>
 
 
 
