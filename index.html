@@ -71,23 +71,28 @@
             border: solid 1px green;
             bottom: 0;
             left: 0;
+            overflow: hidden;
 
         }
 
 
         body>main>section:nth-child(3)>section:nth-child(3)>div{
             position: absolute;
-            border: solid 1px crimson;
+           /* border: solid 1px crimson;*/
             bottom: 0;
             left: 0;
             background: white;
+            animation-name: animate6;
+            animation-duration: 15s;
+            animation-iteration-count: infinite;
+            border-radius: 50%;
 
 
         }
         body>main>section:nth-child(3)>section:nth-child(3)>div:nth-child(1){
             width: 10%;
             height: 16%;
-            border: solid 1px crimson;
+            /*border: solid 1px crimson;*/
             opacity: 0.9;
 
         }
@@ -95,7 +100,7 @@
         body>main>section:nth-child(3)>section:nth-child(3)>div:nth-child(2){
             width: 20%;
             height: 32%;
-            border: solid 1px crimson;
+           /* border: solid 1px crimson;*/
             opacity: 0.6;
 
         }
@@ -103,14 +108,14 @@
         body>main>section:nth-child(3)>section:nth-child(3)>div:nth-child(3){
             width: 30%;
             height: 48%;
-            border: solid 1px crimson;
+          /*  border: solid 1px crimson;*/
             opacity: 0.3;
 
         }
         body>main>section:nth-child(3)>section:nth-child(3)>div:nth-child(4){
             width: 40%;
             height: 64%;
-            border: solid 1px crimson;
+           /* border: solid 1px crimson;*/
             opacity: 0.1;
 
         }
@@ -118,10 +123,15 @@
 
         @keyframes animate6 {
             0%{
-
+                transform: scale(0.8);
+            }
+            50%{
+                transform: scale(1.2);
+            }
+            100%{
+                transform: scale(0.8);
 
             }
-
         }
 
 
