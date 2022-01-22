@@ -5,6 +5,16 @@
     <title>Order Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
+    <style>
+        .img-thumbnail{
+            width: 20%;!important;
+            height: 20%;!important;
+        }
+
+    </style>
+
+
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
@@ -41,7 +51,7 @@
 <div class="container-fluid">
     <section class="row mt-2">
         <section class="col-sm-12 col-lg-4">
-            <label for="basic-url" class="form-label">Customer Detail</label>
+            <label class="form-label">Customer Detail</label>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Enter Code number" aria-label="Code number" aria-describedby="basic-addon1">
             </div>
@@ -50,7 +60,7 @@
             </div>
 
 
-            <label for="basic-url" class="form-label">Item Detail</label>
+            <label  class="form-label">Item Detail</label>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Item Code number" aria-label="Item Code number" aria-describedby="basic-addon1">
             </div>
@@ -59,30 +69,22 @@
                 <input type="text" class="form-control" placeholder="Item Name" aria-label="Item name" aria-describedby="basic-addon2">
             </div>
 
-
             <div class="input-group mb-3">
                 <input type="number" class="form-control" placeholder="Qty" aria-label="qty" aria-describedby="basic-addon2">
+                <button type="button" class="btn btn-success">Add to cart</button>
             </div>
-
-
-
-
-            <label for="basic-url" class="form-label">Your vanity URL</label>
+            <label  class="form-label">Total fee/=</label>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-            </div>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text">$</span>
+                <span class="input-group-text">RS</span>
                 <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
                 <span class="input-group-text">.00</span>
             </div>
 
+            <label  class="form-label">Payment method</label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username">
-                <span class="input-group-text">@</span>
-                <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+                <img src="images/paypal.png" class="img-thumbnail" alt="...">
+                <img src="images/visa2.png" class="img-thumbnail" alt="...">
+                <button type="button" class="btn btn-success m-1 text-end">Pay</button>
             </div>
 
             <div class="input-group">
@@ -92,13 +94,18 @@
         </section >
 
         <section class="col-sm-12 col-lg-8">
-            <table class="table">
+
+            <label  class="form-label text-center fw-bold ">Item Detail Table</label>
+            <table class="table .d-sm-none .d-md-block">
                 <thead>
                 <tr class="bg-danger">
                     <th scope="col">#</th>
-                    <th scope="col">First name</th>
-                    <th scope="col">Last name</th>
-                    <th scope="col">Address</th>
+                    <th scope="col">Item code</th>
+                    <th scope="col">Item name</th>
+                    <th scope="col">Stock qty</th>
+                    <th scope="col">Discount</th>
+                    <th scope="col">Price</th>
+
                 </tr>
                 </thead>
                 <tbody>
