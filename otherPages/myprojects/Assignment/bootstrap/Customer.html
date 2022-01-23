@@ -7,11 +7,22 @@
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
 
     <style>
-
+        body{
+            background-image: url("images/cus2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .row{
+            background-color: rgba(110, 141, 189, 0.51);
+            margin-top: 9vh;
+            width: 80vw;
+            margin-left: 10vw;
+        }
     </style>
 
 </head>
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">MT Food City</a>
@@ -34,20 +45,87 @@
                 </li>
             </ul>
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success bg-light text-dark" type="submit">Search</button>
+                <input class="form-control me-2" type="search" placeholder="Search Customer" aria-label="Search">
+                <button class="btn btn-outline-success bg-light text-dark" type="submit">Search </button>
             </form>
         </div>
     </div>
 </nav>
 
 
-<section>
+<section class="container-fluid">
+    <div class="row">
+
+        <div class="col-sm-12 ">
+            <label class="form-label fw-bold text-danger fs-2 ">Add New Customer </label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control me-2" placeholder="First name" aria-label="First Name" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Last name" aria-label="Last Name" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon2">
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control " placeholder="Tel number " aria-label="tel Number" aria-describedby="basic-addon2">
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
+            </div>
+            <button type="submit" class="btn btn-success me-2 float-end mb-3"> Update Customer</button>
+            <button type="submit" class="btn btn-danger me-2 float-end mb-3"> Delete Customer </button>
+            <button type="submit" class="btn btn-dark me-2 float-end mb-3"> Add Customer </button>
+        </div>
+
+        <hr>
+            <table class="table mt-2">
+                <thead>
+                <tr>
+                    <th scope="col">Customer Code</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Telephone</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">C001</th>
+                    <td>Dasun</td>
+                    <td>Colombo</td>
+                    <td>Dasun@gmail.com</td>
+                    <td>0112121222</td>
+                </tr>
+                <tr>
+                    <th scope="row">C001</th>
+                    <td>Dasun</td>
+                    <td>Colombo</td>
+                    <td>Dasun@gmail.com</td>
+                    <td>0112121222</td>
+                </tr>
+                <tr>
+                    <th scope="row">C001</th>
+                    <td>Dasun</td>
+                    <td>Colombo</td>
+                    <td>Dasun@gmail.com</td>
+                    <td>0112121222</td>
+                </tr>
+                <tr>
+                    <th scope="row">C001</th>
+                    <td>Dasun</td>
+                    <td>Colombo</td>
+                    <td>Dasun@gmail.com</td>
+                    <td>0112121222</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+    </div>
 
 
 </section>
 
-
+<script src="css/js/bootstrap.bundle.js"></script>
 
 </body>
 </html>
