@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Customer</title>
+    <title>Item</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
 
     <style>
         body{
-            background-image: url("images/cus2.jpg");
+            background-image: url("images/item1.jpg");
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -45,7 +45,7 @@
                 </li>
             </ul>
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search Customer" aria-label="Search">
+                <input class="form-control me-2" type="search" placeholder="Search Item" aria-label="Search">
                 <button class="btn btn-outline-success bg-light text-dark" type="submit">Search </button>
             </form>
         </div>
@@ -57,66 +57,68 @@
     <div class="row">
 
         <div class="col-sm-12 ">
-            <label class="form-label fw-bold text-danger fs-2 ">Add New Customer </label>
+            <label class="form-label fw-bold text-danger fs-2 ">Add New Item </label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control me-2" placeholder="First name" aria-label="First Name" aria-describedby="basic-addon1">
-                <input type="text" class="form-control" placeholder="Last name" aria-label="Last Name" aria-describedby="basic-addon1">
+                <input type="text" class="form-control me-2" placeholder="Item Code" aria-label="ItemCode" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Item Name" aria-label="ItemName" aria-describedby="basic-addon1">
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon2">
+                <input type="text" class="form-control" placeholder="Unit Price" aria-label="unitPrice" aria-describedby="basic-addon2">
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control " placeholder="Tel number " aria-label="tel Number" aria-describedby="basic-addon2">
+                <input type="text" class="form-control " placeholder="Pack Size" aria-label="packSize" aria-describedby="basic-addon2">
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
+                <input type="text" class="form-control" placeholder="Quantity" aria-label="qty" aria-describedby="basic-addon2">
             </div>
-            <button type="submit" class="btn btn-success me-2 float-end mb-3"> Update Customer</button>
-            <button type="submit" class="btn btn-danger me-2 float-end mb-3"> Delete Customer </button>
-            <button type="submit" class="btn btn-dark me-2 float-end mb-3"> Add Customer </button>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Buying Price" aria-label="buyPrice" aria-describedby="basic-addon2">
+            </div>
+            <button type="submit" class="btn btn-success me-2 float-end mb-3"> Update Item</button>
+            <button type="submit" class="btn btn-danger me-2 float-end mb-3"> Delete Item </button>
+            <button type="submit" class="btn btn-dark me-2 float-end mb-3"> Add Item </button>
         </div>
 
         <hr>
             <table class="table mt-2">
                 <thead>
                 <tr>
-                    <th scope="col">Customer Code</th>
-                    <th scope="col">Customer Name</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Telephone</th>
+                    <th scope="col">Item Code</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Pack size</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Buying Price</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <th scope="row">C001</th>
-                    <td>Dasun</td>
-                    <td>Colombo</td>
-                    <td>Dasun@gmail.com</td>
-                    <td>0112121222</td>
+                    <th scope="row">I001</th>
+                    <td>Chocolate Biscuit</td>
+                    <td>70.00</td>
+                    <td>100g</td>
+                    <td>200</td>
+                    <td>10.00</td>
+                    <td>12.00</td>
                 </tr>
                 <tr>
-                    <th scope="row">C001</th>
-                    <td>Dasun</td>
-                    <td>Colombo</td>
-                    <td>Dasun@gmail.com</td>
-                    <td>0112121222</td>
+                    <th scope="row">I001</th>
+                    <td>Chocolate Biscuit</td>
+                    <td>70.00</td>
+                    <td>100g</td>
+                    <td>200</td>
+                    <td>10.00</td>
+                    <td>12.00</td>
                 </tr>
                 <tr>
-                    <th scope="row">C001</th>
-                    <td>Dasun</td>
-                    <td>Colombo</td>
-                    <td>Dasun@gmail.com</td>
-                    <td>0112121222</td>
+                    <th scope="row">I001</th>
+                    <td>Chocolate Biscuit</td>
+                    <td>70.00</td>
+                    <td>100g</td>
+                    <td>200</td>
+                    <td>10.00</td>
+                    <td>12.00</td>
                 </tr>
-                <tr>
-                    <th scope="row">C001</th>
-                    <td>Dasun</td>
-                    <td>Colombo</td>
-                    <td>Dasun@gmail.com</td>
-                    <td>0112121222</td>
-                </tr>
-
                 </tbody>
             </table>
 
