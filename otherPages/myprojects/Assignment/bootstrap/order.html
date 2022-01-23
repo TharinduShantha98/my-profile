@@ -26,7 +26,23 @@
             /*bottom: 0;*/
             top: 30vh;
             z-index: -1;
+            opacity: 0.7;
         }
+
+
+        .totalPrice{
+            position: absolute;
+            width: 18%;
+            height: 15%;
+            border: solid 1px crimson;
+            right: 10%;
+            text-align: center;
+            background-color: rgba(195,92,141,0.40);
+        }
+
+
+
+
 
     </style>
 
@@ -67,8 +83,8 @@
 
 <div class="container-fluid">
     <section class="row mt-2">
-        <section class="col-sm-12 col-lg-4">
-            <label class="form-label">Customer Detail</label>
+        <section class="col-sm-12 col-lg-4 border border-5 ms-2 mt-3">
+            <label class="form-label fw-bold">Customer Detail</label>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Enter Code number" aria-label="Code number" aria-describedby="basic-addon1">
             </div>
@@ -77,7 +93,7 @@
             </div>
 
 
-            <label  class="form-label">Item Detail</label>
+            <label  class="form-label fw-bold">Item Detail</label>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Item Code number" aria-label="Item Code number" aria-describedby="basic-addon1">
             </div>
@@ -90,7 +106,7 @@
                 <input type="number" class="form-control" placeholder="Qty" aria-label="qty" aria-describedby="basic-addon2">
                 <button type="button" class="btn btn-success">Add to cart</button>
             </div>
-            <label  class="form-label">Total fee/=</label>
+            <label  class="form-label fw-bold">Total fee/=</label>
             <div class="input-group mb-3">
                 <span class="input-group-text">RS</span>
                 <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
@@ -107,15 +123,15 @@
 
         </section >
 
-        <section class="col-sm-12 col-lg-8">
+        <section class="col-sm-12 col-lg-7 ms-4">
 
            <!-- <label  class="form-label text-center fw-bold ">Item Detail Table</label>-->
             <p class="text-center fw-bold">Item Detail Table</p>
             <table class="table .d-sm-none .d-md-block">
                 <thead>
-                <tr class="bg-danger">
+                <tr  class="table-light">
                     <th scope="col">#</th>
-                    <th scope="col">Item code</th>
+                    <th  scope="col">Item code</th>
                     <th scope="col">Item name</th>
                     <th scope="col">Stock qty</th>
                     <th scope="col">Discount</th>
@@ -124,7 +140,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="bg-primary">
+                <tr class="table-primary">
                     <th scope="row">1</th>
                     <td></td>
                     <td></td>
@@ -132,7 +148,7 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <tr class="bg-primary">
+                <tr  class="table-warning">
                     <th scope="row">2</th>
                     <td></td>
                     <td></td>
@@ -140,7 +156,7 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <tr class="bg-primary">
+                <tr  class="table-danger">
                     <th scope="row">3</th>
                     <td></td>
                     <td></td>
@@ -149,7 +165,7 @@
                     <td></td>
                 </tr>
 
-                <tr class="bg-primary">
+                <tr class="table-success">
                     <th scope="row">4</th>
                     <td></td>
                     <td></td>
@@ -163,33 +179,35 @@
 
             <button type="button" class="btn btn-danger">Delete</button>
             <button type="button" class="btn btn-warning">Update</button>
+            <label  class="form-label text-center fw-bold  ms-4 ">Order Id </label>
+            <label  class="form-label text-center fw-bold  ms-4 ">o-001 </label>
             <table class="table">
                 <thead>
-                <tr>
-                    <th scope="col">ItemCode</th>
+                <tr class="table-light opacity-75">
+                    <th scope="col" class="">ItemCode</th>
                     <th scope="col">Item Name</th>
                     <th scope="col">discount</th>
-                    <th scope="col">data/time</th>
+                    <th scope="col">saleQty</th>
                     <th scope="col">price</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
+                <tr  class="table-primary  opacity-75">
                     <th scope="row">I1</th>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
-                <tr>
-                    <th scope="row">I2</th>
+                <tr class="table-warning   opacity-75">
+                    <th scope="row" >I2</th>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
-                <tr>
-                    <th scope="row">I3</th>
+                <tr class="table-danger   opacity-75">
+                    <th scope="row"  >I3</th>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -197,6 +215,11 @@
                 </tr>
                 </tbody>
             </table>
+
+
+            <div class="totalPrice">
+                <p class="fs-3 text-center fw-bold mt-4 ">10000.00</p>
+            </div>
 
         </section>
 
