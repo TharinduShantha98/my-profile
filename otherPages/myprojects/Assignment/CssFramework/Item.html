@@ -8,15 +8,21 @@
 
     <style>
         body{
-            background-image: url("images/item1.jpg");
+            background-image: url("images/item2.jpg");
             background-repeat: no-repeat;
             background-size: cover;
         }
         .row{
-            background-color: rgba(110, 141, 189, 0.51);
-            margin-top: 9vh;
+          /*  background-color: rgba(110, 141, 189, 0.51);*/
+           /* margin-top: 9vh;*/
             width: 80vw;
-            margin-left: 10vw;
+           /* margin-left: 10vw;*/
+            text-align: center;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
         }
     </style>
 
@@ -57,7 +63,7 @@
     <div class="row">
 
         <div class="col-sm-12 ">
-            <label class="form-label fw-bold text-danger fs-2 ">Add New Item </label>
+            <label class="form-label fw-bold text-dark fs-2 ">Add New Item </label>
             <div class="input-group mb-3">
                 <input type="text" class="form-control me-2" placeholder="Item Code" aria-label="ItemCode" aria-describedby="basic-addon1">
                 <input type="text" class="form-control" placeholder="Item Name" aria-label="ItemName" aria-describedby="basic-addon1">
@@ -80,7 +86,8 @@
         </div>
 
         <hr>
-            <table class="table mt-2">
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
                 <thead>
                 <tr>
                     <th scope="col">Item Code</th>
@@ -121,6 +128,10 @@
                 </tr>
                 </tbody>
             </table>
+
+
+        </div>
+
     </div>
 
 

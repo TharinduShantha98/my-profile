@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
     <style>
-        /*body{
+       /* !*body{
             background-image: url("images/order.jpg");
             background-repeat: no-repeat;
             background-size: cover;
-        }*/
+        }*!*/
+
+       body{
+           height: 100vh;
+          /* width: 100vw;*/
+
+       }
         .img-thumbnail{
             width: 20%;!important;
             height: 20%;!important;
@@ -39,6 +45,15 @@
             text-align: center;
             background-color: rgba(195,92,141,0.40);
         }
+
+        #orderDetail{
+            height: 90vh;
+
+
+
+        }
+
+
 
 
 
@@ -74,6 +89,7 @@
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success bg-light text-dark" type="submit">Search</button>
+
             </form>
         </div>
     </div>
@@ -82,48 +98,66 @@
 
 
 <div class="container-fluid">
-    <section class="row mt-2">
-        <section class="col-sm-12 col-lg-4 border border-5 ms-2 mt-3">
-            <label class="form-label fw-bold">Customer Detail</label>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Enter Code number" aria-label="Code number" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon2">
-            </div>
+    <section class="row mt-2 " id="orderDetail">
+        <section class="col-sm-12 col-lg-5 ms-2 mt-3 border-dark">
+
+            <section class="row">
+                <section class="col-lg-6">
+                    <label class="form-label fw-bold">Customer Detail</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Enter Code number" aria-label="Code number" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon2">
+                    </div>
 
 
-            <label  class="form-label fw-bold">Item Detail</label>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Item Code number" aria-label="Item Code number" aria-describedby="basic-addon1">
-            </div>
+                </section>
 
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Item Name" aria-label="Item name" aria-describedby="basic-addon2">
-            </div>
+                <section class="col-lg-6">
+                    <label  class="form-label fw-bold">Item Detail</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Item Code number" aria-label="Item Code number" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Item Name" aria-label="Item name" aria-describedby="basic-addon2">
+                    </div>
+
+
+                </section>
+
+            </section>
+
 
             <div class="input-group mb-3">
                 <input type="number" class="form-control" placeholder="Qty" aria-label="qty" aria-describedby="basic-addon2">
                 <button type="button" class="btn btn-success">Add to cart</button>
             </div>
-            <label  class="form-label fw-bold">Total fee/=</label>
+            <label  class="form-label fw-bold">Item Total fee/=</label>
             <div class="input-group mb-3">
                 <span class="input-group-text">RS</span>
                 <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
                 <span class="input-group-text">.00</span>
             </div>
 
-            <label  class="form-label">Payment method</label>
+            <label  class="form-label fw-bold">Payment method</label>
             <div class="input-group mb-3">
-                <img src="images/paypal.png" class="img-thumbnail" alt="...">
-                <img src="images/visa2.png" class="img-thumbnail" alt="...">
-                <button type="button" class="btn btn-success m-1 text-end">Pay</button>
+                <img src="images/paypal.png" class="img-thumbnail ms-2" alt="...">
+                <img src="images/visa2.png" class="img-thumbnail ms-2" alt="...">
+                <button type="button" class="btn btn-success ms-2 text-end">Pay</button>
+            </div>
+
+            <div class="input-group mb-3">
+                <label  class="form-label fw-bold">All Items total fee/=</label>
+                <input type="text" class="form-control ms-2" aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-text">.00</span>
             </div>
 
 
         </section >
 
-        <section class="col-sm-12 col-lg-7 ms-4">
+        <section class="col-sm-12 col-lg-6 ms-4   border-5 border-dark">
 
            <!-- <label  class="form-label text-center fw-bold ">Item Detail Table</label>-->
             <p class="text-center fw-bold">Item Detail Table</p>
@@ -216,11 +250,6 @@
                 </tbody>
             </table>
 
-
-            <div class="totalPrice">
-                <p class="fs-3 text-center fw-bold mt-4 ">10000.00</p>
-            </div>
-
         </section>
 
 
@@ -229,7 +258,7 @@
 
 </div>
 
-<div class="background-img mb-5 "></div>
+<!--<div class="background-img mb-5 "></div>-->
 
 
 
