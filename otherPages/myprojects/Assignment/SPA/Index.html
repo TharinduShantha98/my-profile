@@ -52,7 +52,15 @@
 
         }
 
-
+        #item{
+            display: none;
+        }
+        #customer{
+            display: none;
+        }
+        #order{
+            display: none;
+        }
 
 
 
@@ -100,16 +108,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item fw-bold">
-                    <a class="nav-link active" aria-current="page" href="index.html">DashBord</a>
+                    <a class="nav-link active btn fw-bold"  id = "btn1" aria-current="page">DashBord</a>
                 </li>
                 <li class="nav-item fw-bold">
-                    <a class="nav-link active" href="order.html">Order</a>
+                    <a class="nav-link active  btn fw-bold" id = "btn2" >Order</a>
                 </li>
                 <li class="nav-item fw-bold">
-                    <a class="nav-link active" href="Customer.html">Customer</a>
+                    <a class="nav-link active  btn fw-bold" id = "btn3" >Customer</a>
                 </li>
                 <li class="nav-item fw-bold">
-                    <a class="nav-link active" href="Item.html">Items</a>
+                    <a class="nav-link active  btn fw-bold" id = "btn4"  >Items</a>
                 </li>
             </ul>
             <form class="d-flex">
@@ -125,7 +133,7 @@
     </div>
 </nav>
 
-<div class="container-fluid">
+<div class="container-fluid" id="dashBord">
     <div class="row">
         <div class="col-lg-12">
 
@@ -135,7 +143,7 @@
                     <h1 class="h2">Dashboard</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group me-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" id="share">Share</button>
                             <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
                         </div>
                         <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
@@ -280,11 +288,9 @@
     </div>
 
 
-
-
 </div>
 <!--==================order====================-->
-<div class="container-fluid">
+<div class="container-fluid" id="order">
     <section class="row mt-2 " id="orderDetail">
         <section class="col-sm-12 col-lg-5 ms-2 mt-3 border-dark">
 
@@ -348,94 +354,108 @@
 
             <!-- <label  class="form-label text-center fw-bold ">Item Detail Table</label>-->
             <p class="text-center fw-bold">Item Detail Table</p>
-            <table class="table .d-sm-none .d-md-block">
-                <thead>
-                <tr  class="table-light">
-                    <th scope="col">#</th>
-                    <th  scope="col">Item code</th>
-                    <th scope="col">Item name</th>
-                    <th scope="col">Stock qty</th>
-                    <th scope="col">Discount</th>
-                    <th scope="col">Price</th>
 
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="table-primary">
-                    <th scope="row">1</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr  class="table-warning">
-                    <th scope="row">2</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr  class="table-danger">
-                    <th scope="row">3</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+            <div  class="table-responsive">
+                <table class="table .d-sm-none .d-md-block">
+                    <thead>
+                    <tr  class="table-light">
+                        <th scope="col">#</th>
+                        <th  scope="col">Item code</th>
+                        <th scope="col">Item name</th>
+                        <th scope="col">Stock qty</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">Price</th>
 
-                <tr class="table-success">
-                    <th scope="row">4</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                </tbody>
-            </table>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="table-primary">
+                        <th scope="row">1</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr  class="table-warning">
+                        <th scope="row">2</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr  class="table-danger">
+                        <th scope="row">3</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr class="table-success">
+                        <th scope="row">4</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+
+
+
             <p class="text-center fw-bold m-0">Customer Order</p>
 
             <button type="button" class="btn btn-danger">Delete</button>
             <button type="button" class="btn btn-warning">Update</button>
             <label  class="form-label text-center fw-bold  ms-4 ">Order Id </label>
             <label  class="form-label text-center fw-bold  ms-4 ">o-001 </label>
-            <table class="table">
-                <thead>
-                <tr class="table-light opacity-75">
-                    <th scope="col" class="">ItemCode</th>
-                    <th scope="col">Item Name</th>
-                    <th scope="col">discount</th>
-                    <th scope="col">saleQty</th>
-                    <th scope="col">price</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr  class="table-primary  opacity-75">
-                    <th scope="row">I1</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="table-warning   opacity-75">
-                    <th scope="row" >I2</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="table-danger   opacity-75">
-                    <th scope="row"  >I3</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                </tbody>
-            </table>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr class="table-light opacity-75">
+                        <th scope="col" class="">ItemCode</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">discount</th>
+                        <th scope="col">saleQty</th>
+                        <th scope="col">price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  class="table-primary  opacity-75">
+                        <th scope="row">I1</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="table-warning   opacity-75">
+                        <th scope="row" >I2</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="table-danger   opacity-75">
+                        <th scope="row"  >I3</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+
 
         </section>
 
@@ -448,7 +468,7 @@
 
 
 <!--===============customer==================-->
-<section class="container-fluid">
+<section class="container-fluid" id="customer">
     <div class="row">
 
         <div class="col-sm-12 ">
@@ -472,48 +492,55 @@
         </div>
 
         <hr>
-        <table class="table mt-2">
-            <thead>
-            <tr>
-                <th scope="col">Customer Code</th>
-                <th scope="col">Customer Name</th>
-                <th scope="col">Address</th>
-                <th scope="col">Email</th>
-                <th scope="col">Telephone</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">C001</th>
-                <td>Dasun</td>
-                <td>Colombo</td>
-                <td>Dasun@gmail.com</td>
-                <td>0112121222</td>
-            </tr>
-            <tr>
-                <th scope="row">C001</th>
-                <td>Dasun</td>
-                <td>Colombo</td>
-                <td>Dasun@gmail.com</td>
-                <td>0112121222</td>
-            </tr>
-            <tr>
-                <th scope="row">C001</th>
-                <td>Dasun</td>
-                <td>Colombo</td>
-                <td>Dasun@gmail.com</td>
-                <td>0112121222</td>
-            </tr>
-            <tr>
-                <th scope="row">C001</th>
-                <td>Dasun</td>
-                <td>Colombo</td>
-                <td>Dasun@gmail.com</td>
-                <td>0112121222</td>
-            </tr>
 
-            </tbody>
-        </table>
+
+        <div class="table-responsive">
+            <table class="table mt-2">
+                <thead>
+                <tr>
+                    <th scope="col">Customer Code</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Telephone</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">C001</th>
+                    <td>Dasun</td>
+                    <td>Colombo</td>
+                    <td>Dasun@gmail.com</td>
+                    <td>0112121222</td>
+                </tr>
+                <tr>
+                    <th scope="row">C001</th>
+                    <td>Dasun</td>
+                    <td>Colombo</td>
+                    <td>Dasun@gmail.com</td>
+                    <td>0112121222</td>
+                </tr>
+                <tr>
+                    <th scope="row">C001</th>
+                    <td>Dasun</td>
+                    <td>Colombo</td>
+                    <td>Dasun@gmail.com</td>
+                    <td>0112121222</td>
+                </tr>
+                <tr>
+                    <th scope="row">C001</th>
+                    <td>Dasun</td>
+                    <td>Colombo</td>
+                    <td>Dasun@gmail.com</td>
+                    <td>0112121222</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+
+        </div>
+
 
     </div>
 
@@ -521,7 +548,7 @@
 </section>
 
 <!--=======================item===================-->
-<section class="container-fluid">
+<section class="container-fluid" id="item">
     <div class="row">
 
         <div class="col-sm-12 ">
@@ -601,6 +628,45 @@
 
 
 <script src="css/js/bootstrap.bundle.js"></script>
+
+<script>
+    document.getElementById("btn1").addEventListener("click", function () {
+        document.getElementById("dashBord").style.display= "inherit";
+        document.getElementById("item").style.display = "none";
+        document.getElementById("order").style.display = "none";
+        document.getElementById("customer").style.display = "none";
+
+    })
+
+
+    document.getElementById("btn2").addEventListener("click", function () {
+        alert("hello");
+        document.getElementById("dashBord").style.display= "none";
+        document.getElementById("item").style.display = "none";
+        document.getElementById("order").style.display = "inherit";
+        document.getElementById("customer").style.display = "none";
+    })
+
+
+    document.getElementById("btn3").addEventListener("click", function () {
+        alert("hello");
+        document.getElementById("dashBord").style.display= "none";
+        document.getElementById("item").style.display = "none";
+        document.getElementById("order").style.display = "none";
+        document.getElementById("customer").style.display = "inherit";
+    })
+
+    document.getElementById("btn4").addEventListener("click", function () {
+        alert("hello");
+        document.getElementById("dashBord").style.display= "none";
+        document.getElementById("item").style.display = "inherit";
+        document.getElementById("order").style.display = "none";
+        document.getElementById("customer").style.display = "none";
+    })
+
+
+
+</script>
 
 </body>
 </html>
