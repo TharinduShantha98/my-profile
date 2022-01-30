@@ -77,7 +77,10 @@
 
         }
 
-
+        .tableSize{
+            height: 20vh;
+            overflow-y:  auto;
+        }
 
 
 
@@ -570,8 +573,6 @@
 
     </div>
 
-
-
  <!--   </div>-->
 
 
@@ -616,7 +617,7 @@
                 <input type="text" class="form-control ms-2 border-dark" id="itemSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">
             </div>
             <button type="submit" class="btn btn-success me-2 float-end mb-3"> Update Item</button>
-           <!-- <button type="submit" class="btn btn-danger me-2 float-end mb-3"> Delete Item </button>-->
+            <button type="submit" class="btn btn-danger me-2 float-end mb-3"> Delete Item </button>
             <button type="submit" id="itemSave" class="btn btn-dark me-2 float-end mb-3"> Add Item </button>
             <button type="submit" class="btn btn-primary me-2 float-end mb-3"> Search </button>
         </div>
@@ -626,7 +627,7 @@
 
     <div class="row">
         <hr>
-        <div class="table-responsive">
+        <div class="table-responsive   tableSize">
             <table class="table table-striped table-sm" id="itemTable">
                 <thead>
                 <tr>
@@ -636,7 +637,7 @@
                     <th scope="col">Pack size</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Buying Price</th>
-                    <th scope="col">Delete</th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -647,7 +648,7 @@
                     <td>100g</td>
                     <td>200</td>
                     <td>10.00</td>
-                    <td> <button type="submit" class="btn btn-danger" style="font-size: 9px "> Delete Item </button></td>
+
 
                 </tr>
                 <tr>
@@ -657,7 +658,7 @@
                     <td>100g</td>
                     <td>200</td>
                     <td>10.00</td>
-                    <td> <button type="submit" class="btn btn-danger" style="font-size: 9px "> Delete Item </button></td>
+
 
                 </tr>
                 <tr>
@@ -667,7 +668,7 @@
                     <td>100g</td>
                     <td>200</td>
                     <td>10.00</td>
-                    <td> <button type="submit" class="btn btn-danger" style="font-size: 9px "> Delete Item </button></td>
+
 
                 </tr>
                 </tbody>
@@ -741,14 +742,22 @@
         $("#itemQty").val();
         $("#itemBuyingPrice").val();
 
-
-        $("#itemTable").append('<tr> <td>' + $("#itemCode").val() + '</td> <td>' + $("#itemName").val() + '</td><td>'+
+        $("#itemTable").prepend('<tr> <td>' + $("#itemCode").val() + '</td> <td>' + $("#itemName").val() + '</td><td>'+
             $("#itemUnitPrice").val()+ '</td><td>' + $("#itemPackSize").val() + '</td><td>'+$("#itemQty").val()+'</td><td>'
         + $("#itemBuyingPrice").val()+'</td></tr');
 
 
     })
 
+
+    $("#itemCode").onkeypress(function () {
+       if(e.which == 13){
+           alert("hello")
+
+
+       }
+
+    })
 
 
 

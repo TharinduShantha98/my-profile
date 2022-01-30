@@ -459,8 +459,22 @@
 <!--===============customer==================-->
 <section class="container-fluid" id="customer">
     <div class="row">
+        <div class="col-lg-4 mt-2">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Add New Customer</h1>
+                    <h3 class="card-text">Customer Id </h3>
+                    <p class="card-text text-center fw-bold text-primary fs-2 m-0 d-inline-block"> C-001 </p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+                <img src="images/customer7.jpg" class="card-img-bottom " style="height: 150px" alt="...">
+            </div>
 
-        <div class="col-sm-12 ">
+
+        </div>
+
+
+        <div class="col-sm-12 col-lg-8">
             <label class="form-label fw-bold text-dark fs-2  ">Add New Customer </label>
             <div class="input-group mb-3">
                 <input type="text" class="form-control me-2" placeholder="First name" aria-label="First Name" aria-describedby="basic-addon1">
@@ -470,10 +484,12 @@
                 <input type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon2">
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control " placeholder="Tel number " aria-label="tel Number" aria-describedby="basic-addon2">
+                <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
+
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
+                <input type="text" class="form-control " placeholder="Tel number " aria-label="tel Number" aria-describedby="basic-addon2">
+                <input type="text" class="form-control ms-2 border-dark" id="CustomerSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">
             </div>
             <button type="submit" class="btn btn-success me-2 float-end mb-3"> Update Customer</button>
             <button type="submit" class="btn btn-danger me-2 float-end mb-3"> Delete Customer </button>
@@ -481,7 +497,9 @@
         </div>
 
         <hr>
+    </div>
 
+    <div class="row">
 
         <div class="table-responsive">
             <table class="table mt-2">
@@ -539,8 +557,24 @@
 <!--=======================item===================-->
 <section class="container-fluid" id="item">
     <div class="row">
+        <div class="col-lg-4 mt-2">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Add New Item</h1>
+                    <h3 class="card-text">Item Id </h3>
+                    <p class="card-text text-center fw-bold text-primary fs-2 m-0 d-inline-block"> I-001 </p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+                <img src="images/item6.png" class="card-img-bottom " style="height: 150px" alt="...">
+            </div>
 
-        <div class="col-sm-12 ">
+
+        </div>
+
+
+
+
+        <div class=" col-sm-12  col-lg-8">
             <label class="form-label fw-bold text-dark fs-2 ">Add New Item </label>
             <div class="input-group mb-3">
                 <input type="text" class="form-control me-2" placeholder="Item Code" aria-label="ItemCode" aria-describedby="basic-addon1">
@@ -553,16 +587,21 @@
                 <input type="text" class="form-control " placeholder="Pack Size" aria-label="packSize" aria-describedby="basic-addon2">
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Quantity" aria-label="qty" aria-describedby="basic-addon2">
+                <input type="text" class="form-control" placeholder="Buying Price" aria-label="buyPrice" aria-describedby="basic-addon2">
+
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Buying Price" aria-label="buyPrice" aria-describedby="basic-addon2">
+                <input type="text" class="form-control" placeholder="Quantity" aria-label="qty" aria-describedby="basic-addon2">
+                <input type="text" class="form-control ms-2 border-dark" id="itemSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">
             </div>
             <button type="submit" class="btn btn-success me-2 float-end mb-3"> Update Item</button>
             <button type="submit" class="btn btn-danger me-2 float-end mb-3"> Delete Item </button>
             <button type="submit" class="btn btn-dark me-2 float-end mb-3"> Add Item </button>
         </div>
 
+    </div>
+
+    <div class="row">
         <hr>
         <div class="table-responsive">
             <table class="table table-striped table-sm">
