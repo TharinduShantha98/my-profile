@@ -750,7 +750,7 @@
 
 
 
-
+/*================customer part=========================*/
 
 
 
@@ -762,13 +762,45 @@
         let cusTel = $("#cusTelNum").val();
 
 
-
-
-
         var row = `<tr><td>c001</td></td><td>${cusFirstName}</td><td>${cusLastName}</td><td>${cusAddress}</td><td>${cusEmail}</td><td>
         ${cusTel}</td></tr>`;
-
         $("#customerTable").prepend(row);
+
+
+        $("#customerTable").hover(function () {
+            $(this).css("background-color", "green");
+        }, function() {
+            $(this).css("background-color", "white");
+
+
+        })
+
+
+
+
+        $("#customerTable").click(function () {
+
+            var table2 =  document.getElementById("customerTable");
+
+            for(var y =0;  table2.rows.length; y++){
+
+                table2.rows[y].onclick = function () {
+                        document.getElementById("cusFirstName").value = this.cells[2].innerHTML;
+                        document.getElementById("cusLastName").value = this.cells[3].innerHTML;
+                        document.getElementById("cusAddress").value = this.cells[4].innerHTML;
+                        document.getElementById("cusEmail").value = this.cells[5].innerHTML;
+                        document.getElementById("cusTelNum").value = this.cells[6].innerHTML;
+                }
+
+
+            }
+
+
+
+
+        })
+
+
 
 
 
