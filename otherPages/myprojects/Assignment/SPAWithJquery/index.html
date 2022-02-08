@@ -83,6 +83,12 @@
         }
 
 
+        .side{
+            width: 346px;
+            border: 1px solid black;
+        }
+
+
 
 
 
@@ -497,19 +503,29 @@
 
         <div class="col-sm-12 col-lg-8 ">
             <label class="form-label fw-bold text-dark fs-2  ">Customer Detail </label>
+
+
             <div class="input-group mb-3">
                 <input type="text" class="form-control me-2 " id="cusFirstName" placeholder="First name" aria-label="First Name" aria-describedby="basic-addon1">
-                <input type="text" class="form-control " id="cusLastName" placeholder="Last name" aria-label="Last Name" aria-describedby="basic-addon1">
+                <label class="form-label  text-dark ms-1  ">validation1 </label>
+                <input type="text" class="form-control ms-1 " id="cusLastName" placeholder="Last name" aria-label="Last Name" aria-describedby="basic-addon1">
+                <label class="form-label  text-dark  ms-1  ">validation2 </label>
             </div>
+
+
+
             <div class="input-group mb-3">
                 <input type="text" class="form-control " id="cusAddress" placeholder="Address" aria-label="Address" aria-describedby="basic-addon2">
+                <label class="form-label  text-dark ms-1  ">validation1 </label>
             </div>
             <div class="input-group mb-3 cusEmail">
                 <input type="text" class="form-control " id="cusEmail" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
+                <label class="form-label  text-dark ms-1  ">validation1 </label>
 
             </div>
             <div class="input-group mb-3">
                 <input type="text" class="form-control " id="cusTelNum" placeholder="Tel number " aria-label="tel Number" aria-describedby="basic-addon2">
+                <label class="form-label  text-dark ms-1  ">validation1 </label>
                 <input type="search" class="form-control ms-2 border-dark" placeholder="search " aria-label="search" aria-describedby="basic-addon2">
             </div>
             <button type="submit" class="btn btn-success me-2 float-end mb-3"> Update Customer</button>
@@ -715,9 +731,9 @@
             var table =  document.getElementById("itemTable");
             for(var i =0; i < table.rows.length; i++){
                 table.rows[i].onclick = function () {
-                        //var rowIndex1 = this.rowIndex;
-                         // alert(this.cells[1].innerHTML);
-                    //
+                        // var rowIndex1 = this.rowIndex;
+                        //  alert(this.cells[1].innerHTML);
+
                     document.getElementById("itemCode").value = this.cells[0].innerHTML
                     document.getElementById("itemName").value = this.cells[1].innerHTML
                     document.getElementById("itemUnitPrice").value = this.cells[2].innerHTML
@@ -748,13 +764,16 @@
 
 
 
-
-
 /*================customer part=========================*/
 
 
 
     $("#cusSave").click(function () {
+
+        $("#customerTable>tr").off("click");
+
+
+
         let cusFirstName =  $("#cusFirstName").val();
         let cusLastName = $("#cusLastName").val();
         let cusAddress = $("#cusAddress").val();
@@ -767,10 +786,12 @@
         $("#customerTable").prepend(row);
 
 
-        $("#customerTable").hover(function () {
+        $("#customerTable>tr").hover(function () {
             $(this).css("background-color", "green");
+           /* $(this).css("color","blue");*/
         }, function() {
             $(this).css("background-color", "white");
+          /*  $(this).css("color","white");*/
 
 
         })
@@ -778,13 +799,15 @@
 
 
 
-        $("#customerTable").click(function () {
+        $("#customerTable>tr").click(function () {
 
-            var table2 =  document.getElementById("customerTable");
+           /* var table2 =  document.getElementById("customerTable");
 
-            for(var y =0;  table2.rows.length; y++){
+            for(var y =0; table2.rows.length; y++){
 
                 table2.rows[y].onclick = function () {
+
+
                         document.getElementById("cusFirstName").value = this.cells[2].innerHTML;
                         document.getElementById("cusLastName").value = this.cells[3].innerHTML;
                         document.getElementById("cusAddress").value = this.cells[4].innerHTML;
@@ -794,11 +817,44 @@
 
 
             }
+*/
+            //console.log(this);
+
+           // console.log($(this));
 
 
 
+
+            let cusId= $(this).children().eq(0).text();
+            let cusFirstName= $(this).children().eq(1).text();
+            let cusLastName= $(this).children().eq(2).text();
+            let cusAddress= $(this).children().eq(3).text();
+            let cusEmail= $(this).children().eq(4).text();
+            let cusTelNumber= $(this).children().eq(5).text();
+
+            console.log(cusId);
+            console.log(cusFirstName);
+            console.log(cusLastName);
+            console.log(cusAddress);
+            console.log(cusEmail);
+            console.log(cusTelNumber);
+
+
+            $("#cusFirstName").val(cusFirstName);
+            $("#cusLastName").val(cusLastName);
+            $("#cusAddress").val(cusAddress);
+            $("#cusEmail").val(cusEmail);
+            $("#cusTelNum").val(cusTelNumber);
 
         })
+
+
+
+
+
+
+
+
 
 
 

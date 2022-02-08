@@ -109,10 +109,7 @@
                     <a class="nav-link active  btn fw-bold" id = "btn4"  >Items</a>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search order" aria-label="Search">
-                <button class="btn btn-outline-success bg-light text-dark" type="submit">Search </button>
-            </form>
+
             <div class="navbar-nav">
                 <div class="nav-item text-nowrap">
                     <a class="nav-link px-3 fw-bold" href="#">Sign out</a>
@@ -577,26 +574,26 @@
         <div class=" col-sm-12  col-lg-8">
             <label class="form-label fw-bold text-dark fs-2 ">Add New Item </label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control me-2" placeholder="Item Code" aria-label="ItemCode" aria-describedby="basic-addon1">
-                <input type="text" class="form-control" placeholder="Item Name" aria-label="ItemName" aria-describedby="basic-addon1">
+                <input id="itemCode" type="text" class="form-control me-2" placeholder="Item Code" aria-label="ItemCode" aria-describedby="basic-addon1">
+                <input id="itemName" type="text" class="form-control" placeholder="Item Name" aria-label="ItemName" aria-describedby="basic-addon1">
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Unit Price" aria-label="unitPrice" aria-describedby="basic-addon2">
+                <input id="itemUnitPrice" type="text" class="form-control" placeholder="Unit Price" aria-label="unitPrice" aria-describedby="basic-addon2">
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control " placeholder="Pack Size" aria-label="packSize" aria-describedby="basic-addon2">
+                <input id="itemPackSize" type="text" class="form-control " placeholder="Pack Size" aria-label="packSize" aria-describedby="basic-addon2">
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Buying Price" aria-label="buyPrice" aria-describedby="basic-addon2">
+                <input id="itemBuyingPrice" type="text" class="form-control" placeholder="Buying Price" aria-label="buyPrice" aria-describedby="basic-addon2">
 
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Quantity" aria-label="qty" aria-describedby="basic-addon2">
+                <input id="itemQty" type="text" class="form-control" placeholder="Quantity" aria-label="qty" aria-describedby="basic-addon2">
                 <input type="text" class="form-control ms-2 border-dark" id="itemSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">
             </div>
             <button type="submit" class="btn btn-success me-2 float-end mb-3"> Update Item</button>
             <button type="submit" class="btn btn-danger me-2 float-end mb-3"> Delete Item </button>
-            <button type="submit" class="btn btn-dark me-2 float-end mb-3"> Add Item </button>
+            <button type="submit" class="btn btn-dark me-2 float-end mb-3"  id="addItem"> Add Item </button>
         </div>
 
     </div>
@@ -615,34 +612,9 @@
                     <th scope="col">Buying Price</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">I001</th>
-                    <td>Chocolate Biscuit</td>
-                    <td>70.00</td>
-                    <td>100g</td>
-                    <td>200</td>
-                    <td>10.00</td>
+                <tbody  id="itemTable">
 
-                </tr>
-                <tr>
-                    <th scope="row">I001</th>
-                    <td>Chocolate Biscuit</td>
-                    <td>70.00</td>
-                    <td>100g</td>
-                    <td>200</td>
-                    <td>10.00</td>
 
-                </tr>
-                <tr>
-                    <th scope="row">I001</th>
-                    <td>Chocolate Biscuit</td>
-                    <td>70.00</td>
-                    <td>100g</td>
-                    <td>200</td>
-                    <td>10.00</td>
-
-                </tr>
                 </tbody>
             </table>
 
@@ -656,6 +628,7 @@
 
 
 <script src="css/js/bootstrap.bundle.js"></script>
+<script src="jquery/jquery-3.6.0.min.js"></script>
 
 <script>
     document.getElementById("btn1").addEventListener("click", function () {
@@ -691,6 +664,93 @@
         document.getElementById("order").style.display = "none";
         document.getElementById("customer").style.display = "none";
     })
+/*
+==============item part =======================*/
+
+    $("#addItem").click(function () {
+
+        $("#itemTable>tr").off('click');
+
+        let itemCode = $("#itemCode").val();
+        let itemName = $("#itemName").val();
+        let itemUnitPrice = $("#itemUnitPrice").val();
+        let itemPackSize = $("#itemPackSize").val();
+        let itemBuyingPrice = $("#itemBuyingPrice").val();
+        let itemQty = $("#itemQty").val();
+
+
+       let row = `<tr><td>${itemCode}</td><td>${itemName}</td><td>${itemUnitPrice}</td><td>${itemPackSize}</td><td>${itemBuyingPrice}</td>
+                <td>${itemQty}</td></tr>`;
+       $("#itemTable").append(row);
+
+
+       $("#itemTable>tr").click(function () {
+            let code = $(this).children().eq(0).text();
+            let  name = $(this).children().eq(1).text();
+            let unitPrice = $(this).children().eq(2).text();
+            let packSize = $(this).children().eq(3).text();
+            let buyingPrice = $(this).children().eq(4).text();
+            let qty = $(this).children().eq(4).text();
+
+            console.log(code);
+          /*  console.log(name);
+            console.log(unitPrice);
+            console.log(packSize);
+            console.log(buyingPrice);
+            console.log(qty);*/
+
+
+            $("#itemCode").val(code);
+            $("#itemName").val(name);
+            $("#itemUnitPrice").val(unitPrice);
+            $("#itemPackSize").val(packSize);
+            $("#itemBuyingPrice").val(buyingPrice);
+            $("#itemQty").val(qty);
+
+
+       })
+
+
+    })
+
+
+
+    $("#itemCode").keydown(function (event) {
+
+        if(event.keyCode == 13){
+                $("#itemName").focus();
+        }
+    })
+
+
+    $("#itemName").keydown(function (event) {
+        if(event.keyCode == 13){
+            $("#itemUnitPrice").focus();
+        }
+    })
+
+    $("#itemUnitPrice").keydown(function (event) {
+        if(event.keyCode == 13){
+            $("#itemPackSize").focus();
+        }
+    })
+
+    $("#itemPackSize").keydown(function (event) {
+        if(event.keyCode == 13){
+            $("#itemBuyingPrice").focus();
+        }
+    })
+
+    $("#itemBuyingPrice").keydown(function (event) {
+        if(event.keyCode ==  13){
+            $("#itemQty").focus();
+        }
+    })
+
+
+
+
+
 
 
 
