@@ -77,6 +77,32 @@
 
         }
 
+        #cardItem{
+            position: relative;
+            top: 12px;
+            height: 277px;
+           /* border: 1px solid black;*/
+
+        }
+
+        #addItemForm{
+            position: relative;
+            top: 12px;
+
+        }
+
+        #baseCard{
+            background-color: coral;
+            position: relative;
+            box-shadow: 5px 10px #888888
+        }
+
+        #card2{
+            top: 12%;
+        }
+
+
+
 
 
 
@@ -554,15 +580,15 @@
 <!--=======================item===================-->
 <section class="container-fluid" id="item">
     <div class="row">
-        <div class="col-lg-4 mt-2">
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="card-title">Add New Item</h1>
+        <div class="col-lg-4 mt-2" id="cardItem" >
+            <div class="card" id="card2">
+                <div class="card-body" id="baseCard">
+                    <h1 class="card-title fs-2 fw-bold">Item form</h1>
                     <h3 class="card-text">Item Id </h3>
                     <p class="card-text text-center fw-bold text-primary fs-2 m-0 d-inline-block"> I-001 </p>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
-                <img src="images/item6.png" class="card-img-bottom " style="height: 150px" alt="...">
+               <!-- <img src="images/item6.png" class="card-img-bottom " style="height: 150px" alt="...">-->
             </div>
 
 
@@ -571,24 +597,30 @@
 
 
 
-        <div class=" col-sm-12  col-lg-8">
-            <label class="form-label fw-bold text-dark fs-2 ">Add New Item </label>
+        <div class=" col-sm-12  col-lg-8" id="addItemForm">
+            <label class="form-label fw-bold text-dark  ">Add New Item </label>
             <div class="input-group mb-3">
                 <input id="itemCode" type="text" class="form-control me-2" placeholder="Item Code" aria-label="ItemCode" aria-describedby="basic-addon1">
+                <label class="form-label  text-dark ms-1  " id="validation1"> </label>
                 <input id="itemName" type="text" class="form-control" placeholder="Item Name" aria-label="ItemName" aria-describedby="basic-addon1">
+                <label class="form-label  text-dark ms-1  " id="validation2"> </label>
             </div>
             <div class="input-group mb-3">
                 <input id="itemUnitPrice" type="text" class="form-control" placeholder="Unit Price" aria-label="unitPrice" aria-describedby="basic-addon2">
+                <label class="form-label  text-dark ms-1  " id="validation3"> </label>
             </div>
             <div class="input-group mb-3">
                 <input id="itemPackSize" type="text" class="form-control " placeholder="Pack Size" aria-label="packSize" aria-describedby="basic-addon2">
+                <label class="form-label  text-dark ms-1  " id="validation4"> </label>
             </div>
             <div class="input-group mb-3">
                 <input id="itemBuyingPrice" type="text" class="form-control" placeholder="Buying Price" aria-label="buyPrice" aria-describedby="basic-addon2">
+                <label class="form-label  text-dark ms-1  " id="validation5"> </label>
 
             </div>
             <div class="input-group mb-3">
                 <input id="itemQty" type="text" class="form-control" placeholder="Quantity" aria-label="qty" aria-describedby="basic-addon2">
+                <label class="form-label  text-dark ms-1  " id="validation6"> </label>
                 <input type="text" class="form-control ms-2 border-dark" id="itemSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">
             </div>
             <button type="submit" class="btn btn-success me-2 float-end mb-3"> Update Item</button>
@@ -669,6 +701,8 @@
 
     $("#addItem").click(function () {
 
+     /*  -------- add to data for table---------------- */
+
         $("#itemTable>tr").off('click');
 
         let itemCode = $("#itemCode").val();
@@ -683,7 +717,27 @@
                 <td>${itemQty}</td></tr>`;
        $("#itemTable").append(row);
 
+        /*  -------- end add to data for table---------------- */
 
+      /* ------------- table row font-weight--------------*/
+
+        let table = document.getElementById("itemTable");
+
+        for ( var i =0; i< table.rows.length ; i++  ){
+            $("#itemTable").children().eq(i).css("font-weight","bold");
+
+        }
+
+
+      /*  -------------table row hover ---------------*/
+        $("#itemTable>tr").hover(function () {
+            $(this).css("background-color","#95a5a6" );
+        },function () {
+            $(this).css("background-color", "#e67e22");
+        })
+
+
+       /* ------------table row click -----------*/
        $("#itemTable>tr").click(function () {
             let code = $(this).children().eq(0).text();
             let  name = $(this).children().eq(1).text();
@@ -691,6 +745,8 @@
             let packSize = $(this).children().eq(3).text();
             let buyingPrice = $(this).children().eq(4).text();
             let qty = $(this).children().eq(4).text();
+
+
 
             console.log(code);
           /*  console.log(name);
@@ -713,11 +769,13 @@
 
     })
 
-
+    /*-------------text field focus------------*/
 
     $("#itemCode").keydown(function (event) {
 
         if(event.keyCode == 13){
+                $("#itemCode").css("border", "1px solid  green");
+
                 $("#itemName").focus();
         }
     })
@@ -725,27 +783,42 @@
 
     $("#itemName").keydown(function (event) {
         if(event.keyCode == 13){
+            $("#itemName").css("border", "1px solid  green");
             $("#itemUnitPrice").focus();
         }
     })
 
     $("#itemUnitPrice").keydown(function (event) {
         if(event.keyCode == 13){
+            $("#itemUnitPrice").css("border", "1px solid  green");
             $("#itemPackSize").focus();
         }
     })
 
     $("#itemPackSize").keydown(function (event) {
         if(event.keyCode == 13){
+            $("#itemPackSize").css("border", "1px solid  green");
             $("#itemBuyingPrice").focus();
         }
     })
 
     $("#itemBuyingPrice").keydown(function (event) {
         if(event.keyCode ==  13){
+            $("#itemBuyingPrice").css("border", "1px solid  green");
             $("#itemQty").focus();
         }
     })
+
+
+    $("#itemQty").keydown(function (event) {
+        if(event.keyCode ==  13){
+            $("#itemQty").css("border", "1px solid  green");
+            $("#addItem").focus();
+        }
+    })
+
+
+
 
 
 
