@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <style>
+        #display{
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+
+
+        }
+
+
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #ff253a;
+        }
+    </style>
+</head>
+<body id="display">
+<h1 id="header">Hello ijse.....</h1>
+
+
+<p id="min"></p>
+<div></div>
+
+
+<script src="jquery/jquery-3.6.0.min.js"></script>
+<script>
+    $("#display").mousemove(function (event) {
+            console.log(event);
+            $("#header").css("position","relative");
+            $("#header").css("left", event.pageX);
+            $("#header").css("top", event.pageY);
+
+
+
+        const d = new Date();
+        let minutes = d.getSeconds();
+        document.getElementById("min").innerHTML = minutes;
+
+        console.log(typeof minutes);
+
+
+
+
+
+    })
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
