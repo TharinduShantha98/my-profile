@@ -911,6 +911,46 @@
 
 
 
+    $("#customerFName").keydown(function (event) {
+
+        if(event.keyCode == 13){
+            $("#customerFName").css("border", "1px solid green");
+            $("#customerLName").focus();
+        }
+    })
+
+    $("#customerLName").keydown(function (event) {
+
+        if(event.keyCode == 13){
+            $("#customerLName").css("border", "1px solid green");
+            $("#customerAddress").focus();
+        }
+    })
+
+    $("#customerAddress").keydown(function (event) {
+
+        if(event.keyCode == 13){
+            $("#customerAddress").css("border", "1px solid green");
+            $("#customerEmail").focus();
+        }
+    })
+    $("#customerEmail").keydown(function (event) {
+
+        if(event.keyCode == 13){
+            $("#customerEmail").css("border", "1px solid green");
+            $("#customerTelNum").focus();
+        }
+    })
+    $("#customerTelNum").keydown(function (event) {
+
+        if(event.keyCode == 13){
+            $("#customerTelNum").css("border", "1px solid green");
+            $("#addCustomer").focus();
+        }
+    })
+
+
+
 
 
 
