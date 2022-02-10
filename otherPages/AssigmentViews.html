@@ -933,18 +933,77 @@
 
 
         #area2{
-            height: 40vh;
-            background-color: #d49898;
+            height: 60vh;
+            background-color: #3d3a3a;
         }
 
 
         #area2>h1{
-            color: #ec1515;
+            color: #6ebb20;
             font-weight: bold;
             margin: 0;
             font-size: 3vw;
 
         }
+
+
+        .colorText{
+            color: goldenrod;
+        }
+
+
+        #boxAS{
+            position: absolute;
+            width: 90%;
+            height: 80%;
+            border: solid 1px crimson;
+            left: 5%;
+            top: 16%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+
+
+        }
+
+
+
+        .innerBoxAS{
+            position: relative;
+            width: 22%;
+            height: 90%;
+            border: solid 1px chartreuse;
+            text-align: center;
+
+        }
+
+        .innerBoxAS>h1{
+            color: #ff364b;
+            margin: 0;
+        }
+        .innerBoxAS>img{
+            position: absolute;
+            width: 80%;
+            height:60%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .innerBoxAS>h1>a{
+            text-decoration: none;
+            color: #ff364b;
+
+        }
+
+        .innerBoxAS>h1>a:hover{
+           text-decoration: underline;
+            color: #e75908;
+
+        }
+
     </style>
 
 
@@ -1103,11 +1162,27 @@
 
 
 <section id="area2">
-    <h1>JavaScript bootstrap and jquery assigment</h1>
+    <h1>JavaScript bo<span class="colorText">otstrap</span> and jquery a<span class="colorText">ssi</span>gment</h1>
 
-    <div>
-        <div -="">
+    <div id="boxAS">
+        <div class="innerBoxAS" id="as1">
+            <h1><a href="myprojects/Assignment/CssFramework/index.html">Css FrameWork (bootstrap)</a></h1>
+            <img src="images/ass1.png">
+        </div>
 
+        <div class="innerBoxAS" id="as2">
+            <h1><a href="myprojects/Assignment/SPA/Index.html">Single page application <br>(SPA)</a></h1>
+            <img src="images/ass1.png">
+        </div>
+
+        <div class="innerBoxAS" id="as3">
+            <h1><a href="myprojects/Assignment/SPAWithJquery/index.html">SPA with jquery</a></h1>
+            <img src="images/ass1.png">
+        </div>
+
+        <div class="innerBoxAS" id="as4">
+            <h1><a href="myprojects/Assignment/task1/index.html">Task 01</a></h1>
+            <img src="images/ass1.png">
         </div>
 
 
@@ -1115,8 +1190,12 @@
 
 </section>
 
+<script src="css/jquery/jquery-3.6.0.min.js"></script>
+<script>
 
 
+
+</script>
 
 
 </body>
