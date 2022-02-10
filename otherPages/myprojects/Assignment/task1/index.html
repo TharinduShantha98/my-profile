@@ -10,24 +10,79 @@
             margin: 0;
             width: 100vw;
             height: 100vh;
-
-
+            overflow: hidden;
         }
 
-
-        div{
+        #square{
+            position: absolute;
             width: 200px;
             height: 200px;
             background-color: #ff253a;
+            left: 50%;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
         }
+
+        #header2{
+            color: #f13350;
+            border-bottom: 2px solid black;
+            font-size: 50px;
+        }
+
+        #header{
+            z-index: 10;
+            margin: 0;
+        }
+
+        #par1{
+            font-size: 25px;
+            font-weight: bold;
+            color: #9e05de;
+            margin: 0;
+
+        }
+
+        .time{
+            font-weight: bold;
+            color: #6a1a21;
+            font-size: 60px;
+        }
+        .time2{
+            position: relative;
+            left: 30px;
+        }
+
+
     </style>
 </head>
 <body id="display">
-<h1 id="header">Hello ijse.....</h1>
+<h1 id="header2"> Mousemove, mouseup and mousedown event in JS</h1>
+<h2 id="header">Hello Ijse..... <br> This is mousemove event</h2>
 
+<div>
+    <div>
+        <label class="time"> hours </label>
+        <p id="hou" class="time2"></p>
+    </div>
 
-<p id="min"></p>
-<div></div>
+    <div>
+        <label class="time">minutes</label>
+        <p id="min" class="time2"></p>
+    </div>
+
+    <div>
+        <label class="time">seconds</label>
+        <p id="sec" class="time2"></p>
+    </div>
+
+</div>
+
+<div id="square"></div>
+
+<p id="par1">click this paragraph for view mouse down event and mouse up event </p>
+<p>mousedown event for square is  blue color<br> mouseup event for square is green color</p>
 
 
 <script src="jquery/jquery-3.6.0.min.js"></script>
@@ -41,15 +96,33 @@
 
 
         const d = new Date();
-        let minutes = d.getSeconds();
+        let seconds = d.getSeconds();
+        let minutes = d.getMinutes();
+        let hours = d.getHours();
+        document.getElementById("sec").innerHTML = seconds;
+        $("#sec").css("font-size","25px");
+        $("#sec").css("font-wight","bold");
         document.getElementById("min").innerHTML = minutes;
-
+        $("#min").css("font-size","25px");
+        $("#min").css("font-wight","bold");
+        document.getElementById("hou").innerHTML = hours;
+        $("#hou").css("font-size","25px");
+        $("#hou").css("font-wight","bold");
         console.log(typeof minutes);
 
+    })
 
 
 
+    $("#par1").mousedown(function () {
+        console.log("mouse click");
+        $("#square").css("background-color", "blue");
+    })
 
+
+    $("#par1").mouseup(function () {
+        console.log("mouse click");
+        $("#square").css("background-color", "green");
     })
 
 
