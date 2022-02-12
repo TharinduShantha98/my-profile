@@ -126,6 +126,8 @@
             background-image: url("images/2.png");
             background-repeat: no-repeat;
             background-size: cover;
+            color: #d25a72;
+
         }
 
 
@@ -518,16 +520,23 @@
 <section class="container-fluid" id="customer">
     <div class="row">
         <div class="col-lg-4 mt-2" id="cardCustomer">
-            <div class="card">
+          <!--  <div class="card">
                 <div class="card-body" id="baseCardCustomer">
                     <h1 class="card-title fw-bold"> Customer form</h1>
                     <h3 class="card-text">Customer Id </h3>
                     <p class="card-text text-center fw-bold text-primary fs-2 m-0 d-inline-block"> C-001 </p>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
-               <!-- <img src="images/customer7.jpg" class="card-img-bottom " style="height: 150px" alt="...">-->
+               &lt;!&ndash; <img src="images/customer7.jpg" class="card-img-bottom " style="height: 150px" alt="...">&ndash;&gt;
             </div>
-
+            -->
+            <div>
+                <h1 class="fs-2">Customer Manage</h1>
+                <input type="text" class="form-control ms-2 border-dark" id="CustomerSearch" placeholder="Search Customer" aria-label="search Item" aria-describedby="basic-addon2">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-warning  float-end mb-3 fw-bold mt-2" > search </button>
+            </div>
 
         </div>
 
@@ -547,7 +556,7 @@
             </div>
             <div class="input-group mb-3">
                 <input id="customerTelNum" type="text" class="form-control " placeholder="Tel number " aria-label="tel Number" aria-describedby="basic-addon2">
-                <input type="text" class="form-control ms-2 border-dark" id="CustomerSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">
+<!--                <input type="text" class="form-control ms-2 border-dark" id="CustomerSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">-->
             </div>
             <button type="submit" class="btn btn-success me-2 float-end mb-3" > Update Customer</button>
             <button type="submit" class="btn btn-danger me-2 float-end mb-3"> Delete Customer </button>
@@ -572,34 +581,7 @@
                 </tr>
                 </thead>
                 <tbody id="customerTable">
-               <!-- <tr>
-                    <th scope="row">C001</th>
-                    <td>Dasun</td>
-                    <td>Colombo</td>
-                    <td>Dasun@gmail.com</td>
-                    <td>0112121222</td>
-                </tr>
-                <tr>
-                    <th scope="row">C001</th>
-                    <td>Dasun</td>
-                    <td>Colombo</td>
-                    <td>Dasun@gmail.com</td>
-                    <td>0112121222</td>
-                </tr>
-                <tr>
-                    <th scope="row">C001</th>
-                    <td>Dasun</td>
-                    <td>Colombo</td>
-                    <td>Dasun@gmail.com</td>
-                    <td>0112121222</td>
-                </tr>
-                <tr>
-                    <th scope="row">C001</th>
-                    <td>Dasun</td>
-                    <td>Colombo</td>
-                    <td>Dasun@gmail.com</td>
-                    <td>0112121222</td>
-                </tr>-->
+
 
                 </tbody>
             </table>
@@ -617,15 +599,23 @@
 <section class="container-fluid" id="item">
     <div class="row">
         <div class="col-lg-4 mt-2" id="cardItem" >
-            <div class="card" id="card2">
+           <!-- <div class="card" id="card2">
                 <div class="card-body" id="baseCard">
                     <h1 class="card-title fs-2 fw-bold">Item form</h1>
                     <h3 class="card-text">Item Id </h3>
                     <p class="card-text text-center fw-bold text-primary fs-2 m-0 d-inline-block"> I-001 </p>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
-               <!-- <img src="images/item6.png" class="card-img-bottom " style="height: 150px" alt="...">-->
+               &lt;!&ndash; <img src="images/item6.png" class="card-img-bottom " style="height: 150px" alt="...">&ndash;&gt;
+            </div>-->
+            <div>
+                <h1 class="fs-2">Item Manage</h1>
+                <input type="text" class="form-control ms-2 border-dark" id="itemSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">
             </div>
+            <div>
+                <button type="submit" class="btn btn-warning  float-end mb-3 fw-bold mt-2" > search </button>
+            </div>
+
 
 
         </div>
@@ -657,7 +647,7 @@
             <div class="input-group mb-3">
                 <input id="itemQty" type="text" class="form-control" placeholder="Quantity" aria-label="qty" aria-describedby="basic-addon2">
                 <label class="form-label  text-dark ms-1  " id="validation6"> </label>
-                <input type="text" class="form-control ms-2 border-dark" id="itemSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">
+<!--                <input type="text" class="form-control ms-2 border-dark" id="itemSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">-->
             </div>
             <button type="submit" class="btn btn-success me-2 float-end mb-3"> Update Item</button>
             <button type="submit" class="btn btn-danger me-2 float-end mb-3"> Delete Item </button>
@@ -782,16 +772,12 @@
             let buyingPrice = $(this).children().eq(4).text();
             let qty = $(this).children().eq(4).text();
 
-
-
-            console.log(code);
+            /*console.log(code);*/
           /*  console.log(name);
             console.log(unitPrice);
             console.log(packSize);
             console.log(buyingPrice);
             console.log(qty);*/
-
-
             $("#itemCode").val(code);
             $("#itemName").val(name);
             $("#itemUnitPrice").val(unitPrice);
@@ -805,53 +791,76 @@
 
     })
 
+    let itemIdRegx = /^(I00)[-][0-9]{3,9}$/;
+    let itemNameRegx = /^[A-z]{3,15}$/;
+    let itemUnitPriceRegx = /^[0-9]{1,9}$/;
+    let itemPackSizeRegx = /^[0-9]{1,9}(g)$/;
+    let itemBuyingPriceRegx = /^[0-9]{1,9}$/;
+    let itemQtyRegx = /^[0-9]{1,9}$/;
+
     /*-------------text field focus------------*/
 
-    $("#itemCode").keydown(function (event) {
+    function validation(testRegex, event,id,nextId,correctRegex){
+        let test = correctRegex.test(testRegex);
+        if(test){
+            $(id).css("border", "1px solid  green");
+            $(id).css("box-shadow", "0px 0px 10px #5ad25a");
+            if(event.keyCode == 13){
+                $(nextId).focus();
+            }
+        }else{
+            $(id).css("border", "1px solid  red");
+            $(id).css("box-shadow", "0px 0px 10px #d25a72");
 
-        if(event.keyCode == 13){
-                $("#itemCode").css("border", "1px solid  green");
-
-                $("#itemName").focus();
         }
+
+
+    }
+
+    $("#itemCode").keyup(function (event) {
+        let code = $("#itemCode").val();
+        validation(code,event,"#itemCode","#itemName",itemIdRegx);
+
     })
 
 
-    $("#itemName").keydown(function (event) {
-        if(event.keyCode == 13){
-            $("#itemName").css("border", "1px solid  green");
-            $("#itemUnitPrice").focus();
-        }
+    $("#itemName").keyup(function (event) {
+        let code = $("#itemName").val();
+        validation(code,event,"#itemName","#itemUnitPrice",itemIdRegx);
     })
 
-    $("#itemUnitPrice").keydown(function (event) {
-        if(event.keyCode == 13){
+    $("#itemUnitPrice").keyup(function (event) {
+       /* if(event.keyCode == 13){
             $("#itemUnitPrice").css("border", "1px solid  green");
             $("#itemPackSize").focus();
-        }
+        }*/
     })
 
     $("#itemPackSize").keydown(function (event) {
-        if(event.keyCode == 13){
+       /* if(event.keyCode == 13){
             $("#itemPackSize").css("border", "1px solid  green");
             $("#itemBuyingPrice").focus();
-        }
+        }*/
     })
 
     $("#itemBuyingPrice").keydown(function (event) {
-        if(event.keyCode ==  13){
+      /*  if(event.keyCode ==  13){
             $("#itemBuyingPrice").css("border", "1px solid  green");
             $("#itemQty").focus();
-        }
+        }*/
     })
 
 
     $("#itemQty").keydown(function (event) {
-        if(event.keyCode ==  13){
+      /*  if(event.keyCode ==  13){
             $("#itemQty").css("border", "1px solid  green");
             $("#addItem").focus();
-        }
+        }*/
     })
+
+
+
+
 
 
 

@@ -779,8 +779,7 @@
         let cusTel = $("#cusTelNum").val();
 
 
-        var row = `<tr><td>c001</td></td><td>${cusFirstName}</td><td>${cusLastName}</td><td>${cusAddress}</td><td>${cusEmail}</td><td>
-        ${cusTel}</td></tr>`;
+        var row = `<tr><td>c001</td></td><td>${cusFirstName}</td><td>${cusLastName}</td><td>${cusAddress}</td><td>${cusEmail}</td><td>${cusTel}</td></tr>`;
         $("#customerTable").prepend(row);
 
 
@@ -790,7 +789,6 @@
         }, function() {
             $(this).css("background-color", "white");
           /*  $(this).css("color","white");*/
-
 
         })
 
@@ -817,9 +815,7 @@
             }
 */
             //console.log(this);
-
            // console.log($(this));
-
 
 
 
@@ -854,11 +850,20 @@
 
 
 
+        $("#customerTable>tr").dblclick(function () {
+          //  alert("hello");
+            $(this).remove();
 
+
+        })
 
 
 
     })
+
+
+
+
 
 
 
