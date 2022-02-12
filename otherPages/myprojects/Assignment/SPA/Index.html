@@ -147,6 +147,8 @@
 
 
 
+
+
     </style>
 
 </head>
@@ -627,26 +629,26 @@
             <label class="form-label fw-bold text-dark  ">Add New Item </label>
             <div class="input-group mb-3">
                 <input id="itemCode" type="text" class="form-control me-2" placeholder="Item Code" aria-label="ItemCode" aria-describedby="basic-addon1">
-                <label class="form-label  text-dark ms-1  " id="validation1"> </label>
+                <p class="form-label   ms-1  me-3 mt-2 " id="validationI1"> </p>
                 <input id="itemName" type="text" class="form-control" placeholder="Item Name" aria-label="ItemName" aria-describedby="basic-addon1">
-                <label class="form-label  text-dark ms-1  " id="validation2"> </label>
+                <label class="form-label  ms-1   " id="validationI2"> </label>
             </div>
             <div class="input-group mb-3">
                 <input id="itemUnitPrice" type="text" class="form-control" placeholder="Unit Price" aria-label="unitPrice" aria-describedby="basic-addon2">
-                <label class="form-label  text-dark ms-1  " id="validation3"> </label>
+                <label class="form-label  mt-2 ms-1  " id="validationI3"> </label>
             </div>
             <div class="input-group mb-3">
                 <input id="itemPackSize" type="text" class="form-control " placeholder="Pack Size" aria-label="packSize" aria-describedby="basic-addon2">
-                <label class="form-label  text-dark ms-1  " id="validation4"> </label>
+                <label class="form-label  mt-2 ms-1  " id="validationI4"> </label>
             </div>
             <div class="input-group mb-3">
                 <input id="itemBuyingPrice" type="text" class="form-control" placeholder="Buying Price" aria-label="buyPrice" aria-describedby="basic-addon2">
-                <label class="form-label  text-dark ms-1  " id="validation5"> </label>
+                <label class="form-label  mt-2 ms-1  " id="validationI5"> </label>
 
             </div>
             <div class="input-group mb-3">
                 <input id="itemQty" type="text" class="form-control" placeholder="Quantity" aria-label="qty" aria-describedby="basic-addon2">
-                <label class="form-label  text-dark ms-1  " id="validation6"> </label>
+                <label class="form-label  mt-2 ms-1  " id="validationI6"> </label>
 <!--                <input type="text" class="form-control ms-2 border-dark" id="itemSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">-->
             </div>
             <button type="submit" class="btn btn-success me-2 float-end mb-3"> Update Item</button>
@@ -657,7 +659,7 @@
     </div>
 
     <div class="row">
-        <hr>
+        <hr class="bg-danger" >
         <div class="table-responsive" id="tableSize">
             <table class="table table-striped table-sm" >
                 <thead class="bg-warning">
@@ -724,6 +726,7 @@
     })
 /*
 ==============item part =======================*/
+    $("#addItem").prop('disabled',true);
 
     $("#addItem").click(function () {
 
@@ -801,17 +804,25 @@
     /*-------------text field focus------------*/
 
     function validation(testRegex, event,id,nextId,correctRegex){
+
+
+
         let test = correctRegex.test(testRegex);
         if(test){
             $(id).css("border", "1px solid  green");
             $(id).css("box-shadow", "0px 0px 10px #5ad25a");
+
             if(event.keyCode == 13){
                 $(nextId).focus();
             }
+
+
+            return true;
         }else{
             $(id).css("border", "1px solid  red");
             $(id).css("box-shadow", "0px 0px 10px #d25a72");
-
+            $("#addItem").prop('disabled',true);
+            return false;
         }
 
 
@@ -819,43 +830,88 @@
 
     $("#itemCode").keyup(function (event) {
         let code = $("#itemCode").val();
-        validation(code,event,"#itemCode","#itemName",itemIdRegx);
+        let boolean = validation(code,event,"#itemCode","#itemName",itemIdRegx);
+        console.log(boolean);
+
+        if(boolean){
+            $("#validationI1").text("");
+        }else{
+            $("#validationI1").text("Input format-(I00-000)")
+            $("#validationI1").css("color", "red");
+            $("#validationI1").css("font-weight", "bold");
+        }
 
     })
 
 
     $("#itemName").keyup(function (event) {
         let code = $("#itemName").val();
-        validation(code,event,"#itemName","#itemUnitPrice",itemIdRegx);
+        let boolean = validation(code,event,"#itemName","#itemUnitPrice",itemNameRegx);
+
+        if(boolean){
+            $("#validationI2").text("");
+        }else{
+            $("#validationI2").text("Input format-(I00-000)")
+            $("#validationI2").css("color", "red");
+            $("#validationI2").css("font-weight", "bold");
+        }
     })
 
     $("#itemUnitPrice").keyup(function (event) {
-       /* if(event.keyCode == 13){
-            $("#itemUnitPrice").css("border", "1px solid  green");
-            $("#itemPackSize").focus();
-        }*/
+        let code = $("#itemUnitPrice").val();
+        let boolean = validation(code,event,"#itemUnitPrice","#itemPackSize",itemUnitPriceRegx);
+
+        if(boolean){
+            $("#validationI3").text("");
+        }else{
+            $("#validationI3").text("Input format-(I00-000)")
+            $("#validationI3").css("color", "red");
+            $("#validationI3").css("font-weight", "bold");
+        }
+
+
     })
 
-    $("#itemPackSize").keydown(function (event) {
-       /* if(event.keyCode == 13){
-            $("#itemPackSize").css("border", "1px solid  green");
-            $("#itemBuyingPrice").focus();
-        }*/
+    $("#itemPackSize").keyup(function (event) {
+        let code = $("#itemPackSize").val();
+        let boolean = validation(code,event,"#itemPackSize","#itemBuyingPrice",itemPackSizeRegx);
+
+        if(boolean){
+            $("#validationI4").text("");
+        }else{
+            $("#validationI4").text("Input format-(I00-000)")
+            $("#validationI4").css("color", "red");
+            $("#validationI4").css("font-weight", "bold");
+        }
+
     })
 
-    $("#itemBuyingPrice").keydown(function (event) {
-      /*  if(event.keyCode ==  13){
-            $("#itemBuyingPrice").css("border", "1px solid  green");
-            $("#itemQty").focus();
-        }*/
+    $("#itemBuyingPrice").keyup(function (event) {
+        let code = $("#itemBuyingPrice").val();
+        let boolean = validation(code,event,"#itemBuyingPrice","#itemQty",itemBuyingPriceRegx);
+
+        if(boolean){
+            $("#validationI5").text("");
+        }else{
+            $("#validationI5").text("Input format-(I00-000)")
+            $("#validationI5").css("color", "red");
+            $("#validationI6").css("font-weight", "bold");
+        }
     })
 
 
-    $("#itemQty").keydown(function (event) {
-      /*  if(event.keyCode ==  13){
-            $("#itemQty").css("border", "1px solid  green");
-            $("#addItem").focus();
-        }*/
+    $("#itemQty").keyup(function (event) {
+        let code = $("#itemQty").val();
+        let boolean = validation(code,event,"#itemQty","#addItem",itemQtyRegx);
+
+        if(boolean){
+            $("#validationI6").text("");
+            $("#addItem").prop('disabled',false);
+        }else{
+            $("#validationI6").text("Input format-(I00-000)")
+            $("#validationI6").css("color", "red");
+            $("#validationI6").css("font-weight", "bold");
+        }
     })
 
 
