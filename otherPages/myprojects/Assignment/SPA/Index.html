@@ -522,16 +522,7 @@
 <section class="container-fluid" id="customer">
     <div class="row">
         <div class="col-lg-4 mt-2" id="cardCustomer">
-          <!--  <div class="card">
-                <div class="card-body" id="baseCardCustomer">
-                    <h1 class="card-title fw-bold"> Customer form</h1>
-                    <h3 class="card-text">Customer Id </h3>
-                    <p class="card-text text-center fw-bold text-primary fs-2 m-0 d-inline-block"> C-001 </p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-               &lt;!&ndash; <img src="images/customer7.jpg" class="card-img-bottom " style="height: 150px" alt="...">&ndash;&gt;
-            </div>
-            -->
+
             <div>
                 <h1 class="fs-2">Customer Manage</h1>
                 <input type="text" class="form-control ms-2 border-dark" id="CustomerSearch" placeholder="Search Customer" aria-label="search Item" aria-describedby="basic-addon2">
@@ -547,20 +538,25 @@
             <label class="form-label fw-bold text-dark">Add New Customer </label>
             <div class="input-group mb-3">
                 <input id="customerFName" type="text" class="form-control me-2" placeholder="First name" aria-label="First Name" aria-describedby="basic-addon1">
+                <p class="form-label   ms-1  me-3 mt-2 " id="validationC1"> </p>
                 <input id="customerLName" type="text" class="form-control" placeholder="Last name" aria-label="Last Name" aria-describedby="basic-addon1">
+                <p class="form-label   ms-1  me-3 mt-2 " id="validationC2"> </p>
             </div>
             <div class="input-group mb-3">
                 <input id="customerAddress" type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon2">
+                <p class="form-label   ms-1  me-3 mt-2 " id="validationC3"> </p>
             </div>
             <div class="input-group mb-3">
                 <input id="customerEmail" type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
+                <p class="form-label   ms-1  me-3 mt-2 " id="validationC4"> </p>
 
             </div>
             <div class="input-group mb-3">
                 <input id="customerTelNum" type="text" class="form-control " placeholder="Tel number " aria-label="tel Number" aria-describedby="basic-addon2">
-<!--                <input type="text" class="form-control ms-2 border-dark" id="CustomerSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">-->
+                <p class="form-label   ms-1  me-3 mt-2 " id="validationC5"> </p>
+
             </div>
-            <button type="submit" class="btn btn-success me-2 float-end mb-3" > Update Customer</button>
+            <button type="submit" class="btn btn-success me-2 float-end mb-3" id="updateCustomer" > Update Customer</button>
             <button type="submit" class="btn btn-danger me-2 float-end mb-3"> Delete Customer </button>
             <button type="submit" class="btn btn-dark me-2 float-end mb-3" id="addCustomer"> Add Customer </button>
         </div>
@@ -651,7 +647,7 @@
                 <label class="form-label  mt-2 ms-1  " id="validationI6"> </label>
 <!--                <input type="text" class="form-control ms-2 border-dark" id="itemSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">-->
             </div>
-            <button type="submit" class="btn btn-success me-2 float-end mb-3"> Update Item</button>
+            <button type="submit" class="btn btn-success me-2 float-end mb-3" id="updateItem"> Update Item</button>
             <button type="submit" class="btn btn-danger me-2 float-end mb-3"> Delete Item </button>
             <button type="submit" class="btn btn-dark me-2 float-end mb-3"  id="addItem"> Add Item </button>
         </div>
@@ -724,15 +720,26 @@
         document.getElementById("order").style.display = "none";
         document.getElementById("customer").style.display = "none";
     })
-/*
+
+
+
+
+
+    /*
 ==============item part =======================*/
-    $("#addItem").prop('disabled',true);
+    // $("#addItem").prop('disabled',true);
+
+
 
     $("#addItem").click(function () {
 
-     /*  -------- add to data for table---------------- */
 
         $("#itemTable>tr").off('click');
+        $("#updateItem").off('click');
+
+     /*  -------- add to data for table---------------- */
+
+
 
         let itemCode = $("#itemCode").val();
         let itemName = $("#itemName").val();
@@ -767,20 +774,17 @@
 
 
        /* ------------table row click -----------*/
+
+        let rowIndexItem;
+
        $("#itemTable>tr").click(function () {
             let code = $(this).children().eq(0).text();
             let  name = $(this).children().eq(1).text();
             let unitPrice = $(this).children().eq(2).text();
             let packSize = $(this).children().eq(3).text();
             let buyingPrice = $(this).children().eq(4).text();
-            let qty = $(this).children().eq(4).text();
+            let qty = $(this).children().eq(5).text();
 
-            /*console.log(code);*/
-          /*  console.log(name);
-            console.log(unitPrice);
-            console.log(packSize);
-            console.log(buyingPrice);
-            console.log(qty);*/
             $("#itemCode").val(code);
             $("#itemName").val(name);
             $("#itemUnitPrice").val(unitPrice);
@@ -788,12 +792,31 @@
             $("#itemBuyingPrice").val(buyingPrice);
             $("#itemQty").val(qty);
 
+            rowIndexItem = this.rowIndex;
+
+
 
        })
 
 
+
+        $("#updateItem").click(function () {
+
+            alert("Are yoe sure you want update this Item?");
+
+            $("#itemTable").children().eq(rowIndexItem -1).children().eq(0).text($("#itemCode").val());
+            $("#itemTable").children().eq(rowIndexItem -1).children().eq(1).text($("#itemName").val());
+            $("#itemTable").children().eq(rowIndexItem -1).children().eq(2).text($("#itemUnitPrice").val());
+            $("#itemTable").children().eq(rowIndexItem -1).children().eq(3).text($("#itemPackSize").val());
+            $("#itemTable").children().eq(rowIndexItem -1).children().eq(4).text($("#itemBuyingPrice").val());
+            $("#itemTable").children().eq(rowIndexItem -1).children().eq(5).text($("#itemQty").val());
+
+        })
+
     })
 
+
+    /*-------------text field focus  and validation part of item ------------*/
     let itemIdRegx = /^(I00)[-][0-9]{3,9}$/;
     let itemNameRegx = /^[A-z]{3,15}$/;
     let itemUnitPriceRegx = /^[0-9]{1,9}$/;
@@ -801,11 +824,8 @@
     let itemBuyingPriceRegx = /^[0-9]{1,9}$/;
     let itemQtyRegx = /^[0-9]{1,9}$/;
 
-    /*-------------text field focus------------*/
 
     function validation(testRegex, event,id,nextId,correctRegex){
-
-
 
         let test = correctRegex.test(testRegex);
         if(test){
@@ -941,11 +961,12 @@
 
 
 
-
    /* ================customer part=============================*/
 
 
     $("#addCustomer").click(function () {
+        $("#customerTable>tr").off('click');
+        $("#updateCustomer").off('click');
 
         let cusFName = $("#customerFName").val();
         let cusLName = $("#customerLName").val();
@@ -973,7 +994,7 @@
             $(this).css("background-color", "#54a0ff");
         })
 
-
+        let rowIndex;
 
         $("#customerTable>tr").click(function (){
             let cusId = $(this).children().eq(0).text();
@@ -989,12 +1010,41 @@
             $("#customerEmail").val(cusEmail);
             $("#customerTelNum").val(cusTelNum);
 
+            rowIndex  = this.rowIndex;
+            // console.log("rowIndex " + rowIndex);
+
 
         })
 
 
 
+
+        $("#updateCustomer").click(function () {
+
+            alert("are you sure you want update this customer?");
+
+            $("#customerTable").children().eq(rowIndex -1).children().eq(1).text($("#customerFName").val());
+            $("#customerTable").children().eq(rowIndex -1).children().eq(2).text($("#customerLName").val());
+            $("#customerTable").children().eq(rowIndex -1).children().eq(3).text($("#customerAddress").val());
+            $("#customerTable").children().eq(rowIndex -1).children().eq(4).text($("#customerEmail").val());
+            $("#customerTable").children().eq(rowIndex -1).children().eq(5).text($("#customerTelNum").val());
+
+
+        })
+
+        $("#updateCustomer").on('click');
+
     })
+
+
+
+
+
+
+
+
+
+
 
 
 
