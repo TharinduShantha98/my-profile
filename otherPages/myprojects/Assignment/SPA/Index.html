@@ -524,9 +524,14 @@
         <div class="col-lg-4 mt-2" id="cardCustomer">
 
             <div>
-                <h1 class="fs-2">Customer Manage</h1>
+                <h1 class="fs-2" id="customerManage">Customer Manage</h1>
+
+            </div>
+            <div class="mt-2">
                 <input type="text" class="form-control ms-2 border-dark" id="CustomerSearch" placeholder="Search Customer" aria-label="search Item" aria-describedby="basic-addon2">
             </div>
+
+
             <div>
                 <button type="submit" class="btn btn-warning  float-end mb-3 fw-bold mt-2" > search </button>
             </div>
@@ -1140,6 +1145,29 @@
             $("#validationC5").css("font-weight", "bold");
         }
     })
+    var timeId;
+    var position = 1;
+    var test =  $("#customerManage").text();
+
+    console.log(test);
+    function customerManegeFun() {
+
+        var output =test.substr(0,position);
+        position++;
+
+
+        $("#customerManage").text(output);
+
+        if(position == test.length){
+            position = 1;
+        }
+
+
+    }
+
+
+    timeId = setInterval(customerManegeFun,100);
+   /* console.log(timeId);*/
 
 
 
