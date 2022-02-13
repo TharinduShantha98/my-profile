@@ -836,7 +836,6 @@
                 $(nextId).focus();
             }
 
-
             return true;
         }else{
             $(id).css("border", "1px solid  red");
@@ -1038,51 +1037,107 @@
 
 
 
+    let cusFNameRegx = /^[A-z]{3,15}$/;
+    let cusLNameRegx = /^[A-z]{3,15}$/;
+    let cusAddressRegx = /^(No-)[1-9]{1,9}(\s)[A-z]{1,15}|[A-z]{0,20}$/;
+    let cusEmailRegx = /^[A-z0-9$#^&*]{0,30}(@)(gmail.com)$/;
+    let cusTelNumRegx = /^[0-9]{10}$/;
 
 
 
+    function validationCustomer(testRegex, event,id,nextId,correctRegex){
+
+        let test = correctRegex.test(testRegex);
+        if(test){
+            $(id).css("border", "1px solid  green");
+            $(id).css("box-shadow", "0px 0px 10px #5ad25a");
+
+            if(event.keyCode == 13){
+                $(nextId).focus();
+            }
+
+            return true;
+        }else{
+            $(id).css("border", "1px solid  red");
+            $(id).css("box-shadow", "0px 0px 10px #d25a72");
+            $("#addItem").prop('disabled',true);
+            return false;
+        }
+
+
+    }
 
 
 
+    $("#customerFName").keyup(function (event) {
 
+        let code = $("#customerFName").val();
+        let boolean = validationCustomer(code,event,"#customerFName","#customerLName",cusFNameRegx);
 
-
-
-    $("#customerFName").keydown(function (event) {
-
-        if(event.keyCode == 13){
-            $("#customerFName").css("border", "1px solid green");
-            $("#customerLName").focus();
+        if(boolean){
+            $("#validationC1").text("");
+            checkButton();
+        }else{
+            $("#validationC1").text("by A to z characters only one word")
+            $("#validationC1").css("color", "red");
+            $("#validationC1").css("font-weight", "bold");
         }
     })
 
-    $("#customerLName").keydown(function (event) {
+    $("#customerLName").keyup(function (event) {
 
-        if(event.keyCode == 13){
-            $("#customerLName").css("border", "1px solid green");
-            $("#customerAddress").focus();
+        let code = $("#customerLName").val();
+        let boolean = validationCustomer(code,event,"#customerLName","#customerAddress",cusLNameRegx);
+
+        if(boolean){
+            $("#validationC2").text("");
+            checkButton();
+        }else{
+            $("#validationC2").text("by A to z characters only one word")
+            $("#validationC2").css("color", "red");
+            $("#validationC2").css("font-weight", "bold");
         }
     })
 
-    $("#customerAddress").keydown(function (event) {
+    $("#customerAddress").keyup(function (event) {
+        let code = $("#customerAddress").val();
+        let boolean = validationCustomer(code,event,"#customerAddress","#customerEmail",cusAddressRegx);
 
-        if(event.keyCode == 13){
-            $("#customerAddress").css("border", "1px solid green");
-            $("#customerEmail").focus();
+        if(boolean){
+            $("#validationC3").text("");
+            checkButton();
+        }else{
+            $("#validationC3").text(" as a no-1 ********")
+            $("#validationC3").css("color", "red");
+            $("#validationC3").css("font-weight", "bold");
         }
     })
-    $("#customerEmail").keydown(function (event) {
+    $("#customerEmail").keyup(function (event) {
 
-        if(event.keyCode == 13){
-            $("#customerEmail").css("border", "1px solid green");
-            $("#customerTelNum").focus();
+        let code = $("#customerEmail").val();
+        let boolean = validationCustomer(code,event,"#customerEmail","#customerTelNum",cusEmailRegx);
+
+        if(boolean){
+            $("#validationC4").text("");
+            checkButton();
+        }else{
+            $("#validationC4").text("please input last text as a @gmail.com")
+            $("#validationC4").css("color", "red");
+            $("#validationC4").css("font-weight", "bold");
         }
     })
-    $("#customerTelNum").keydown(function (event) {
+    $("#customerTelNum").keyup(function (event) {
 
-        if(event.keyCode == 13){
-            $("#customerTelNum").css("border", "1px solid green");
-            $("#addCustomer").focus();
+        let code = $("#customerTelNum").val();
+        let boolean = validationCustomer(code,event,"#customerTelNum","#addCustomer",cusTelNumRegx);
+
+        if(boolean){
+            $("#validationC5").text("");
+            checkButton();
+        }else{
+            $("#validationC5").text("please input only numbers")
+            $("#validationC5").css("color", "red");
+            $("#validationC5").css("font-weight", "bold");
         }
     })
 
