@@ -835,6 +835,7 @@
 
         if(boolean){
             $("#validationI1").text("");
+            checkButton();
         }else{
             $("#validationI1").text("Input format-(I00-000)")
             $("#validationI1").css("color", "red");
@@ -850,8 +851,9 @@
 
         if(boolean){
             $("#validationI2").text("");
+            checkButton();
         }else{
-            $("#validationI2").text("Input format-(I00-000)")
+            $("#validationI2").text("by A to z characters only one word")
             $("#validationI2").css("color", "red");
             $("#validationI2").css("font-weight", "bold");
         }
@@ -863,8 +865,9 @@
 
         if(boolean){
             $("#validationI3").text("");
+            checkButton();
         }else{
-            $("#validationI3").text("Input format-(I00-000)")
+            $("#validationI3").text("only numbers")
             $("#validationI3").css("color", "red");
             $("#validationI3").css("font-weight", "bold");
         }
@@ -878,8 +881,9 @@
 
         if(boolean){
             $("#validationI4").text("");
+            checkButton();
         }else{
-            $("#validationI4").text("Input format-(I00-000)")
+            $("#validationI4").text("Input format-(100g)")
             $("#validationI4").css("color", "red");
             $("#validationI4").css("font-weight", "bold");
         }
@@ -892,10 +896,11 @@
 
         if(boolean){
             $("#validationI5").text("");
+            checkButton();
         }else{
-            $("#validationI5").text("Input format-(I00-000)")
+            $("#validationI5").text("only number")
             $("#validationI5").css("color", "red");
-            $("#validationI6").css("font-weight", "bold");
+            $("#validationI5").css("font-weight", "bold");
         }
     })
 
@@ -906,14 +911,31 @@
 
         if(boolean){
             $("#validationI6").text("");
-            $("#addItem").prop('disabled',false);
+          /*  $("#addItem").prop('disabled',false);*/
+            checkButton();
         }else{
-            $("#validationI6").text("Input format-(I00-000)")
+            $("#validationI6").text("only number")
             $("#validationI6").css("color", "red");
             $("#validationI6").css("font-weight", "bold");
         }
+
+
+
+
     })
 
+    function checkButton() {
+        if(($("#itemCode").val() != "") &&  ($("#ItemName").val() != "") &&  ($("#itemUnitPrice").val() != "") &&
+            ($("#itemPackSize").val() != "") &&  ($("#itemBuyingPrice").val() != "") && ($("#itemQty").val() != "")){
+
+            $("#addItem").prop('disabled',false);
+
+
+        }else {
+            $("#addItem").prop('disabled',true);
+
+        }
+    }
 
 
 
