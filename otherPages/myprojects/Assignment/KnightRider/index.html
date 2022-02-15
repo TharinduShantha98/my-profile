@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <style>
+        #content{
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background-color: #1c1b1b;
+
+
+        }
+
+        #innerContainer{
+            position: absolute;
+            width: 80%;
+            height: 15%;
+            border: 1px solid crimson;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .boxSize{
+            width: 20%;
+            height: 100%;
+            border: solid 1px red;
+
+
+
+        }
+
+        #box1{
+            background-color: #846d6e;
+        }
+
+        #box2{
+            background-color: #92555b;
+        }
+
+        #box3{
+            background-color: #95434a;
+        }
+
+        #box4{
+            background-color: #93202b;
+        }
+
+        #box5{
+            background-color: #86040f;
+        }
+
+
+        #btnStart{
+            position: absolute;
+            width: 10%;
+            height: 5%;
+            left: 40%;
+            bottom: 32%;
+            margin: auto;
+            background-color: #283CF5;
+            font-weight: bold;
+
+        }
+
+
+        #btnStop{
+            position: absolute;
+            width: 10%;
+            height: 5%;
+            right: 40%;
+            bottom: 32%;
+            margin: auto;
+            background-color: green;
+            font-weight: bold;
+        }
+
+
+
+
+
+
+
+    </style>
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+<section id="content">
+
+    <div id="innerContainer">
+        <div id="box1" class="boxSize"></div>
+        <div id="box2" class="boxSize"></div>
+        <div id="box3" class="boxSize"></div>
+        <div id="box4" class="boxSize"></div>
+        <div id="box5" class="boxSize"></div>
+    </div>
+
+    <button type="button" id="btnStart">start</button>
+    <button type="button" id="btnStop">stop</button>
+
+
+
+
+
+</section>
+
+</body>
+</html>
