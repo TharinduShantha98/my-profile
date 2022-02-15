@@ -42,23 +42,23 @@
         }
 
         #box1{
-            background-color: #846d6e;
+            background-color: #f8f2f2;
         }
 
         #box2{
-            background-color: #92555b;
+            background-color: #f8f2f2;
         }
 
         #box3{
-            background-color: #95434a;
+            background-color: #f8f2f2;
         }
 
         #box4{
-            background-color: #93202b;
+            background-color: #f8f2f2;
         }
 
         #box5{
-            background-color: #86040f;
+            background-color: #f8f2f2;
         }
 
 
@@ -123,5 +123,146 @@
 
 </section>
 
+
+
+<script src="jquery/jquery-3.6.0.min.js"></script>
+<script>
+
+    $("#btnStart").click(function () {
+
+
+    })
+
+
+    var color = ['86040f','93202b','95434a','92555b','846d6e','f8f2f2','f8f2f2','f8f2f2','f8f2f2'];
+
+    let a =0;
+    let b = 1;
+    let c = 2;
+    let d = 3;
+    let e = 4;
+
+    var timer1;
+    var timer2;
+   /* function knightRider1() {
+
+        $("#box1").css("background-color", "#"+color[a]);
+        a++;
+        if(a == color.length + 4){
+          a=0;
+
+        }
+    }
+
+
+    function knightRider2() {
+        $("#box2").css("background-color", "#"+color[b]);
+        b++;
+        if(b == color.length + 4){
+            b=0;
+        }
+
+    }
+
+    function knightRider3() {
+
+        $("#box3").css("background-color", "#"+color[c]);
+        c++;
+        if(c == color.length + 4){
+            c=0;
+        }
+
+    }
+
+
+    function knightRider4() {
+        $("#box4").css("background-color", "#"+color[d]);
+        d++;
+        if(d == color.length + 4){
+            d=0;
+        }
+
+    }
+
+    function knightRider5() {
+        $("#box5").css("background-color", "#"+color[e]);
+        e++;
+        if(e == color.length + 4 ){
+            e=0;
+        }
+
+    }*/
+
+
+
+    function knightRider1(){
+        $("#box1").css("background-color", "#"+color[a]);
+        a++;
+        if(a > color.length){
+            console.log("a"+b);
+            a=0;
+        }
+
+    }
+
+    function knightRider2(){
+
+        $("#box2").css("background-color", "#"+color[b]);
+        b++;
+        if(b > color.length){
+            b=0;
+        }
+
+    }
+
+    function knightRider3(){
+
+        $("#box3").css("background-color", "#"+color[c]);
+        c++;
+        if(c > color.length){
+            c=0;
+        }
+
+    }
+
+
+    function knightRider4(){
+
+        $("#box4").css("background-color", "#"+color[d]);
+        d++;
+        if(d > color.length){
+            d=0;
+        }
+
+    }
+
+    function knightRider5(){
+
+        $("#box5").css("background-color", "#"+color[e]);
+        e++;
+        if(e > color.length){
+            e=0;
+        }
+
+    }
+
+
+
+
+
+    setInterval(knightRider1,100);
+    setInterval(knightRider2,100);
+    setInterval(knightRider3,100);
+    setInterval(knightRider4,100);
+    setInterval(knightRider5,100);
+  /*  setInterval(knightRider2,1000);
+    setInterval(knightRider3,1000);
+    setInterval(knightRider4,1000);
+    setInterval(knightRider5,1000);*/
+
+
+
+
+</script>
 </body>
 </html>
