@@ -153,13 +153,60 @@
 
     let color = ['aaaa27','a8996f','915da7','e34059','5ee047','2653c6'];
 
+    var a =0;
+    var b =1;
+    var c =2;
+    var d =3;
+    var e =4;
+    var f =5;
+    var g =6;
+
     function changeColor() {
-        for(var i = 0 ;  i < 6; i++){
+        $("#box1").css("background-color", "#"+color[f]);
+        $("#box2").css("background-color", "#"+color[e]);
+        $("#box3").css("background-color", "#"+color[d]);
+        $("#box4").css("background-color", "#"+color[c]);
+        $("#box5").css("background-color", "#"+color[b]);
+        $("#box6").css("background-color", "#"+color[a]);
+
+        a++;
+        b++;
+        c++;
+        d++;
+        e++;
+        f++;
 
 
+
+        if(a == color.length){
+            a = 0;
         }
 
+        if(b == color.length){
+            b = 0;
+        }
+
+        if(c == color.length){
+            c = 0;
+        }
+
+        if(d == color.length){
+            d = 0;
+        }
+
+        if(e == color.length){
+            e = 0;
+        }
+
+        if(f == color.length){
+            f = 0;
+        }
+
+
     }
+
+
+    setInterval(changeColor,1000);
 
 
 
