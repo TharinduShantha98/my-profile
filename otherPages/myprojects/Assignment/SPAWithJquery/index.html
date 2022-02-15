@@ -647,6 +647,7 @@
 
 <script src="assets/css/js/bootstrap.bundle.js"></script>
 <script src="assets/css/jquery/jquery-3.6.0.min.js"></script>
+<script src="Db/db.js"></script>
 <script>
 
     $("#btn1").click(function () {
@@ -779,8 +780,31 @@
         let cusTel = $("#cusTelNum").val();
 
 
-        var row = `<tr><td>c001</td></td><td>${cusFirstName}</td><td>${cusLastName}</td><td>${cusAddress}</td><td>${cusEmail}</td><td>${cusTel}</td></tr>`;
-        $("#customerTable").prepend(row);
+        var customer = {
+            firstName: cusFirstName,
+            lastName: cusLastName,
+            address: cusAddress,
+            email: cusEmail,
+            telNum: cusTel
+
+
+        }
+
+
+        customerDb.push(customer);
+
+
+        $("#customerTable").empty();
+        for (var i =0; i < customerDb.length; i++){
+            let newRow = `<tr><td>c001</td></td><td>${customerDb[i].firstName}</td><td>${customerDb[i].lastName}</td><td>${customerDb[i].address}</td><td>${customerDb[i].email}</td><td>${customerDb[i].telNum}</td></tr>`;
+            $("#customerTable").append(newRow);
+        }
+
+
+
+
+      /*  var row = `<tr><td>c001</td></td><td>${cusFirstName}</td><td>${cusLastName}</td><td>${cusAddress}</td><td>${cusEmail}</td><td>${cusTel}</td></tr>`;
+        $("#customerTable").prepend(row);*/
 
 
         $("#customerTable>tr").hover(function () {

@@ -602,17 +602,9 @@
 <section class="container-fluid" id="item">
     <div class="row">
         <div class="col-lg-4 mt-2" id="cardItem" >
-           <!-- <div class="card" id="card2">
-                <div class="card-body" id="baseCard">
-                    <h1 class="card-title fs-2 fw-bold">Item form</h1>
-                    <h3 class="card-text">Item Id </h3>
-                    <p class="card-text text-center fw-bold text-primary fs-2 m-0 d-inline-block"> I-001 </p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-               &lt;!&ndash; <img src="images/item6.png" class="card-img-bottom " style="height: 150px" alt="...">&ndash;&gt;
-            </div>-->
+
             <div>
-                <h1 class="fs-2">Item Manage</h1>
+                <h1 class="fs-2" id="itemManage">Item Manage   </h1>
                 <input type="text" class="form-control ms-2 border-dark" id="itemSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">
             </div>
             <div>
@@ -732,7 +724,7 @@
 
     /*
 ==============item part =======================*/
-    // $("#addItem").prop('disabled',true);
+    $("#addItem").prop('disabled',true);
 
 
 
@@ -965,8 +957,26 @@
 
 
 
-   /* ================customer part=============================*/
+    var position2 = 1;
+    var text = $("#itemManage").text();
+    function itemManageFun(){
+        let outPut2 = text.substr(0,position2);
+        $("#itemManage").text(outPut2);
+        position2++;
 
+        if(position2 == text.length){
+            position2 = 1;
+        }
+
+
+    }
+
+
+    setInterval(itemManageFun,100);
+
+
+   /* ================customer part=============================*/
+    $("#addCustomer").prop('disabled',true);
 
     $("#addCustomer").click(function () {
         $("#customerTable>tr").off('click');
@@ -1081,7 +1091,7 @@
 
         if(boolean){
             $("#validationC1").text("");
-            checkButton();
+            checkButtonCustomerAdd();
         }else{
             $("#validationC1").text("by A to z characters only one word")
             $("#validationC1").css("color", "red");
@@ -1096,7 +1106,7 @@
 
         if(boolean){
             $("#validationC2").text("");
-            checkButton();
+            checkButtonCustomerAdd();
         }else{
             $("#validationC2").text("by A to z characters only one word")
             $("#validationC2").css("color", "red");
@@ -1110,7 +1120,7 @@
 
         if(boolean){
             $("#validationC3").text("");
-            checkButton();
+            checkButtonCustomerAdd();
         }else{
             $("#validationC3").text(" as a no-1 ********")
             $("#validationC3").css("color", "red");
@@ -1124,7 +1134,7 @@
 
         if(boolean){
             $("#validationC4").text("");
-            checkButton();
+            checkButtonCustomerAdd();
         }else{
             $("#validationC4").text("please input last text as a @gmail.com")
             $("#validationC4").css("color", "red");
@@ -1138,13 +1148,30 @@
 
         if(boolean){
             $("#validationC5").text("");
-            checkButton();
+            checkButtonCustomerAdd();
         }else{
             $("#validationC5").text("please input only numbers")
             $("#validationC5").css("color", "red");
             $("#validationC5").css("font-weight", "bold");
         }
     })
+
+
+    function checkButtonCustomerAdd() {
+        if(($("#CustomerFName").val() != "") &&  ($("#customerLName").val() != "") &&  ($("#customerAddress").val() != "") &&
+            ($("#customerEmail").val() != "") &&  ($("#customerTelNum").val() != "")){
+
+            $("#addCustomer").prop('disabled',false);
+
+        }else {
+            $("#addCustomer").prop('disabled',true);
+
+        }
+    }
+
+
+
+
     var timeId;
     var position = 1;
     var test =  $("#customerManage").text();
