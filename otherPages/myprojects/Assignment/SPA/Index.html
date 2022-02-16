@@ -608,7 +608,7 @@
                 <input type="text" class="form-control ms-2 border-dark" id="itemSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">
             </div>
             <div>
-                <button type="submit" class="btn btn-warning  float-end mb-3 fw-bold mt-2" > search </button>
+                <button type="submit" class="btn btn-warning  float-end mb-3 fw-bold mt-2" id="btnItemSearch" > search </button>
             </div>
 
 
@@ -624,7 +624,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12">
                     <div>
-                        <p class="m-0 ">itemCode</p>
+                        <p class="m-0 "></p>
                     </div>
 
                     <div class="input-group mb-3">
@@ -635,7 +635,7 @@
 
                 <div class="col-lg-6 col-md-12 col-sm-12">
                     <div>
-                        <p class="m-0 ">itemName</p>
+                        <p class="m-0 "></p>
                     </div>
 
                     <div class="input-group mb-3">
@@ -704,6 +704,7 @@
 
 <script src="css/js/bootstrap.bundle.js"></script>
 <script src="jquery/jquery-3.6.0.min.js"></script>
+<script src="DB/dataBase.js"></script>
 
 <script>
     document.getElementById("btn1").addEventListener("click", function () {
@@ -750,16 +751,11 @@
     $("#itemCode").val("I00-");
 
 
-
-
-
     $("#addItem").click(function () {
         $("#itemTable>tr").off('click');
         $("#updateItem").off('click');
  /*------------------------ add to data for table---------------- */
 
-
-    if(confirm("Are you sure, you want to add this Item?")){
         let itemCode = $("#itemCode").val();
         let itemName = $("#itemName").val();
         let itemUnitPrice = $("#itemUnitPrice").val();
@@ -767,16 +763,36 @@
         let itemBuyingPrice = $("#itemBuyingPrice").val();
         let itemQty = $("#itemQty").val();
 
-        let row = `<tr><td>${itemCode}</td><td>${itemName}</td><td>${itemUnitPrice}</td><td>${itemPackSize}</td><td>${itemBuyingPrice}</td>
-                <td>${itemQty}</td></tr>`;
-        $("#itemTable").append(row);
+        var itemObject = {
+            code: itemCode,
+            name: itemName,
+            unitPrice:itemUnitPrice,
+            packSize: itemPackSize,
+            buyingPrice: itemBuyingPrice,
+            qty: itemQty
+        }
+
+        if(confirm("Are you sure you want to add this item?")){
+            items.push(itemObject);
+
+        }else{}
 
 
-    }else{
 
 
-    }
 
+        $("#itemTable").empty();
+        for(var i =0; i < items.length; i++){
+
+            let row = `<tr><td>${items[i].code}</td><td>${items[i].name}</td><td>${items[i].unitPrice}</td><td>${items[i].packSize}</td><td>${items[i].buyingPrice}</td>
+                <td>${items[i].qty}</td></tr>`;
+            $("#itemTable").append(row);
+
+        }
+
+
+
+        $("#itemName").val('');
 
  /*------------------------------- end add to data for table---------------- */
 
@@ -797,8 +813,7 @@
 
         $("#itemTable>tr").css("background-color","#54a0ff");
 
-
-/*-------------------------------------table row click -----------*/
+/*-------------------------------------table row click --------------------------*/
 
         let rowIndexItem;
 
@@ -844,6 +859,47 @@
         })
 
     })
+
+
+/*-------------------------------------Search Item--------------------------*/
+
+    $("#itemSearch").keyup(function (event) {
+
+        if(event.keyCode == 13){
+            $("#btnItemSearch").focus();
+        }
+
+    })
+
+
+
+
+    $("#btnItemSearch").click(function () {
+        let searchItemCode = $("#itemSearch").val();
+        for(var k=0; k < items.length; k++){
+            if(items[k].code == searchItemCode){
+                $("#itemCode").val(items[k].code);
+                $("#itemName").val(items[k].name);
+                $("#itemUnitPrice").val(items[k].unitPrice);
+                $("#itemPackSize").val(items[k].packSize);
+                $("#itemBuyingPrice").val(items[k].buyingPrice);
+                $("#itemQty").val(items[k].qty);
+
+            }else{
+                alert("this item code not in dataBase");
+            }
+
+        }
+
+    })
+
+
+
+
+
+
+
+
 
 
     /*-------------text field focus  and validation part of item ------------*/
@@ -1029,10 +1085,26 @@
         let cusTelNum = $("#customerTelNum").val();
 
 
-        console.log(cusFName);
+        var customer = {
+            firstName: cusFirstName,
+            lastName: cusLastName,
+            address: cusAddress,
+            email: cusEmail,
+            telNum: cusTel
 
-        var row2 = `<tr><td>100</td><td>${cusFName}</td><td>${cusLName}</td><td>${cusAddress}</td><td>${cusEmail}</td><td>${cusTelNum}</td></tr>`
-        $("#customerTable").append(row2);
+
+        }
+
+
+        customerDb.push(customer);
+
+
+        $("#customerTable").empty();
+        for (var i =0; i < customerDb.length; i++){
+            let newRow = `<tr><td>c001</td></td><td>${customerDb[i].firstName}</td><td>${customerDb[i].lastName}</td><td>${customerDb[i].address}</td><td>${customerDb[i].email}</td><td>${customerDb[i].telNum}</td></tr>`;
+            $("#customerTable").append(newRow);
+        }
+
 
 
         let table = document.getElementById("customerTable");
