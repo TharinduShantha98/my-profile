@@ -130,7 +130,7 @@
 
     $("#btnStart").click(function () {
         clearInterval(timer1)
-        timer1 = setInterval(all,100);
+        timer1 = setInterval(start,100);
       /*  all();*/
 
     })
@@ -233,7 +233,7 @@
 
 
 
-    function knightRider1(){
+   /* function knightRider1(){
         $("#box1").css("background-color", "#"+color[a]);
         a++;
         if(a > color.length){
@@ -330,7 +330,86 @@
        ww++;
 
 
+    }*/
+
+    let count =0;
+    function start() {
+
+        if(count===1){
+            $("#box1").css('background-color','#cc0000');
+        }
+        if(count===2){
+            $("#box1").css('background-color','#990000');
+            $("#box2").css('background-color','#cc0000');
+        }
+        if(count===3){
+            $("#box1").css('background-color','#993333');
+            $("#box2").css('background-color','#990000');
+            $("#box3").css('background-color','#cc0000');
+        }
+        if(count===4){
+            $("#box1").css('background-color','#ecc6c6');
+            $("#box2").css('background-color','#993333');
+            $("#box3").css('background-color','#990000');
+            $("#box4").css('background-color','#cc0000');
+        }
+        if(count===5){
+            $("#box1").css('background-color','#ecc6c6');
+            $("#box2").css('background-color','#d98c8c');
+            $("#box3").css('background-color','#993333');
+            $("#box4").css('background-color','#990000');
+            $("#box5").css('background-color','#cc0000');
+        }
+        if(count===6){
+            $("#box1").css('background-color','white');
+            $("#box2").css('background-color','white');
+            $("#box3").css('background-color','white');
+            $("#box4").css('background-color','white');
+            $("#box5").css('background-color','white');
+        }
+
+        if(count===7){
+            $("#box5").css('background-color','#cc0000');
+        }
+        if(count===8){
+            $("#box05").css('background-color','#990000');
+            $("#box4").css('background-color','#cc0000');
+        }
+        if(count===9){
+            $("#box5").css('background-color','#993333');
+            $("#box4").css('background-color','#990000');
+            $("#box3").css('background-color','#cc0000');
+        }
+        if(count===10){
+            $("#box5").css('background-color','#d98c8c');
+            $("#box4").css('background-color','#993333');
+            $("#box3").css('background-color','#990000');
+            $("#box2").css('background-color','#cc0000');
+        }
+        if(count===11){
+            $("#box5").css('background-color','#ecc6c6');
+            $("#box4").css('background-color','#d98c8c');
+            $("#box3").css('background-color','#993333');
+            $("#box2").css('background-color','#990000');
+            $("#box1").css('background-color','#cc0000');
+        }
+        if(count===12){
+            $("#box1").css('background-color','white');
+            $("#box2").css('background-color','white');
+            $("#box3").css('background-color','white');
+            $("#box4").css('background-color','white');
+            $("#box5").css('background-color','white');
+        }
+        if(count>12){
+            count=-1;
+        }
+        count++;
+
     }
+
+
+
+
 
     /*setInterval(knightRider11,100);*/
 

@@ -620,11 +620,31 @@
 
         <div class=" col-sm-12  col-lg-8" id="addItemForm">
             <label class="form-label fw-bold text-dark  ">Add New Item </label>
-            <div class="input-group mb-3">
-                <input id="itemCode" type="text" class="form-control me-2" placeholder="Item Code" aria-label="ItemCode" aria-describedby="basic-addon1">
-                <p class="form-label   ms-1  me-3 mt-2 " id="validationI1"> </p>
-                <input id="itemName" type="text" class="form-control" placeholder="Item Name" aria-label="ItemName" aria-describedby="basic-addon1">
-                <label class="form-label  ms-1   " id="validationI2"> </label>
+
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div>
+                        <p class="m-0 ">itemCode</p>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input id="itemCode" type="text" class="form-control me-2" placeholder="Item Code" aria-label="ItemCode" aria-describedby="basic-addon1">
+                        <label class="form-label   ms-1  me-3 mt-2 " id="validationI1"></label>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div>
+                        <p class="m-0 ">itemName</p>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input id="itemName" type="text" class="form-control" placeholder="Item Name" aria-label="ItemName" aria-describedby="basic-addon1">
+                        <label class="form-label  ms-1   " id="validationI2"> </label>
+                    </div>
+
+                </div>
+
             </div>
             <div class="input-group mb-3">
                 <input id="itemUnitPrice" type="text" class="form-control" placeholder="Unit Price" aria-label="unitPrice" aria-describedby="basic-addon2">
