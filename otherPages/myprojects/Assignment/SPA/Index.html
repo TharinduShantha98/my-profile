@@ -628,6 +628,7 @@
             </div>
             <div class="input-group mb-3">
                 <input id="itemUnitPrice" type="text" class="form-control" placeholder="Unit Price" aria-label="unitPrice" aria-describedby="basic-addon2">
+                <span class="input-group-text fw-bold me-1">RS</span>
                 <label class="form-label  mt-2 ms-1  " id="validationI3"> </label>
             </div>
             <div class="input-group mb-3">
@@ -636,6 +637,7 @@
             </div>
             <div class="input-group mb-3">
                 <input id="itemBuyingPrice" type="text" class="form-control" placeholder="Buying Price" aria-label="buyPrice" aria-describedby="basic-addon2">
+                <span class="input-group-text fw-bold me-1">RS</span>
                 <label class="form-label  mt-2 ms-1  " id="validationI5"> </label>
 
             </div>
@@ -725,19 +727,19 @@
     /*
 ==============item part =======================*/
     $("#addItem").prop('disabled',true);
+    $("#itemCode").val("I00-");
+
+
 
 
 
     $("#addItem").click(function () {
-
-
         $("#itemTable>tr").off('click');
         $("#updateItem").off('click');
-
-     /*  -------- add to data for table---------------- */
-
+ /*------------------------ add to data for table---------------- */
 
 
+    if(confirm("Are you sure, you want to add this Item?")){
         let itemCode = $("#itemCode").val();
         let itemName = $("#itemName").val();
         let itemUnitPrice = $("#itemUnitPrice").val();
@@ -745,22 +747,24 @@
         let itemBuyingPrice = $("#itemBuyingPrice").val();
         let itemQty = $("#itemQty").val();
 
-
-       let row = `<tr><td>${itemCode}</td><td>${itemName}</td><td>${itemUnitPrice}</td><td>${itemPackSize}</td><td>${itemBuyingPrice}</td>
+        let row = `<tr><td>${itemCode}</td><td>${itemName}</td><td>${itemUnitPrice}</td><td>${itemPackSize}</td><td>${itemBuyingPrice}</td>
                 <td>${itemQty}</td></tr>`;
-       $("#itemTable").append(row);
+        $("#itemTable").append(row);
 
-        /*  -------- end add to data for table---------------- */
+
+    }else{
+
+
+    }
+
+
+ /*------------------------------- end add to data for table---------------- */
 
       /* ------------- table row font-weight--------------*/
-
         let table = document.getElementById("itemTable");
-
         for ( var i =0; i< table.rows.length ; i++  ){
             $("#itemTable").children().eq(i).css("font-weight","bold");
-
         }
-
 
       /*  -------------table row hover ---------------*/
         $("#itemTable>tr").hover(function () {
@@ -769,29 +773,38 @@
             $(this).css("background-color", "#54a0ff");
         })
 
+       /* ----------------table row color----------------*/
 
-       /* ------------table row click -----------*/
+        $("#itemTable>tr").css("background-color","#54a0ff");
+
+
+/*-------------------------------------table row click -----------*/
 
         let rowIndexItem;
 
        $("#itemTable>tr").click(function () {
-            let code = $(this).children().eq(0).text();
-            let  name = $(this).children().eq(1).text();
-            let unitPrice = $(this).children().eq(2).text();
-            let packSize = $(this).children().eq(3).text();
-            let buyingPrice = $(this).children().eq(4).text();
-            let qty = $(this).children().eq(5).text();
 
-            $("#itemCode").val(code);
-            $("#itemName").val(name);
-            $("#itemUnitPrice").val(unitPrice);
-            $("#itemPackSize").val(packSize);
-            $("#itemBuyingPrice").val(buyingPrice);
-            $("#itemQty").val(qty);
+           if(confirm("Are you sure you want to get this item")){
+               let code = $(this).children().eq(0).text();
+               let  name = $(this).children().eq(1).text();
+               let unitPrice = $(this).children().eq(2).text();
+               let packSize = $(this).children().eq(3).text();
+               let buyingPrice = $(this).children().eq(4).text();
+               let qty = $(this).children().eq(5).text();
 
-            rowIndexItem = this.rowIndex;
+               $("#itemCode").val(code);
+               $("#itemName").val(name);
+               $("#itemUnitPrice").val(unitPrice);
+               $("#itemPackSize").val(packSize);
+               $("#itemBuyingPrice").val(buyingPrice);
+               $("#itemQty").val(qty);
+
+               rowIndexItem = this.rowIndex;
 
 
+           }else{
+
+           }
 
        })
 
@@ -817,9 +830,19 @@
     let itemIdRegx = /^(I00)[-][0-9]{3,9}$/;
     let itemNameRegx = /^[A-z]{3,15}$/;
     let itemUnitPriceRegx = /^[0-9]{1,9}$/;
-    let itemPackSizeRegx = /^[0-9]{1,9}(g)$/;
+    let itemPackSizeRegx = /^[0-9]+(l|g|kg|ml)$/;
     let itemBuyingPriceRegx = /^[0-9]{1,9}$/;
     let itemQtyRegx = /^[0-9]{1,9}$/;
+
+
+    $('#itemCode,#itemName,#itemUnitPrice,#itemPackSize,#itemBuyingPrice,#itemQty').keydown(function (eventOb) {
+        if (eventOb.key == "Tab") {
+           eventOb.preventDefault();
+
+        }
+    })
+
+
 
 
     function validation(testRegex, event,id,nextId,correctRegex){
@@ -899,7 +922,7 @@
             $("#validationI4").text("");
             checkButton();
         }else{
-            $("#validationI4").text("Input format-(100g)")
+            $("#validationI4").text("please input pack Size (kg/l/ml/l) end of number")
             $("#validationI4").css("color", "red");
             $("#validationI4").css("font-weight", "bold");
         }
@@ -954,9 +977,6 @@
     }
 
 
-
-
-
     var position2 = 1;
     var text = $("#itemManage").text();
     function itemManageFun(){
@@ -975,7 +995,7 @@
     setInterval(itemManageFun,100);
 
 
-   /* ================customer part=============================*/
+/*===================================================customer part=============================*/
     $("#addCustomer").prop('disabled',true);
 
     $("#addCustomer").click(function () {
@@ -1091,12 +1111,16 @@
 
         if(boolean){
             $("#validationC1").text("");
-            checkButtonCustomerAdd();
+
+
         }else{
             $("#validationC1").text("by A to z characters only one word")
             $("#validationC1").css("color", "red");
             $("#validationC1").css("font-weight", "bold");
+
         }
+
+        checkButtonCustomerAdd();
     })
 
     $("#customerLName").keyup(function (event) {
@@ -1106,12 +1130,16 @@
 
         if(boolean){
             $("#validationC2").text("");
-            checkButtonCustomerAdd();
+
+
         }else{
             $("#validationC2").text("by A to z characters only one word")
             $("#validationC2").css("color", "red");
             $("#validationC2").css("font-weight", "bold");
+
         }
+
+        checkButtonCustomerAdd();
     })
 
     $("#customerAddress").keyup(function (event) {
@@ -1120,12 +1148,16 @@
 
         if(boolean){
             $("#validationC3").text("");
-            checkButtonCustomerAdd();
+
         }else{
             $("#validationC3").text(" as a no-1 ********")
             $("#validationC3").css("color", "red");
             $("#validationC3").css("font-weight", "bold");
+
         }
+
+        checkButtonCustomerAdd();
+
     })
     $("#customerEmail").keyup(function (event) {
 
@@ -1134,12 +1166,16 @@
 
         if(boolean){
             $("#validationC4").text("");
-            checkButtonCustomerAdd();
+
+
         }else{
             $("#validationC4").text("please input last text as a @gmail.com")
             $("#validationC4").css("color", "red");
             $("#validationC4").css("font-weight", "bold");
+
         }
+
+        checkButtonCustomerAdd();
     })
     $("#customerTelNum").keyup(function (event) {
 
@@ -1148,24 +1184,43 @@
 
         if(boolean){
             $("#validationC5").text("");
-            checkButtonCustomerAdd();
+            $("#addCustomer").prop('disabled', false);
+
         }else{
             $("#validationC5").text("please input only numbers")
             $("#validationC5").css("color", "red");
             $("#validationC5").css("font-weight", "bold");
+
         }
+
+
+        checkButtonCustomerAdd();
     })
 
 
-    function checkButtonCustomerAdd() {
+    /*function checkButtonCustomerAdd() {
         if(($("#CustomerFName").val() != "") &&  ($("#customerLName").val() != "") &&  ($("#customerAddress").val() != "") &&
             ($("#customerEmail").val() != "") &&  ($("#customerTelNum").val() != "")){
-
+            console.log("false");
             $("#addCustomer").prop('disabled',false);
 
         }else {
             $("#addCustomer").prop('disabled',true);
+            console.log("true");
+        }
+    }*/
 
+
+
+    function checkButtonCustomerAdd() {
+        if(($("#validationC1").text() == "") &&  ($("#validationC2").text() == "") &&  ($("#validationC3").text() == "") &&
+            ($("#validationC4").text() == "") &&  ($("#validationC5").text() == "")){
+            console.log("false");
+            $("#addCustomer").prop('disabled',false);
+
+        }else {
+            $("#addCustomer").prop('disabled',true);
+            console.log("true");
         }
     }
 
