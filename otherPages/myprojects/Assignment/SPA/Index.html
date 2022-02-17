@@ -533,7 +533,7 @@
 
 
             <div>
-                <button type="submit" class="btn btn-warning  float-end mb-3 fw-bold mt-2" > search </button>
+                <button type="submit" class="btn btn-warning  float-end mb-3 fw-bold mt-2" id="btnCustomerSearch" > search </button>
             </div>
 
         </div>
@@ -541,6 +541,12 @@
 
         <div class="col-sm-12 col-lg-8">
             <label class="form-label fw-bold text-dark">Add New Customer </label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control me-2 " id="customerId" placeholder="customer Id" aria-label="customerId" aria-describedby="basic-addon1">
+                <p class="form-label   ms-1 mt-2 " id="validationC6"> </p>
+            </div>
+
+
             <div class="input-group mb-3">
                 <input id="customerFName" type="text" class="form-control me-2" placeholder="First name" aria-label="First Name" aria-describedby="basic-addon1">
                 <p class="form-label   ms-1  me-3 mt-2 " id="validationC1"> </p>
@@ -1073,11 +1079,12 @@
 
 /*===================================================customer part=============================*/
     $("#addCustomer").prop('disabled',true);
+    $("#customerId").val("C00-");
 
     $("#addCustomer").click(function () {
         $("#customerTable>tr").off('click');
         $("#updateCustomer").off('click');
-
+        let cusId = $("#customerId").val();
         let cusFName = $("#customerFName").val();
         let cusLName = $("#customerLName").val();
         let cusAddress = $("#customerAddress").val();
@@ -1086,22 +1093,23 @@
 
 
         var customer = {
-            firstName: cusFirstName,
-            lastName: cusLastName,
+            id: cusId,
+            firstName: cusFName,
+            lastName: cusLName,
             address: cusAddress,
             email: cusEmail,
-            telNum: cusTel
+            telNum: cusTelNum
 
 
         }
 
 
-        customerDb.push(customer);
-
+        customers.push(customer);
 
         $("#customerTable").empty();
-        for (var i =0; i < customerDb.length; i++){
-            let newRow = `<tr><td>c001</td></td><td>${customerDb[i].firstName}</td><td>${customerDb[i].lastName}</td><td>${customerDb[i].address}</td><td>${customerDb[i].email}</td><td>${customerDb[i].telNum}</td></tr>`;
+        for (var i =0; i < customers.length; i++){
+            let newRow = `<tr><td>${customers[i].id}</td></td><td>${customers[i].firstName}</td><td>${customers[i].lastName}
+                </td><td>${customers[i].address}</td><td>${customers[i].email}</td><td>${customers[i].telNum}</td></tr>`;
             $("#customerTable").append(newRow);
         }
 
@@ -1130,6 +1138,7 @@
             let cusEmail = $(this).children().eq(4).text();
             let cusTelNum = $(this).children().eq(5).text();
 
+            $("#customerId").val(cusId);
             $("#customerFName").val(cusFName);
             $("#customerLName").val(cusLName);
             $("#customerAddress").val(cusAddress);
@@ -1148,7 +1157,7 @@
         $("#updateCustomer").click(function () {
 
             alert("are you sure you want update this customer?");
-
+            $("#customerTable").children().eq(rowIndex -1).children().eq(1).text($("#customerId").val());
             $("#customerTable").children().eq(rowIndex -1).children().eq(1).text($("#customerFName").val());
             $("#customerTable").children().eq(rowIndex -1).children().eq(2).text($("#customerLName").val());
             $("#customerTable").children().eq(rowIndex -1).children().eq(3).text($("#customerAddress").val());
@@ -1162,8 +1171,45 @@
 
     })
 
+    $("#CustomerSearch").keyup(function (event) {
+
+        if(event.keyCode == 13){
+            $("#btnCustomerSearch").focus();
+        }
+
+    })
 
 
+
+
+    $("#btnCustomerSearch").click(function () {
+        let searchItemCode = $("#CustomerSearch").val();
+        for(var k=0; k < customers.length; k++){
+            if(customers[k].id == searchItemCode){
+                $("#customerId").val(customers[k].id);
+                console.log(customers[k].id);
+                $("#customerFName").val(customers[k].firstName);
+                $("#customerLName").val(customers[k].lastName);
+                $("#customerAddress").val(customers[k].address);
+                $("#cusEmail").val(customers[k].email);
+                $("#customerTelNum").val(customers[k].telNum);
+
+            }else{
+               /* alert("this item code not in dataBase");*/
+            }
+
+        }
+
+    })
+
+
+
+
+
+
+
+
+    let customerIdRegx = /^(C00)[-][0-9]{3,9}$/
     let cusFNameRegx = /^[A-z]{3,15}$/;
     let cusLNameRegx = /^[A-z]{3,15}$/;
     let cusAddressRegx = /^(No-)[1-9]{1,9}(\s)[A-z]{1,15}|[A-z]{0,20}$/;
@@ -1195,6 +1241,26 @@
     }
 
 
+    $("#customerId").keyup(function (event) {
+
+        let code = $("#customerId").val();
+        let boolean = validationCustomer(code,event,"#customerId","#customerFName",customerIdRegx);
+
+        if(boolean){
+            $("#validationC6").text("");
+
+
+        }else{
+            $("#validationC6").text("input format(C00-***)");
+            $("#validationC6").css("color", "red");
+            $("#validationC6").css("font-weight", "bold");
+
+        }
+
+        checkButtonCustomerAdd();
+    })
+
+
 
     $("#customerFName").keyup(function (event) {
 
@@ -1206,7 +1272,7 @@
 
 
         }else{
-            $("#validationC1").text("by A to z characters only one word")
+            $("#validationC1").text("by A to z characters only one word");
             $("#validationC1").css("color", "red");
             $("#validationC1").css("font-weight", "bold");
 
@@ -1225,7 +1291,7 @@
 
 
         }else{
-            $("#validationC2").text("by A to z characters only one word")
+            $("#validationC2").text("by A to z characters only one word");
             $("#validationC2").css("color", "red");
             $("#validationC2").css("font-weight", "bold");
 
@@ -1242,7 +1308,7 @@
             $("#validationC3").text("");
 
         }else{
-            $("#validationC3").text(" as a no-1 ********")
+            $("#validationC3").text(" as a no-1 ********");
             $("#validationC3").css("color", "red");
             $("#validationC3").css("font-weight", "bold");
 
@@ -1261,7 +1327,7 @@
 
 
         }else{
-            $("#validationC4").text("please input last text as a @gmail.com")
+            $("#validationC4").text("please input last text as a @gmail.com");
             $("#validationC4").css("color", "red");
             $("#validationC4").css("font-weight", "bold");
 
@@ -1279,7 +1345,7 @@
             $("#addCustomer").prop('disabled', false);
 
         }else{
-            $("#validationC5").text("please input only numbers")
+            $("#validationC5").text("please input only numbers");
             $("#validationC5").css("color", "red");
             $("#validationC5").css("font-weight", "bold");
 
@@ -1306,7 +1372,7 @@
 
     function checkButtonCustomerAdd() {
         if(($("#validationC1").text() == "") &&  ($("#validationC2").text() == "") &&  ($("#validationC3").text() == "") &&
-            ($("#validationC4").text() == "") &&  ($("#validationC5").text() == "")){
+            ($("#validationC4").text() == "") &&  ($("#validationC5").text() == "") && ($("#validationC6").text() == "") ){
             console.log("false");
             $("#addCustomer").prop('disabled',false);
 
