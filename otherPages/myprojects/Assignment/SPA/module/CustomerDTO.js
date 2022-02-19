@@ -56,7 +56,7 @@ function customerDTO(id,fName,lName, address, email,telNum) {
     }
 
 
-    this.getTemNum = function () {
+    this.getTelNum = function () {
         return _telNum;
     }
     this.setTelNum = function (telNumber) {

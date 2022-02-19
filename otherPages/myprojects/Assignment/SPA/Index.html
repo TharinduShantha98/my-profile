@@ -568,7 +568,7 @@
 
             </div>
             <button type="submit" class="btn btn-success me-2 float-end mb-3" id="updateCustomer" > Update Customer</button>
-            <button type="submit" class="btn btn-danger me-2 float-end mb-3"> Delete Customer </button>
+            <button type="submit" class="btn btn-danger me-2 float-end mb-3" id="deleteCustomer"> Delete Customer </button>
             <button type="submit" class="btn btn-dark me-2 float-end mb-3" id="addCustomer"> Add Customer </button>
         </div>
 
@@ -711,6 +711,7 @@
 <script src="css/js/bootstrap.bundle.js"></script>
 <script src="jquery/jquery-3.6.0.min.js"></script>
 <script src="DB/dataBase.js"></script>
+<script src="module/CustomerDTO.js"></script>
 
 <script>
     document.getElementById("btn1").addEventListener("click", function () {
@@ -1074,8 +1075,14 @@
 
 
 /*===================================================customer part=============================*/
-    $("#addCustomer").prop('disabled',true);
+    // $("#addCustomer").prop('disabled',true);
     $("#customerId").val("C00-");
+
+    var clickRowCusId;
+
+
+  /* ====================== customer Crud Operation ====================*/
+                           /*-----------------------customer Add part start------ */
 
     $("#addCustomer").click(function () {
         $("#customerTable>tr").off('click');
@@ -1087,8 +1094,7 @@
         let cusEmail = $("#customerEmail").val();
         let cusTelNum = $("#customerTelNum").val();
 
-
-        var customer = {
+      /*  var customer = {
             id: cusId,
             firstName: cusFName,
             lastName: cusLName,
@@ -1098,18 +1104,102 @@
 
 
         }
+*/
 
+        let  customer = new  customerDTO();
+        customer.setId(cusId);
+        customer.setFName(cusFName);
+        customer.setLName(cusLName);
+        customer.setAddress(cusAddress);
+        customer.setEmail(cusEmail);
+        customer.setTelNum(cusTelNum);
 
         customers.push(customer);
+        console.log(customer);
+        addTableRow();
+                             /*-----------------------customer Add part End ------ */
 
+        tableRowStyle();
+
+
+                        /*-------------------customer Table Row click part start ------ */
+
+        let rowIndex;
+        $("#customerTable>tr").click(function (){
+            let cusId = $(this).children().eq(0).text();
+            for(let i =0; i < customers.length; i++){
+                if(cusId == customers[i].getId()){
+                    $("#customerId").val(customers[i].getId());
+                    $("#customerFName").val(customers[i].getFName());
+                    $("#customerLName").val(customers[i].getLName());
+                    $("#customerAddress").val(customers[i].getAddress());
+                    $("#customerEmail").val(customers[i].getEmail());
+                    $("#customerTelNum").val(customers[i].getTelNum());
+
+                }
+            }
+            rowIndex  = this.rowIndex;
+            // console.log("rowIndex " + rowIndex);
+        })
+                /*-------------------customer Table Row click part End ------ */
+
+
+
+
+
+                /*-------------------customer update part start ------ */
+
+        $("#updateCustomer").click(function (){
+            //alert("hello");
+            let id  = $("#customerId").val();
+            console.log(id);
+            for(var j = 0; j < customers.length; j++){
+                if(id == customers[j].getId()){
+                    customers[j].setFName($("#customerFName").val());
+                    customers[j].setLName($("#customerLName").val());
+                    customers[j].setAddress($("#customerAddress").val());
+                    customers[j].setEmail($("#customerEmail").val());
+                    customers[j].setTelNum($("#customerTelNum").val());
+                    console.log("update");
+                }
+
+            }
+            addTableRow();
+            tableRowStyle();
+
+        })
+
+                /*-------------------customer update part End ------ */
+
+
+
+
+
+                /*-------------------customer delete part Start ------ */
+
+
+
+
+
+
+
+
+
+    })
+
+    function addTableRow(){
         $("#customerTable").empty();
         for (var i =0; i < customers.length; i++){
-            let newRow = `<tr><td>${customers[i].id}</td></td><td>${customers[i].firstName}</td><td>${customers[i].lastName}
-                </td><td>${customers[i].address}</td><td>${customers[i].email}</td><td>${customers[i].telNum}</td></tr>`;
+            let newRow = `<tr><td>${customers[i].getId()}</td></td><td>${customers[i].getFName()}</td><td>${customers[i].getLName()}
+                </td><td>${customers[i].getAddress()}</td><td>${customers[i].getEmail()}</td><td>${customers[i].getTelNum()}</td></tr>`;
             $("#customerTable").append(newRow);
         }
 
 
+    }
+
+    function tableRowStyle(){
+        $("#customerTable>tr").css("background-color", "#54a0ff");
 
         let table = document.getElementById("customerTable");
         for ( var i =0; i< table.rows.length ; i++  ){
@@ -1117,55 +1207,46 @@
 
         }
 
-
         $("#customerTable>tr").hover(function () {
             $(this).css("background-color","#95a5a6" );
         },function () {
             $(this).css("background-color", "#54a0ff");
         })
-
-        let rowIndex;
-
-        $("#customerTable>tr").click(function (){
-            let cusId = $(this).children().eq(0).text();
-            let cusFName =  $(this).children().eq(1).text();
-            let cusLName = $(this).children().eq(2).text();
-            let cusAddress = $(this).children().eq(3).text();
-            let cusEmail = $(this).children().eq(4).text();
-            let cusTelNum = $(this).children().eq(5).text();
-
-            $("#customerId").val(cusId);
-            $("#customerFName").val(cusFName);
-            $("#customerLName").val(cusLName);
-            $("#customerAddress").val(cusAddress);
-            $("#customerEmail").val(cusEmail);
-            $("#customerTelNum").val(cusTelNum);
-
-            rowIndex  = this.rowIndex;
-            // console.log("rowIndex " + rowIndex);
-
-
-        })
+    }
 
 
 
 
-        $("#updateCustomer").click(function () {
 
-            alert("are you sure you want update this customer?");
-            $("#customerTable").children().eq(rowIndex -1).children().eq(1).text($("#customerId").val());
-            $("#customerTable").children().eq(rowIndex -1).children().eq(1).text($("#customerFName").val());
-            $("#customerTable").children().eq(rowIndex -1).children().eq(2).text($("#customerLName").val());
-            $("#customerTable").children().eq(rowIndex -1).children().eq(3).text($("#customerAddress").val());
-            $("#customerTable").children().eq(rowIndex -1).children().eq(4).text($("#customerEmail").val());
-            $("#customerTable").children().eq(rowIndex -1).children().eq(5).text($("#customerTelNum").val());
+    function updateCustomer(){
 
 
-        })
 
-        $("#updateCustomer").on('click');
 
-    })
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     $("#CustomerSearch").keyup(function (event) {
 
@@ -1174,6 +1255,13 @@
         }
 
     })
+
+
+
+
+
+
+
 
 
 
@@ -1214,7 +1302,7 @@
 
 
 
-    function validationCustomer(testRegex, event,id,nextId,correctRegex){
+   /* function validationCustomer(testRegex, event,id,nextId,correctRegex){
 
         let test = correctRegex.test(testRegex);
         if(test){
@@ -1352,7 +1440,7 @@
     })
 
 
-    /*function checkButtonCustomerAdd() {
+    /!*function checkButtonCustomerAdd() {
         if(($("#CustomerFName").val() != "") &&  ($("#customerLName").val() != "") &&  ($("#customerAddress").val() != "") &&
             ($("#customerEmail").val() != "") &&  ($("#customerTelNum").val() != "")){
             console.log("false");
@@ -1362,7 +1450,7 @@
             $("#addCustomer").prop('disabled',true);
             console.log("true");
         }
-    }*/
+    }*!/
 
 
 
@@ -1378,7 +1466,7 @@
         }
     }
 
-
+*/
 
 
     var timeId;
