@@ -791,6 +791,7 @@
             items.push(item);
             addRowForItemTable();
             itemTableStyle();
+            clearTextField();
         }else{
 
         }
@@ -800,7 +801,7 @@
 
                 /*-------------------------------------table row click  --------------------------*/
 
-        function ItemTableRowClick(){
+        function itemTableRowClick(){
             $("#itemTable>tr").click(function () {
                 if(confirm("Are you sure you want to get this item")){
                     let code = $(this).children().eq(0).text();
@@ -835,10 +836,6 @@
 
 
                 /*-------------------------------------update table row click --------------------------*/
-
-
-
-
         $("#updateItem").click(function () {
             let itemId  = $("#itemCode").val();
             console.log(itemId);
@@ -898,28 +895,29 @@
 
 
 
-    function itemTableRowClick(){
-
-
-
-    }
-
 
 /* -------------------------------delete Item ------------------------------*/
 
     $("#deleteItem").click(function () {
-        let id =  $("#itemCode").val();
-        for(let i =0; i <items.length; i++){
-            if(id == items[i].getId()){
-                items.splice(i,1);
-            }else{
+        if(confirm("Are you sure, you want delete this item?")){
+            let id =  $("#itemCode").val();
+            for(let i =0; i <items.length; i++){
+                if(id == items[i].getId()){
+                    items.splice(i,1);
+                }else{
+
+                }
 
             }
+            addRowForItemTable();
+            itemTableStyle();
+
+        }else{
 
         }
-        addRowForItemTable();
-        itemTableRowClick();
-        itemTableStyle();
+
+
+
 
     })
 
@@ -943,7 +941,7 @@
     $("#btnItemSearch").click(function () {
         let searchItemCode = $("#itemSearch").val();
         for(var k=0; k < items.length; k++){
-            if(items[k].code == searchItemCode){
+            if(items[k].getId() == searchItemCode){
                 $("#itemCode").val(items[k].getId());
                 $("#itemName").val(items[k].getItemName());
                 $("#itemUnitPrice").val(items[k].getUnitPrice());
@@ -952,12 +950,27 @@
                 $("#itemQty").val(items[k].getQuantity());
 
             }else{
-                alert("this item code not in dataBase");
+
             }
 
         }
 
     })
+
+    function clearTextField(){
+        $("#itemCode").val();
+        $("#itemName").val();
+        $("#itemUnitPrice").val();
+        $("#itemPackSize").val();
+        $("#itemBuyingPrice").val();
+        $("#itemQty").val();
+
+
+
+    }
+
+
+
 
 
     /*-------------text field focus  and validation part of item ------------*/
