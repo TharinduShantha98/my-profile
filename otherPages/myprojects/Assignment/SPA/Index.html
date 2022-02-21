@@ -131,6 +131,12 @@
         }
 
 
+        .sizeImage{
+            width: 80px;
+            height: 80px;
+        }
+
+
 
 
 
@@ -343,172 +349,188 @@
 <!--==================order====================-->
 <div class="container-fluid" id="order">
     <section class="row mt-2 " id="orderDetail">
-        <section class="col-sm-12 col-lg-5 ms-2 mt-3 border-dark">
+        <section class="col-sm-12 col-lg-5  border-dark">
 
+            <label class="form-label fw-bold fs-3 ">Customer Detail</label>
             <section class="row">
                 <section class="col-lg-6">
-                    <label class="form-label fw-bold">Customer Detail</label>
+                    <label class="form-label fw-bold m-0">Customer code</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Enter Code number" aria-label="Code number" aria-describedby="basic-addon1">
+                        <!--<input type="text" class="form-control" placeholder="Customer id" aria-label="Customer id " aria-describedby="basic-addon1">-->
+                        <input class="form-control" list="customerIdList" id="cusIdOrder" placeholder="customer Id">
+                        <datalist  id="customerIdList">
+
+                        </datalist>
                     </div>
+                    <label class="form-label fw-bold m-0">Address</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" placeholder="customer Address"  id="cusAddressOrder" aria-label="customerAddress" aria-describedby="basic-addon2">
                     </div>
 
 
                 </section>
 
                 <section class="col-lg-6">
-                    <label  class="form-label fw-bold">Item Detail</label>
+                    <label  class="form-label fw-bold m-0">Customer Name</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Item Code number" aria-label="Item Code number" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" placeholder="Customer Name" id="cusNameOrder" aria-label="CustomerName" aria-describedby="basic-addon1">
+                    </div>
+                    <label class="form-label fw-bold m-0">Tel num</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="customer Tel num" id="cusTelOrder" aria-label="CustomerTel" aria-describedby="basic-addon2">
                     </div>
 
+                </section>
+
+                <label class="form-label fw-bold m-0">Email Address</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="customer Email" id="cusEmailOrder" aria-label="packSize" aria-describedby="basic-addon2">
+                </div>
+
+
+            </section>
+
+
+
+
+
+        </section >
+
+        <section class="col-sm-12 col-lg-7    border-5 border-dark">
+            <label class="form-label fw-bold fs-3 mt-0">Item Detail</label>
+            <section class="row">
+                <section class="col-lg-6">
+                    <label class="form-label fw-bold m-0">Item code</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="ItemCode" aria-label="Code number" aria-describedby="basic-addon1">
+                    </div>
+                    <label class="form-label fw-bold m-0">Item qty</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Item Qty" aria-label="ItemQty" aria-describedby="basic-addon2">
+                    </div>
+
+
+                </section>
+
+                <section class="col-lg-6">
+                    <label  class="form-label fw-bold m-0">Item Name</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Item Name" aria-label="Item Code number" aria-describedby="basic-addon1">
+                    </div>
+                    <label class="form-label fw-bold m-0">Item Price</label>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Item Name" aria-label="Item name" aria-describedby="basic-addon2">
                     </div>
 
+                </section>
+
+                <label class="form-label fw-bold m-0">Item pack Size</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Item packSize" aria-label="packSize" aria-describedby="basic-addon2">
+                </div>
+
+            </section>
+
+            <div class="input-group mb-3">
+                <input type="number" class="form-control me-2" placeholder="Qty" aria-label="qty" aria-describedby="basic-addon2">
+                <button type="button" class="btn btn-success">Add to cart</button>
+            </div>
+
+
+
+
+            <div class="input-group mb-3">
+                <label  class="form-label fw-bold">Item Sub total fee/=</label>
+                <input type="text" class="form-control ms-2" aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-text">.00</span>
+            </div>
+
+        </section>
+
+
+        <section class="row mt-2 ">
+            <section class="col-lg-8">
+                <p class="text-center fw-bold  fs-3 m-0"> Order Cart</p>
+
+                <div>
+                    <label  class="form-label text-center fw-bold  ms-4 ">Order Id </label>
+                    <label  class="form-label text-center fw-bold  ms-4 ">o-001 </label>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-warning">Update</button>
+
+
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="bg-primary">
+                        <tr class="table-light opacity-75">
+                            <th scope="col" class="">ItemCode</th>
+                            <th scope="col">Item Name</th>
+                            <th scope="col">discount</th>
+                            <th scope="col">saleQty</th>
+                            <th scope="col">price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr  class="table-primary  opacity-75">
+                            <th scope="row">I1</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="table-warning   opacity-75">
+                            <th scope="row" >I2</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="table-danger   opacity-75">
+                            <th scope="row"  >I3</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <section class="col-lg-4">
+
+                <section>
+                    <label  class="form-label fw-bold">Item Total fee/=</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">RS</span>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                        <span class="input-group-text">.00</span>
+                    </div>
+
+                    <label  class="form-label fw-bold ">Payment method</label>
+                    <div class="input-group mb-3">
+                        <img src="images/paypal.png" class="img-thumbnail ms-2 sizeImage" alt="...">
+                        <img src="images/visa2.png" class="img-thumbnail ms-2 sizeImage"  alt="...">
+                        <button type="button" class="btn btn-success ms-2 text-end">Pay</button>
+                    </div>
 
                 </section>
 
             </section>
 
 
-            <div class="input-group mb-3">
-                <input type="number" class="form-control" placeholder="Qty" aria-label="qty" aria-describedby="basic-addon2">
-                <button type="button" class="btn btn-success">Add to cart</button>
-            </div>
-            <label  class="form-label fw-bold">Item Total fee/=</label>
-            <div class="input-group mb-3">
-                <span class="input-group-text">RS</span>
-                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                <span class="input-group-text">.00</span>
-            </div>
-
-            <label  class="form-label fw-bold ">Payment method</label>
-            <div class="input-group mb-3">
-                <img src="images/paypal.png" class="img-thumbnail ms-2" alt="...">
-                <img src="images/visa2.png" class="img-thumbnail ms-2" alt="...">
-                <button type="button" class="btn btn-success ms-2 text-end">Pay</button>
-            </div>
-
-            <div class="input-group mb-3">
-                <label  class="form-label fw-bold">All Items total fee/=</label>
-                <input type="text" class="form-control ms-2" aria-label="Amount (to the nearest dollar)">
-                <span class="input-group-text">.00</span>
-            </div>
-
-
-        </section >
-
-        <section class="col-sm-12 col-lg-6 ms-4   border-5 border-dark">
-
-            <!-- <label  class="form-label text-center fw-bold ">Item Detail Table</label>-->
-            <p class="text-center fw-bold">Item Detail Table</p>
-
-            <div  class="table-responsive">
-                <table class="table .d-sm-none .d-md-block">
-                    <thead>
-                    <tr  class="table-light">
-                        <th scope="col">#</th>
-                        <th  scope="col">Item code</th>
-                        <th scope="col">Item name</th>
-                        <th scope="col">Stock qty</th>
-                        <th scope="col">Discount</th>
-                        <th scope="col">Price</th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr class="table-primary">
-                        <th scope="row">1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr  class="table-warning">
-                        <th scope="row">2</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr  class="table-danger">
-                        <th scope="row">3</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr class="table-success">
-                        <th scope="row">4</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
-
-
-            </div>
-
-
-
-            <p class="text-center fw-bold m-0">Customer Order</p>
-
-            <button type="button" class="btn btn-danger">Delete</button>
-            <button type="button" class="btn btn-warning">Update</button>
-            <label  class="form-label text-center fw-bold  ms-4 ">Order Id </label>
-            <label  class="form-label text-center fw-bold  ms-4 ">o-001 </label>
-
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                    <tr class="table-light opacity-75">
-                        <th scope="col" class="">ItemCode</th>
-                        <th scope="col">Item Name</th>
-                        <th scope="col">discount</th>
-                        <th scope="col">saleQty</th>
-                        <th scope="col">price</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr  class="table-primary  opacity-75">
-                        <th scope="row">I1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr class="table-warning   opacity-75">
-                        <th scope="row" >I2</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr class="table-danger   opacity-75">
-                        <th scope="row"  >I3</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
-
-
-            </div>
-
-
         </section>
+
+
+
 
 
 
@@ -672,9 +694,11 @@
                 <label class="form-label  mt-2 ms-1  " id="validationI6"> </label>
 <!--                <input type="text" class="form-control ms-2 border-dark" id="itemSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">-->
             </div>
+            <button type="submit" class="btn btn-primary me-2 float-end mb-3"  id="clearText"> clear </button>
             <button type="submit" class="btn btn-success me-2 float-end mb-3" id="updateItem"> Update Item</button>
             <button type="submit" class="btn btn-danger me-2 float-end mb-3" id="deleteItem"> Delete Item </button>
             <button type="submit" class="btn btn-dark me-2 float-end mb-3"  id="addItem"> Add Item </button>
+
         </div>
 
     </div>
@@ -958,12 +982,12 @@
     })
 
     function clearTextField(){
-        $("#itemCode").val();
-        $("#itemName").val();
-        $("#itemUnitPrice").val();
-        $("#itemPackSize").val();
-        $("#itemBuyingPrice").val();
-        $("#itemQty").val();
+        //$("#itemCode").val("");
+        $("#itemName").val("");
+        $("#itemUnitPrice").val("");
+        $("#itemPackSize").val("");
+        $("#itemBuyingPrice").val("");
+        $("#itemQty").val("");
 
 
 
@@ -1174,6 +1198,7 @@
         customer.setTelNum(cusTelNum);
         if(confirm("Are you sure, you want to add this customer")){
             customers.push(customer);
+            addCustomerIdForOrderPart();
 
         }else{
 
@@ -1355,7 +1380,7 @@
 
 
 
-    let customerIdRegx = /^(C00)[-][0-9]{3,9}$/
+  /*  let customerIdRegx = /^(C00)[-][0-9]{3,9}$/
     let cusFNameRegx = /^[A-z]{3,15}$/;
     let cusLNameRegx = /^[A-z]{3,15}$/;
     let cusAddressRegx = /^(No-)[1-9]{1,9}(\s)[A-z]{1,15}|[A-z]{0,20}$/;
@@ -1502,7 +1527,7 @@
     })
 
 
-    /*function checkButtonCustomerAdd() {
+    /!*function checkButtonCustomerAdd() {
         if(($("#CustomerFName").val() != "") &&  ($("#customerLName").val() != "") &&  ($("#customerAddress").val() != "") &&
             ($("#customerEmail").val() != "") &&  ($("#customerTelNum").val() != "")){
             console.log("false");
@@ -1512,7 +1537,7 @@
             $("#addCustomer").prop('disabled',true);
             console.log("true");
         }
-    }*/
+    }*!/
 
 
 
@@ -1526,7 +1551,7 @@
             $("#addCustomer").prop('disabled',true);
             console.log("true");
         }
-    }
+    }*/
 
     /* -------------------customer validation part end------------------*/
 
@@ -1553,6 +1578,51 @@
 
     timeId = setInterval(customerManegeFun,100);
    /* console.log(timeId);*/
+
+
+
+/*-------------------------------Customer Order part ----------------------------------*/
+
+
+    function addCustomerIdForOrderPart() {
+        var str  = '';
+        for(var i = 0; i < customers.length; i++){
+            str += '<option value="'+customers[i].getId()+'" />';
+        }
+
+        var my_list = document.getElementById("customerIdList");
+        my_list.innerHTML = str;
+
+    }
+
+
+
+
+    $("#cusIdOrder").keyup(function (event) {
+        console.log("helloo keyup");
+        if(event.keyCode == 13){
+            let cusId  = $("#cusIdOrder").val();
+            for (var i =0; i < customers.length; i++){
+                if(cusId == customers[i].getId()){
+                    $("#cusNameOrder").val(customers[i].getFName());
+                    $("#cusAddressOrder").val(customers[i].getAddress());
+                    $("#cusTelOrder").val(customers[i].getTelNum());
+                    $("#cusEmailOrder").val(customers[i].getEmail());
+
+                }
+            }
+        }
+
+
+    })
+
+
+
+
+
+
+
+
 
 
 
