@@ -402,47 +402,57 @@
                 <section class="col-lg-6">
                     <label class="form-label fw-bold m-0">Item code</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="ItemCode" aria-label="Code number" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" list="itemIdList" placeholder="ItemCode" id="itemIdOrder" aria-label="Code number" aria-describedby="basic-addon1">
+                        <datalist  id="itemIdList">
+
+                        </datalist>
                     </div>
                     <label class="form-label fw-bold m-0">Item qty</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Item Qty" aria-label="ItemQty" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" placeholder="Item Qty" id="itemQtyOrder" aria-label="ItemQty" aria-describedby="basic-addon2">
                     </div>
-
+                    <label class="form-label fw-bold m-0">Item Price</label>
+                    <div class="input-group mb-3">
+                       <input type="text" class="form-control" placeholder="Item price" id="itemPriceOrder" aria-label="Item name" aria-describedby="basic-addon2">
+                    </div>
 
                 </section>
 
                 <section class="col-lg-6">
                     <label  class="form-label fw-bold m-0">Item Name</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Item Name" aria-label="Item Code number" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" placeholder="Item Name" id="itemNameOrder" aria-label="Item Code number" aria-describedby="basic-addon1">
                     </div>
-                    <label class="form-label fw-bold m-0">Item Price</label>
+
+                    <label class="form-label fw-bold m-0">Item pack Size</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Item Name" aria-label="Item name" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control " placeholder="Item packSize" id="itemPackSizeOrder" aria-label="packSize" aria-describedby="basic-addon2">
+                    </div>
+
+
+                    <label class="form-label fw-bold m-0">Qty</label>
+                    <div  class="input-group mb-3">
+                        <input type="number" class="form-control "  id="saleItemQty" placeholder="Qty"  aria-label="qty" aria-describedby="basic-addon2">
                     </div>
 
                 </section>
 
-                <label class="form-label fw-bold m-0">Item pack Size</label>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Item packSize" aria-label="packSize" aria-describedby="basic-addon2">
-                </div>
 
             </section>
 
             <div class="input-group mb-3">
-                <input type="number" class="form-control me-2" placeholder="Qty" aria-label="qty" aria-describedby="basic-addon2">
-                <button type="button" class="btn btn-success">Add to cart</button>
+
+
             </div>
 
 
 
 
             <div class="input-group mb-3">
-                <label  class="form-label fw-bold">Item Sub total fee/=</label>
-                <input type="text" class="form-control ms-2" aria-label="Amount (to the nearest dollar)">
-                <span class="input-group-text">.00</span>
+                <label  class="form-label fw-bold">Item Sub total fee</label>
+                <input type="text" class="form-control ms-2"  id="itemTotalPrice" aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-text">.00 /=</span>
+                <button type="button" class="btn btn-success ms-2">Add to cart</button>
             </div>
 
         </section>
@@ -816,6 +826,7 @@
             addRowForItemTable();
             itemTableStyle();
             clearTextField();
+            addItemIdForOrderPart();
         }else{
 
         }
@@ -1599,15 +1610,68 @@
 
 
     $("#cusIdOrder").keyup(function (event) {
-        console.log("helloo keyup");
+
         if(event.keyCode == 13){
             let cusId  = $("#cusIdOrder").val();
             for (var i =0; i < customers.length; i++){
                 if(cusId == customers[i].getId()){
+                    $("#cusIdOrder").css("border", "1px solid  green");
+
+
                     $("#cusNameOrder").val(customers[i].getFName());
+                    $("#cusNameOrder").css("border", "1px solid  green")
+
                     $("#cusAddressOrder").val(customers[i].getAddress());
+                    $("#cusAddressOrder").css("border", "1px solid  green");
+
                     $("#cusTelOrder").val(customers[i].getTelNum());
+                    $("#cusTelOrder").css("border", "1px solid  green");
+
                     $("#cusEmailOrder").val(customers[i].getEmail());
+                    $("#cusEmailOrder").css("border", "1px solid  green");
+
+                }
+            }
+        }
+
+
+    })
+
+
+
+    function addItemIdForOrderPart() {
+        var str  = '';
+        for(var i = 0; i < items.length; i++){
+            str += '<option value="'+items[i].getId()+'" />';
+        }
+
+        var my_list = document.getElementById("itemIdList");
+        my_list.innerHTML = str;
+
+    }
+
+
+
+    $("#itemIdOrder").keyup(function (event) {
+        console.log("hello");
+        if(event.keyCode == 13){
+            let cusId  = $("#itemIdOrder").val();
+            for (var i =0; i < items.length; i++){
+                if(cusId == items[i].getId()){
+                    $("#itemIdOrder").css("border", "1px solid  green");
+
+
+                    $("#itemNameOrder").val(items[i].getItemName());
+                    $("#itemNameOrder").css("border", "1px solid  green")
+
+                    $("#itemQtyOrder").val(items[i].getQuantity());
+                    $("#itemQtyOrder").css("border", "1px solid  green");
+
+                    $("#itemPackSizeOrder").val(items[i].getPackSize());
+                    $("#itemPackSizeOrder").css("border", "1px solid  green");
+
+                    $("#itemPriceOrder").val(items[i].getUnitPrice());
+                    $("#itemPriceOrder").css("border", "1px solid  green");
 
                 }
             }
@@ -1620,6 +1684,22 @@
 
 
 
+
+    $("#saleItemQty").keyup(function (event) {
+
+        let itemUnitPrice = $("#itemPriceOrder").val();
+        let priceNum = parseInt(itemUnitPrice);
+
+
+
+        if(event.keyCode == 13){
+            let qty = $("#saleItemQty").val();
+            let itemPrice =  qty * priceNum;
+            $("#itemTotalPrice").val(itemPrice);
+
+
+        }
+    })
 
 
 
