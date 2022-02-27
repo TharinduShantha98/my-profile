@@ -477,7 +477,7 @@
 
                 <div>
                     <label  class="form-label text-center fw-bold  ms-4 ">Order Id </label>
-                    <label  class="form-label text-center fw-bold  ms-4 ">o-001 </label>
+                    <label  class="form-label text-center fw-bold  ms-4 " id="lblOrderId">o-001 </label>
                     <button type="button" class="btn btn-danger mb-2">Delete</button>
                     <button type="button" class="btn btn-warning mb-2">Update</button>
 
@@ -543,7 +543,7 @@
                     <div class="input-group mb-3">
                         <img src="images/paypal.png" class="img-thumbnail ms-2 sizeImage" alt="...">
                         <img src="images/visa2.png" class="img-thumbnail ms-2 sizeImage"  alt="...">
-                        <button type="button" class="btn btn-success ms-2 text-end">Pay</button>
+                        <button type="button" class="btn btn-success ms-2 text-end"  id="itemPay">Pay</button>
                     </div>
 
                 </section>
@@ -762,6 +762,7 @@
 <script src="module/CustomerDTO.js"></script>
 <script src="module/ItemDTO.js"></script>
 <script src="module/CartDTO.js"></script>
+<script src="module/OrderDTO.js"></script>
 
 <script>
     document.getElementById("btn1").addEventListener("click", function () {
@@ -1743,11 +1744,15 @@
 
 
 
-
+        let allItemProfit = 0;
         if(confirm("Are you sure, you want add this order")){
             cartArray.push(cartDTO);
             addOrderRow();
             addSumTotalPrice();
+            getDateAndTime();
+            allItemProfit = allItemProfit + countSaleProfit(cartDTO.getItemCode());
+            console.log(allItemProfit);
+
         }else {
 
         }
@@ -1767,6 +1772,7 @@
             $("#orderCartTable").append(newRow);
         }
 
+
     }
 
 
@@ -1778,6 +1784,87 @@
         }
         $("#allItemTotalFee").val(totalPrice);
     }
+
+
+    function getDateAndTime() {
+        let dateAndTime =  new Date();
+        let hours = dateAndTime.getHours();
+        let min = dateAndTime.getMinutes();
+        let second  = dateAndTime.getSeconds();
+
+        let day = dateAndTime.getDate();
+        let month =  dateAndTime.getMonth();
+        let year =  dateAndTime.getFullYear();
+
+
+        let dateAndTime1 =hours + ":" + min + ":" + second +" / "+ day + "-" + month + "-" + year;
+
+        return  dateAndTime1;
+
+    }
+
+
+    function countSaleProfit(ItemCode) {
+        let itemBuyingPrice = 0;
+        let itemUnitPrice   = 0;
+        for(let i =0; i < items.length; i++){
+            if(ItemCode == items[i].getItemCode()){
+               itemBuyingPrice = items[i].getBuyingPrice();
+               itemUnitPrice =  items[i].getUnitPrice();
+
+               let buyingPrice = parseInt(itemBuyingPrice);
+               let unitPrice = parseInt(itemUnitPrice);
+
+               return  buyingPrice - unitPrice;
+
+            }
+        }
+    }
+
+
+    $("#itemPay").click(function () {
+
+        alert("hello");
+
+        let orderId = $("#lblOrderId").text();
+        let customerId = $("#cusIdOrder").val();
+        let sale =  $("#allItemTotalFee").val();
+        let profit;
+        let dateAndTime = getDateAndTime();
+
+        let orderDTO = new OrderDTO();
+        orderDTO.setCustomerId(customerId);
+        orderDTO.setOrderId(orderId);
+        orderDTO.setSale(sale);
+        orderDTO.setDateTime(dateAndTime);
+
+        order.push(orderDTO);
+
+        for(let  i =0; i < cartArray.length; i++){
+
+
+        }
+
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
