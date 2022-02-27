@@ -137,6 +137,19 @@
         }
 
 
+        .textColour{
+            color: #3498db;
+        }
+
+
+        .textColour2{
+            color: #e67e22;
+        }
+
+
+        .bgColor{
+            background-color: #34495e;
+        }
 
 
 
@@ -349,12 +362,12 @@
 <!--==================order====================-->
 <div class="container-fluid" id="order">
     <section class="row mt-2 " id="orderDetail">
-        <section class="col-sm-12 col-lg-5  border-dark">
+        <section class="col-sm-12 col-lg-6">
 
             <label class="form-label fw-bold fs-3 ">Customer Detail</label>
             <section class="row">
                 <section class="col-lg-6">
-                    <label class="form-label fw-bold m-0">Customer code</label>
+                    <label class="form-label fw-bold m-0 textColour">Customer code</label>
                     <div class="input-group mb-3">
                         <!--<input type="text" class="form-control" placeholder="Customer id" aria-label="Customer id " aria-describedby="basic-addon1">-->
                         <input class="form-control" list="customerIdList" id="cusIdOrder" placeholder="customer Id">
@@ -362,7 +375,7 @@
 
                         </datalist>
                     </div>
-                    <label class="form-label fw-bold m-0">Address</label>
+                    <label class="form-label fw-bold m-0 textColour">Address</label>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="customer Address"  id="cusAddressOrder" aria-label="customerAddress" aria-describedby="basic-addon2">
                     </div>
@@ -371,18 +384,18 @@
                 </section>
 
                 <section class="col-lg-6">
-                    <label  class="form-label fw-bold m-0">Customer Name</label>
+                    <label  class="form-label fw-bold m-0 textColour">Customer Name</label>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Customer Name" id="cusNameOrder" aria-label="CustomerName" aria-describedby="basic-addon1">
                     </div>
-                    <label class="form-label fw-bold m-0">Tel num</label>
+                    <label class="form-label fw-bold m-0 textColour">Tel num</label>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="customer Tel num" id="cusTelOrder" aria-label="CustomerTel" aria-describedby="basic-addon2">
                     </div>
 
                 </section>
 
-                <label class="form-label fw-bold m-0">Email Address</label>
+                <label class="form-label fw-bold m-0 textColour">Email Address</label>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="customer Email" id="cusEmailOrder" aria-label="packSize" aria-describedby="basic-addon2">
                 </div>
@@ -396,22 +409,22 @@
 
         </section >
 
-        <section class="col-sm-12 col-lg-7    border-5 border-dark">
-            <label class="form-label fw-bold fs-3 mt-0">Item Detail</label>
+        <section class="col-sm-12 col-lg-6    border-5 border-dark">
+            <label class="form-label fw-bold fs-3 mt-0 ">Item Detail</label>
             <section class="row">
                 <section class="col-lg-6">
-                    <label class="form-label fw-bold m-0">Item code</label>
+                    <label class="form-label fw-bold m-0 textColour2">Item code</label>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" list="itemIdList" placeholder="ItemCode" id="itemIdOrder" aria-label="Code number" aria-describedby="basic-addon1">
                         <datalist  id="itemIdList">
 
                         </datalist>
                     </div>
-                    <label class="form-label fw-bold m-0">Item qty</label>
+                    <label class="form-label fw-bold m-0 textColour2">Item qty</label>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Item Qty" id="itemQtyOrder" aria-label="ItemQty" aria-describedby="basic-addon2">
                     </div>
-                    <label class="form-label fw-bold m-0">Item Price</label>
+                    <label class="form-label fw-bold m-0 textColour2">Item Price</label>
                     <div class="input-group mb-3">
                        <input type="text" class="form-control" placeholder="Item price" id="itemPriceOrder" aria-label="Item name" aria-describedby="basic-addon2">
                     </div>
@@ -419,18 +432,18 @@
                 </section>
 
                 <section class="col-lg-6">
-                    <label  class="form-label fw-bold m-0">Item Name</label>
+                    <label  class="form-label fw-bold m-0 textColour2">Item Name</label>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Item Name" id="itemNameOrder" aria-label="Item Code number" aria-describedby="basic-addon1">
                     </div>
 
-                    <label class="form-label fw-bold m-0">Item pack Size</label>
+                    <label class="form-label fw-bold m-0 textColour2">Item pack Size</label>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control " placeholder="Item packSize" id="itemPackSizeOrder" aria-label="packSize" aria-describedby="basic-addon2">
                     </div>
 
 
-                    <label class="form-label fw-bold m-0">Qty</label>
+                    <label class="form-label fw-bold m-0 textColour2">Qty</label>
                     <div  class="input-group mb-3">
                         <input type="number" class="form-control "  id="saleItemQty" placeholder="Qty"  aria-label="qty" aria-describedby="basic-addon2">
                     </div>
@@ -452,7 +465,7 @@
                 <label  class="form-label fw-bold">Item Sub total fee</label>
                 <input type="text" class="form-control ms-2"  id="itemTotalPrice" aria-label="Amount (to the nearest dollar)">
                 <span class="input-group-text">.00 /=</span>
-                <button type="button" class="btn btn-success ms-2">Add to cart</button>
+                <button type="button" class="btn btn-success ms-2" id="addToCart">Add to cart</button>
             </div>
 
         </section>
@@ -460,13 +473,13 @@
 
         <section class="row mt-2 ">
             <section class="col-lg-8">
-                <p class="text-center fw-bold  fs-3 m-0"> Order Cart</p>
+                <p class="text-center fw-bold  fs-3 m-0 text-primary"> Order Cart</p>
 
                 <div>
                     <label  class="form-label text-center fw-bold  ms-4 ">Order Id </label>
                     <label  class="form-label text-center fw-bold  ms-4 ">o-001 </label>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                    <button type="button" class="btn btn-warning">Update</button>
+                    <button type="button" class="btn btn-danger mb-2">Delete</button>
+                    <button type="button" class="btn btn-warning mb-2">Update</button>
 
 
                 </div>
@@ -476,14 +489,15 @@
                         <thead class="bg-primary">
                         <tr class="table-light opacity-75">
                             <th scope="col" class="">ItemCode</th>
+                            <th scope="col" class="">CustomerCode</th>
                             <th scope="col">Item Name</th>
-                            <th scope="col">discount</th>
+                            <th scope="col">unit Price</th>
                             <th scope="col">saleQty</th>
                             <th scope="col">price</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr  class="table-primary  opacity-75">
+                        <tbody id="orderCartTable">
+                      <!--  <tr  class="table-primary  opacity-75">
                             <th scope="row">I1</th>
                             <td></td>
                             <td></td>
@@ -503,7 +517,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                        </tr>
+                        </tr>-->
                         </tbody>
                     </table>
 
@@ -521,7 +535,7 @@
                     <label  class="form-label fw-bold">Item Total fee/=</label>
                     <div class="input-group mb-3">
                         <span class="input-group-text">RS</span>
-                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                        <input type="number" class="form-control"  id="allItemTotalFee" aria-label="Amount (to the nearest dollar)">
                         <span class="input-group-text">.00</span>
                     </div>
 
@@ -747,6 +761,7 @@
 <script src="DB/dataBase.js"></script>
 <script src="module/CustomerDTO.js"></script>
 <script src="module/ItemDTO.js"></script>
+<script src="module/CartDTO.js"></script>
 
 <script>
     document.getElementById("btn1").addEventListener("click", function () {
@@ -1696,10 +1711,75 @@
             let qty = $("#saleItemQty").val();
             let itemPrice =  qty * priceNum;
             $("#itemTotalPrice").val(itemPrice);
+            $("#itemTotalPrice").focus();
+
 
 
         }
     })
+
+
+/*===============add to cart===========*/
+    let cartArray = new Array();
+
+    $("#addToCart").click(function () {
+
+        let itemCode =  $("#itemIdOrder").val();
+        let itemName = $("#itemNameOrder").val();
+        let customerId  =  $("#cusIdOrder").val();
+        let unitPrice  =  $("#itemPriceOrder").val();
+        let saleQty =  $("#saleItemQty").val();
+        let price  =  $("#itemTotalPrice").val();
+
+
+        let cartDTO = new CartDTO();
+        cartDTO.setItemCode(itemCode);
+        cartDTO.setItemName(itemName);
+        cartDTO.setCustomerCode(customerId);
+        cartDTO.setUnitPrice(unitPrice);
+        cartDTO.setSaleQty(saleQty);
+        cartDTO.setPrice(price);
+
+
+
+
+
+        if(confirm("Are you sure, you want add this order")){
+            cartArray.push(cartDTO);
+            addOrderRow();
+            addSumTotalPrice();
+        }else {
+
+        }
+
+
+
+    })
+
+
+
+    function addOrderRow() {
+
+        $("#orderCartTable").empty();
+        for (var i =0; i <cartArray.length; i++){
+            let newRow = `<tr><td>${cartArray[i].getItemCode()}</td></td><td>${cartArray[i].getCustomerCode()}</td><td>${cartArray[i].getItemName()}
+                </td><td>${cartArray[i].getUnitPrice()}</td><td>${cartArray[i].getSaleQty()}</td><td>${cartArray[i].getPrice()}</td></tr>`;
+            $("#orderCartTable").append(newRow);
+        }
+
+    }
+
+
+    function  addSumTotalPrice() {
+        let totalPrice = 0;
+        for(let i =0; i < cartArray.length;i++){
+            let price = parseInt(cartArray[i].getPrice())
+            totalPrice = totalPrice + price;
+        }
+        $("#allItemTotalFee").val(totalPrice);
+    }
+
+
 
 
 
