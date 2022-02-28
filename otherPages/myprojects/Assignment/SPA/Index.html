@@ -737,8 +737,9 @@
                     <th scope="col">Item Name</th>
                     <th scope="col">Unit Price</th>
                     <th scope="col">Pack size</th>
-                    <th scope="col">Quantity</th>
                     <th scope="col">Buying Price</th>
+                    <th scope="col">Quantity</th>
+
                 </tr>
                 </thead>
                 <tbody  id="itemTable">
@@ -763,6 +764,7 @@
 <script src="module/ItemDTO.js"></script>
 <script src="module/CartDTO.js"></script>
 <script src="module/OrderDTO.js"></script>
+<script src="module/OrderDetailDTO.js"></script>
 
 <script>
     document.getElementById("btn1").addEventListener("click", function () {
@@ -1808,14 +1810,14 @@
         let itemBuyingPrice = 0;
         let itemUnitPrice   = 0;
         for(let i =0; i < items.length; i++){
-            if(ItemCode == items[i].getItemCode()){
+            if(ItemCode == items[i].getId()){
                itemBuyingPrice = items[i].getBuyingPrice();
                itemUnitPrice =  items[i].getUnitPrice();
 
                let buyingPrice = parseInt(itemBuyingPrice);
                let unitPrice = parseInt(itemUnitPrice);
 
-               return  buyingPrice - unitPrice;
+               return  unitPrice - buyingPrice;
 
             }
         }
@@ -1824,7 +1826,7 @@
 
     $("#itemPay").click(function () {
 
-        alert("hello");
+      //  alert("hello");
 
         let orderId = $("#lblOrderId").text();
         let customerId = $("#cusIdOrder").val();
@@ -1840,10 +1842,25 @@
 
         order.push(orderDTO);
 
-        for(let  i =0; i < cartArray.length; i++){
+        console.log(order[0].getCustomerId());
 
+        for(let  i =0; i < cartArray.length; i++){
+                let orderDetailDTO =  new OrderDetailDTO();
+                orderDetailDTO.setItemCode(cartArray[i].getItemCode());
+                orderDetailDTO.setOrderId(orderId);
+                orderDetailDTO.setUnitPrice(cartArray[i].getUnitPrice());
+                orderDetailDTO.setQty(cartArray[i].getSaleQty());
+                orderDetailDTO.setSale(cartArray[i].getPrice());
+                orderDetailDTO.setItemProfit(countSaleProfit(cartArray[i].getItemCode())* cartArray[i].getSaleQty() );
+
+                orderDetail.push(orderDetailDTO);
 
         }
+
+        cartArray.splice(0, cartArray.length);
+
+
+
 
 
     })
