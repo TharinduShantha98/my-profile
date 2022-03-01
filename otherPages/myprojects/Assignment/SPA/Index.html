@@ -477,7 +477,7 @@
 
                 <div>
                     <label  class="form-label text-center fw-bold  ms-4 ">Order Id </label>
-                    <label  class="form-label text-center fw-bold  ms-4 " id="lblOrderId">o-001 </label>
+                    <label  class="form-label text-center fw-bold  ms-4 " id="lblOrderId">o-100 </label>
                     <button type="button" class="btn btn-danger mb-2">Delete</button>
                     <button type="button" class="btn btn-warning mb-2">Update</button>
 
@@ -1368,9 +1368,7 @@
         let nextIdNum =  number+ 1;
         let nextId =  "C00-"+nextIdNum;
         $("#customerId").val(nextId);
-
-
-
+        
     }
 
 
@@ -1858,6 +1856,8 @@
         }
 
         cartArray.splice(0, cartArray.length);
+        addOrderRow();
+        generateOrderId();
 
 
 
@@ -1865,6 +1865,28 @@
 
     })
 
+
+
+  /*  let index = customers.length;
+    let gId  = customers[index-1].getId();
+    let text =  gId.substr(4,7);
+    let number =  Number(text);
+    let nextIdNum =  number+ 1;
+    let nextId =  "C00-"+nextIdNum;
+    $("#customerId").val(nextId);*/
+
+    function generateOrderId() {
+        let index =  order.length;
+        let orderId =  order[index-1].getOrderId();
+        let text =  orderId.substr(2);
+        let num1 = parseInt(text);
+        let numGenerate = num1 + 1;
+        let nextId = "0-"+numGenerate;
+        $("#lblOrderId").text(nextId);
+
+
+
+    }
 
 
 
