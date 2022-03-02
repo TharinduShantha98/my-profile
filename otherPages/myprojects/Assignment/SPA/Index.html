@@ -301,15 +301,15 @@
         <table class="table table-striped table-sm">
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">orderId</th>
+                <th scope="col">order Id</th>
+                <th scope="col">customer Id </th>
                 <th scope="col">sale</th>
                 <th scope="col">profit</th>
                 <th scope="col">date/time</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
+            <tbody id="orderDashBord">
+           <!-- <tr>
                 <td>1,001</td>
                 <td>random</td>
                 <td>data</td>
@@ -350,7 +350,7 @@
                 <td>irrelevant</td>
                 <td>text</td>
                 <td>placeholder</td>
-            </tr>
+            </tr>-->
 
 
             </tbody>
@@ -477,7 +477,7 @@
 
                 <div>
                     <label  class="form-label text-center fw-bold  ms-4 ">Order Id </label>
-                    <label  class="form-label text-center fw-bold  ms-4 " id="lblOrderId">o-100 </label>
+                    <label  class="form-label text-center fw-bold  ms-4 " id="lblOrderId">O-100 </label>
                     <button type="button" class="btn btn-danger mb-2">Delete</button>
                     <button type="button" class="btn btn-warning mb-2">Update</button>
 
@@ -567,7 +567,74 @@
 <!--===============customer==================-->
 <section class="container-fluid" id="customer">
     <div class="row">
-        <div class="col-lg-4 mt-2" id="cardCustomer">
+        <div class=" col-sm-12 col-lg-8" >
+
+
+            <label class="form-label fw-bold text-dark">Add New Customer </label>
+
+            <div>
+                <label class="form-label  text-primary m-0">CustomerId </label>
+            </div>
+            <div class="input-group mb-1">
+                <input type="text" class="form-control me-3 " id="customerId" placeholder="customer Id" aria-label="customerId" aria-describedby="basic-addon1">
+                <p class="form-label   ms-1 mt-2 " id="validationC6"> </p>
+            </div>
+
+
+
+
+            <div class="row">
+                <div  class="col-lg-6">
+                    <label class="form-label  text-primary m-0">First Name </label>
+                    <div class="input-group mb-1">
+                        <input id="customerFName" type="text" class="form-control " placeholder="First name" aria-label="First Name" aria-describedby="basic-addon1">
+                        <p class="form-label   ms-1  me-3 mt-2 " id="validationC1"> </p>
+                    </div>
+                    <label class="form-label  text-primary m-0">Address </label>
+                    <div class="input-group mb-1">
+                        <input id="customerAddress" type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon2">
+                        <p class="form-label   ms-1  me-3 mt-2 " id="validationC3"> </p>
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class="col-lg-6">
+                    <label class="form-label  text-primary m-0">Last Name </label>
+                    <div class="input-group mb-1">
+                        <input id="customerLName" type="text" class="form-control" placeholder="Last name" aria-label="Last Name" aria-describedby="basic-addon1">
+                        <p class="form-label   ms-1  me-3 mt-2 " id="validationC2"> </p>
+                    </div>
+
+                    <label class="form-label  text-primary m-0">Tel Number </label>
+                    <div class="input-group mb-1">
+                        <input id="customerTelNum" type="text" class="form-control " placeholder="Tel number " aria-label="tel Number" aria-describedby="basic-addon2">
+                        <p class="form-label   ms-1  me-3 mt-2 " id="validationC5"> </p>
+                    </div>
+
+                </div>
+
+            </div>
+            <label class="form-label  text-primary m-0">Email Address </label>
+            <div class="input-group mb-3">
+                <input id="customerEmail" type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
+                <p class="form-label   ms-1  me-3 mt-2 " id="validationC4"> </p>
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+        <div class="col-lg-4 mt-2" >
 
             <div>
                 <h1 class="fs-2" id="customerManage">Customer Manage</h1>
@@ -582,40 +649,14 @@
                 <button type="submit" class="btn btn-warning  float-end mb-3 fw-bold mt-2" id="btnCustomerSearch" > search </button>
             </div>
 
-        </div>
-
-
-        <div class="col-sm-12 col-lg-8">
-            <label class="form-label fw-bold text-dark">Add New Customer </label>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control me-2 " id="customerId" placeholder="customer Id" aria-label="customerId" aria-describedby="basic-addon1">
-                <p class="form-label   ms-1 mt-2 " id="validationC6"> </p>
-            </div>
-
-
-            <div class="input-group mb-3">
-                <input id="customerFName" type="text" class="form-control me-2" placeholder="First name" aria-label="First Name" aria-describedby="basic-addon1">
-                <p class="form-label   ms-1  me-3 mt-2 " id="validationC1"> </p>
-                <input id="customerLName" type="text" class="form-control" placeholder="Last name" aria-label="Last Name" aria-describedby="basic-addon1">
-                <p class="form-label   ms-1  me-3 mt-2 " id="validationC2"> </p>
-            </div>
-            <div class="input-group mb-3">
-                <input id="customerAddress" type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon2">
-                <p class="form-label   ms-1  me-3 mt-2 " id="validationC3"> </p>
-            </div>
-            <div class="input-group mb-3">
-                <input id="customerEmail" type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
-                <p class="form-label   ms-1  me-3 mt-2 " id="validationC4"> </p>
+            <div class="mt-2">
+                <button type="submit" class="btn btn-success me-2 float-end mb-3" id="updateCustomer" > Update Customer</button>
+                <button type="submit" class="btn btn-dark me-2 float-end mb-3" id="addCustomer"> Add Customer </button>
+                <button type="submit" class="btn btn-danger me-2 float-end mb-3" id="deleteCustomer"> Delete Customer </button>
 
             </div>
-            <div class="input-group mb-3">
-                <input id="customerTelNum" type="text" class="form-control " placeholder="Tel number " aria-label="tel Number" aria-describedby="basic-addon2">
-                <p class="form-label   ms-1  me-3 mt-2 " id="validationC5"> </p>
 
-            </div>
-            <button type="submit" class="btn btn-success me-2 float-end mb-3" id="updateCustomer" > Update Customer</button>
-            <button type="submit" class="btn btn-danger me-2 float-end mb-3" id="deleteCustomer"> Delete Customer </button>
-            <button type="submit" class="btn btn-dark me-2 float-end mb-3" id="addCustomer"> Add Customer </button>
+
         </div>
 
         <hr>
@@ -653,15 +694,72 @@
 <!--=======================item===================-->
 <section class="container-fluid" id="item">
     <div class="row">
-        <div class="col-lg-4 mt-2" id="cardItem" >
+        <div class="col-lg-8 mt-2"  >
 
-            <div>
-                <h1 class="fs-2" id="itemManage">Item Manage   </h1>
-                <input type="text" class="form-control ms-2 border-dark" id="itemSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">
+            <label class="form-label fw-bold text-dark  ">Add New Item </label>
+
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div>
+                        <p class="m-0 "></p>
+                    </div>
+                    <label class="form-label  text-primary m-0">Item code </label>
+                    <div class="input-group mb-3 mt-0">
+                        <input id="itemCode" type="text" class="form-control me-2" placeholder="Item Code" aria-label="ItemCode" aria-describedby="basic-addon1">
+                        <label class="form-label   ms-1  me-3 mt-2 " id="validationI1"></label>
+                    </div>
+
+
+                    <label class="form-label  text-primary m-0">Unit price</label>
+                    <div class="input-group mb-3 mt-0">
+                        <input id="itemUnitPrice" type="text" class="form-control" placeholder="Unit Price" aria-label="unitPrice" aria-describedby="basic-addon2">
+                        <span class="input-group-text fw-bold me-1">RS</span>
+                        <label class="form-label  mt-2 ms-1  " id="validationI3"> </label>
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div>
+                        <p class="m-0 "></p>
+                    </div>
+                    <label class="form-label  text-primary m-0">Item Name </label>
+                    <div class="input-group mb-3 mt-0">
+                        <input id="itemName" type="text" class="form-control" placeholder="Item Name" aria-label="ItemName" aria-describedby="basic-addon1">
+                        <label class="form-label  ms-1   " id="validationI2"> </label>
+                    </div>
+
+                    <label class="form-label  text-primary m-0">Buying price</label>
+                    <div class="input-group mb-3 mt-0">
+                        <input id="itemBuyingPrice" type="text" class="form-control" placeholder="Buying Price" aria-label="buyPrice" aria-describedby="basic-addon2">
+                        <span class="input-group-text fw-bold me-1">RS</span>
+                        <label class="form-label  mt-2 ms-1  " id="validationI5"> </label>
+
+                    </div>
+
+
+
+                </div>
+
             </div>
-            <div>
-                <button type="submit" class="btn btn-warning  float-end mb-3 fw-bold mt-2" id="btnItemSearch" > search </button>
+
+            <label class="form-label  text-primary m-0">Pack size</label>
+            <div class="input-group mb-3 mt-0">
+                <input id="itemPackSize" type="text" class="form-control " placeholder="Pack Size" aria-label="packSize" aria-describedby="basic-addon2">
+                <label class="form-label  mt-2 ms-1  " id="validationI4"> </label>
             </div>
+
+            <label class="form-label  text-primary m-0">Quantity</label>
+            <div class="input-group mb-3 mt-0">
+                <input id="itemQty" type="text" class="form-control" placeholder="Quantity" aria-label="qty" aria-describedby="basic-addon2">
+                <label class="form-label  mt-2 ms-1  " id="validationI6"> </label>
+                <!--                <input type="text" class="form-control ms-2 border-dark" id="itemSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">-->
+            </div>
+
+
 
 
 
@@ -670,58 +768,21 @@
 
 
 
-        <div class=" col-sm-12  col-lg-8" id="addItemForm">
-            <label class="form-label fw-bold text-dark  ">Add New Item </label>
+        <div class=" col-sm-12  col-lg-4" id="addItemForm">
 
-            <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <div>
-                        <p class="m-0 "></p>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <input id="itemCode" type="text" class="form-control me-2" placeholder="Item Code" aria-label="ItemCode" aria-describedby="basic-addon1">
-                        <label class="form-label   ms-1  me-3 mt-2 " id="validationI1"></label>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <div>
-                        <p class="m-0 "></p>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <input id="itemName" type="text" class="form-control" placeholder="Item Name" aria-label="ItemName" aria-describedby="basic-addon1">
-                        <label class="form-label  ms-1   " id="validationI2"> </label>
-                    </div>
-
-                </div>
+            <div>
+                <h1 class="fs-2" id="itemManage">Item Manage   </h1>
+                <input type="text" class="form-control ms-2 border-dark" id="itemSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-warning  float-end mb-3 fw-bold mt-2" id="btnItemSearch" > search </button>
+                <button type="submit" class="btn btn-primary me-2 float-end mb-3 mt-2"  id="clearText"> clear </button>
+                <button type="submit" class="btn btn-dark me-2 float-end mb-3 mt-2"  id="addItem"> Add Item </button>
+                <button type="submit" class="btn btn-success me-2 float-end mb-3 mt-2" id="updateItem"> Update Item</button>
+                <button type="submit" class="btn btn-danger me-2 float-end mb-3 mt-2" id="deleteItem"> Delete Item </button>
 
             </div>
-            <div class="input-group mb-3">
-                <input id="itemUnitPrice" type="text" class="form-control" placeholder="Unit Price" aria-label="unitPrice" aria-describedby="basic-addon2">
-                <span class="input-group-text fw-bold me-1">RS</span>
-                <label class="form-label  mt-2 ms-1  " id="validationI3"> </label>
-            </div>
-            <div class="input-group mb-3">
-                <input id="itemPackSize" type="text" class="form-control " placeholder="Pack Size" aria-label="packSize" aria-describedby="basic-addon2">
-                <label class="form-label  mt-2 ms-1  " id="validationI4"> </label>
-            </div>
-            <div class="input-group mb-3">
-                <input id="itemBuyingPrice" type="text" class="form-control" placeholder="Buying Price" aria-label="buyPrice" aria-describedby="basic-addon2">
-                <span class="input-group-text fw-bold me-1">RS</span>
-                <label class="form-label  mt-2 ms-1  " id="validationI5"> </label>
 
-            </div>
-            <div class="input-group mb-3">
-                <input id="itemQty" type="text" class="form-control" placeholder="Quantity" aria-label="qty" aria-describedby="basic-addon2">
-                <label class="form-label  mt-2 ms-1  " id="validationI6"> </label>
-<!--                <input type="text" class="form-control ms-2 border-dark" id="itemSearch" placeholder="Search Item" aria-label="search Item" aria-describedby="basic-addon2">-->
-            </div>
-            <button type="submit" class="btn btn-primary me-2 float-end mb-3"  id="clearText"> clear </button>
-            <button type="submit" class="btn btn-success me-2 float-end mb-3" id="updateItem"> Update Item</button>
-            <button type="submit" class="btn btn-danger me-2 float-end mb-3" id="deleteItem"> Delete Item </button>
-            <button type="submit" class="btn btn-dark me-2 float-end mb-3"  id="addItem"> Add Item </button>
 
         </div>
 
@@ -808,7 +869,7 @@
     /*
 ==============item part =======================*/
     // $("#addItem").prop('disabled',true);
-    $("#itemCode").val("I00-");
+    $("#itemCode").val("I00-100");
 
 
     $("#addItem").click(function () {
@@ -823,14 +884,7 @@
         let itemBuyingPrice = $("#itemBuyingPrice").val();
         let itemQty = $("#itemQty").val();
 
-      /*  var itemObject = {
-            code: itemCode,
-            name: itemName,
-            unitPrice:itemUnitPrice,
-            packSize: itemPackSize,
-            buyingPrice: itemBuyingPrice,
-            qty: itemQty
-        }*/
+
         var item =  new  ItemDTO();
         item.setId(itemCode);
         item.setItemName(itemName);
@@ -845,6 +899,7 @@
             itemTableStyle();
             clearTextField();
             addItemIdForOrderPart();
+            generateItemId();
         }else{
 
         }
@@ -854,30 +909,7 @@
 
                 /*-------------------------------------table row click  --------------------------*/
 
-        function itemTableRowClick(){
-            $("#itemTable>tr").click(function () {
-                if(confirm("Are you sure you want to get this item")){
-                    let code = $(this).children().eq(0).text();
-                    let  name = $(this).children().eq(1).text();
-                    let unitPrice = $(this).children().eq(2).text();
-                    let packSize = $(this).children().eq(3).text();
-                    let buyingPrice = $(this).children().eq(4).text();
-                    let qty = $(this).children().eq(5).text();
 
-                    $("#itemCode").val(code);
-                    $("#itemName").val(name);
-                    $("#itemUnitPrice").val(unitPrice);
-                    $("#itemPackSize").val(packSize);
-                    $("#itemBuyingPrice").val(buyingPrice);
-                    $("#itemQty").val(qty);
-                }else{
-
-
-                }
-
-            })
-
-        }
 
         itemTableRowClick();
 
@@ -911,11 +943,40 @@
             addRowForItemTable();
             itemTableRowClick();
             itemTableStyle();
+            clearTextField();
+            generateItemId();
 
 
         })
 
     })
+
+
+
+    function itemTableRowClick(){
+        $("#itemTable>tr").click(function () {
+            if(confirm("Are you sure you want to get this item")){
+                let code = $(this).children().eq(0).text();
+                let  name = $(this).children().eq(1).text();
+                let unitPrice = $(this).children().eq(2).text();
+                let packSize = $(this).children().eq(3).text();
+                let buyingPrice = $(this).children().eq(4).text();
+                let qty = $(this).children().eq(5).text();
+
+                $("#itemCode").val(code);
+                $("#itemName").val(name);
+                $("#itemUnitPrice").val(unitPrice);
+                $("#itemPackSize").val(packSize);
+                $("#itemBuyingPrice").val(buyingPrice);
+                $("#itemQty").val(qty);
+            }else{
+
+
+            }
+
+        })
+
+    }
 
 
     function addRowForItemTable(){
@@ -964,6 +1025,9 @@
             }
             addRowForItemTable();
             itemTableStyle();
+            itemTableRowClick();
+            clearTextField();
+            generateItemId();
 
         }else{
 
@@ -1021,6 +1085,19 @@
 
 
     }
+
+    function generateItemId(){
+
+        let index = items.length;
+        let gId  = items[index-1].getId();
+        let text =  gId.substr(4,7);
+        let number =  Number(text);
+        let nextIdNum =  number+ 1;
+        let nextId =  "I00-"+nextIdNum;
+        $("#itemCode").val(nextId);
+
+    }
+
 
 
 
@@ -1229,6 +1306,7 @@
             customers.push(customer);
             addCustomerIdForOrderPart();
 
+
         }else{
 
         }
@@ -1403,7 +1481,30 @@
 
 
 
-       /* -------------------customer validation part start------------------*/
+
+
+
+
+    function clearCustomerTextField(){
+        //$("#itemCode").val("");
+      //  $("#customerId").val("");
+        $("#customerFName").val("");
+        $("#customerLName").val("");
+        $("#customerAddress").val("");
+        $("#cusEmail").val("");
+        $("#customerTelNum").val("");
+
+
+
+    }
+
+
+
+
+
+
+
+    /* -------------------customer validation part start------------------*/
 
 
 
@@ -1747,7 +1848,7 @@
         let allItemProfit = 0;
         if(confirm("Are you sure, you want add this order")){
             cartArray.push(cartDTO);
-            addOrderRow();
+            addOrderCartRow();
             addSumTotalPrice();
             getDateAndTime();
             allItemProfit = allItemProfit + countSaleProfit(cartDTO.getItemCode());
@@ -1763,7 +1864,7 @@
 
 
 
-    function addOrderRow() {
+    function addOrderCartRow() {
 
         $("#orderCartTable").empty();
         for (var i =0; i <cartArray.length; i++){
@@ -1856,8 +1957,9 @@
         }
 
         cartArray.splice(0, cartArray.length);
-        addOrderRow();
+        addOrderCartRow();
         generateOrderId();
+        addOrderRow();
 
 
 
@@ -1867,13 +1969,7 @@
 
 
 
-  /*  let index = customers.length;
-    let gId  = customers[index-1].getId();
-    let text =  gId.substr(4,7);
-    let number =  Number(text);
-    let nextIdNum =  number+ 1;
-    let nextId =  "C00-"+nextIdNum;
-    $("#customerId").val(nextId);*/
+
 
     function generateOrderId() {
         let index =  order.length;
@@ -1887,6 +1983,26 @@
 
 
     }
+
+
+    function addOrderRow() {
+
+        $("#orderDashBord").empty();
+        for (var i =0; i <order.length; i++){
+            let newRow = `<tr><td>${order[i].getOrderId()}</td></td><td>${order[i].getCustomerId()}</td><td>${order[i].getSale()}
+                </td><td>${order[i].getProfit()}</td><td>${order[i].getDateAndTime()}</td></tr>`;
+            $("#orderDashBord").append(newRow);
+        }
+
+
+    }
+
+
+
+
+
+
+
 
 
 
