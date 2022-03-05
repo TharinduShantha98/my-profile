@@ -149,6 +149,7 @@
 
         .bgColor{
             background-color: #34495e;
+
         }
 
 
@@ -223,10 +224,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
 
             <div style="border: solid 1px crimson; text-align: center;" class="bg-dark">
                 <div class="card text-dark bg-info mb-3 d-inline-block col-lg-2 mt-2  designBox col-md-6 col-sm-12" style="max-width: 18rem;">
@@ -795,12 +792,12 @@
             <table class="table table-striped table-sm" >
                 <thead class="bg-warning">
                 <tr>
-                    <th scope="col">Item Code</th>
-                    <th scope="col">Item Name</th>
-                    <th scope="col">Unit Price</th>
-                    <th scope="col">Pack size</th>
-                    <th scope="col">Buying Price</th>
-                    <th scope="col">Quantity</th>
+                    <th scope="col" style="border: 1px solid black" class="text-center">Item Code</th>
+                    <th scope="col" style="border: 1px solid black" class="text-center"> Item Name</th>
+                    <th scope="col" style="border: 1px solid black" class="text-center">Unit Price</th>
+                    <th scope="col" style="border: 1px solid black" class="text-center">Pack size</th>
+                    <th scope="col" style="border: 1px solid black" class="text-center">Buying Price</th>
+                    <th scope="col" style="border: 1px solid black" class="text-center">Quantity</th>
 
                 </tr>
                 </thead>
@@ -994,6 +991,7 @@
         let table = document.getElementById("itemTable");
         for ( var i =0; i< table.rows.length ; i++){
             $("#itemTable").children().eq(i).css("font-weight","bold");
+            $("#itemTable").children().eq(i).css("text-align","center");
 
         }
 
@@ -1074,6 +1072,12 @@
         }
 
     })
+
+    $("#clearText").click(function () {
+        clearTextField();
+        generateItemId();
+    })
+
 
     function clearTextField(){
         //$("#itemCode").val("");
@@ -1309,11 +1313,11 @@
         customer.setEmail(cusEmail);
         customer.setTelNum(cusTelNum);
         if(confirm("Are you sure, you want to add this customer")){
+
             customers.push(customer);
             addCustomerIdForOrderPart();
             generateCustomerId();
             clearCustomerTextField();
-
 
         }else{
 
@@ -1529,6 +1533,13 @@
     })
 
 
+
+    $("#clearTextCustomer").click(function () {
+        generateCustomerId();
+        clearCustomerTextField();
+    })
+
+
     function generateCustomerId(){
 
         let index = customers.length;
@@ -1553,6 +1564,7 @@
         $("#customerAddress").val("");
         $("#cusEmail").val("");
         $("#customerTelNum").val("");
+        $("#customerEmail").val("");
 
 
 
@@ -1987,16 +1999,20 @@
 
       //  alert("hello");
 
+
+
+
         let orderId = $("#lblOrderId").text();
         let customerId = $("#cusIdOrder").val();
         let sale =  $("#allItemTotalFee").val();
-        let profit;
+        let profit =calculateCustomerAllItemProfit();
         let dateAndTime = getDateAndTime();
 
         let orderDTO = new OrderDTO();
         orderDTO.setCustomerId(customerId);
         orderDTO.setOrderId(orderId);
         orderDTO.setSale(sale);
+        orderDTO.setProfit(profit);
         orderDTO.setDateTime(dateAndTime);
 
         order.push(orderDTO);
@@ -2014,6 +2030,10 @@
 
                 orderDetail.push(orderDetailDTO);
 
+                calculateForItemQty(cartArray[i].getItemCode(), cartArray[i].getSaleQty());
+
+
+
         }
 
         cartArray.splice(0, cartArray.length);
@@ -2026,6 +2046,38 @@
 
 
     })
+
+
+
+    function calculateCustomerAllItemProfit() {
+        let totalProfit =0;
+        //let itemQty = parseInt(qty);
+
+        for(let i =0; i < cartArray.length;i++){
+            totalProfit = totalProfit +( countSaleProfit(cartArray[i].getItemCode())* cartArray[i].getSaleQty());
+
+
+        }
+        return totalProfit;
+
+
+    }
+
+
+
+
+    function calculateForItemQty(itemCode, qty){
+        for(let i= 0; i < items.length; i++){
+            if(itemCode == items[i].getId()){
+                let num = items[i].getQuantity();
+                let count = parseInt(num);
+                items[i].setQuantity(count - qty);
+
+            }else {
+
+            }
+        }
+    }
 
 
 
