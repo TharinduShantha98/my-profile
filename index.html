@@ -123,6 +123,7 @@
            /* border: solid 1px crimson;*/
             opacity: 0.1;
 
+
         }
 
 
@@ -138,7 +139,6 @@
 
             }
         }
-
 
 
 
@@ -310,13 +310,14 @@
             <h2>Most frequently used tools</h2>
 
             <div>
-                <img src="assets/images/previous.png" alt="previous image" >
-                <img src="assets/images/IntelliJ.png" alt="intellij idea" >
-                <img src="assets/images/vscode.png" alt="vscode idea">
-                <img src="assets/images/github.png" alt="github" >
-                <img src="assets/images/linux.png" alt="linux" >
-                <img src="assets/images/slack.png" alt="slack" >
-                <img src="assets/images/next.png" alt="hibernate image">
+                <img src="assets/images/previous.png" alt="previous image" id="previous2" >
+                <img src="assets/images/IntelliJ.png" alt="intellij idea" id="intellij" >
+                <img src="assets/images/vscode.png" alt="vscode idea" id="vsCode">
+                <img src="assets/images/github.png" alt="github" id="gitHub" >
+                <img src="assets/images/linux.png" alt="linux"  id="linux">
+                <img src="assets/images/slack.png" alt="slack" id="slack" >
+                <img src="assets/images/hackerRank2.png" alt="hackRank image" id="hackRank">
+                <img src="assets/images/next.png" alt="next image" id="next2">
 
             </div>
 
@@ -646,7 +647,7 @@
 
 
 
-    function changeColor() {
+    function changeImage1() {
         $("#java").attr("src","assets/images/"+skill1[g]);
         $("#mysql").attr("src","assets/images/"+skill1[f]);
         $("#python").attr("src","assets/images/"+skill1[e]);
@@ -663,8 +664,6 @@
         e++;
         f++;
         g++;
-
-
 
         if(a == skill1.length){
             a = 0;
@@ -696,11 +695,258 @@
 
     }
 
-    setInterval(changeColor,1500);
+
+
+
+    $("#next").click(function () {
+
+        changeImage1();
+
+    })
+
+
+    function changeImage11() {
+        $("#java").attr("src","assets/images/"+skill1[a]);
+        $("#mysql").attr("src","assets/images/"+skill1[b]);
+        $("#python").attr("src","assets/images/"+skill1[c]);
+        $("#javaScript").attr("src","assets/images/"+skill1[d]);
+        $("#nodeJs").attr("src","assets/images/"+skill1[e]);
+        $("#html").attr("src","assets/images/"+skill1[f]);
+        $("#hibernate").attr("src","assets/images/"+skill1[g]);
+
+
+        a++;
+        b++;
+        c++;
+        d++;
+        e++;
+        f++;
+        g++;
+
+        if(a == skill1.length){
+            a = 0;
+        }
+
+        if(b == skill1.length){
+            b = 0;
+        }
+
+        if(c == skill1.length){
+            c = 0;
+        }
+
+        if(d == skill1.length){
+            d = 0;
+        }
+
+        if(e == skill1.length){
+            e = 0;
+        }
+
+        if(f == skill1.length){
+            f = 0;
+        }
+        if(g == skill1.length){
+            g = 0;
+        }
+
+
+    }
+
+
+
+    $("#previous1").click(function () {
+
+
+        changeImage11();
+
+    })
+
+    $("#previous1").mousedown(function () {
+
+        $("#previous1").css("width", "11%");
+    })
+
+    $("#previous1").mouseup(function () {
+        $("#previous1").css("width", "10%");
+    })
+
+
+
+    $("#next").mousedown(function () {
+
+        $("#next").css("width", "11%");
+    })
+
+    $("#next").mouseup(function () {
+        $("#next").css("width", "10%");
+    })
+
+
+
+    let skill2 = ["IntelliJ.png","vscode.png","github.png","linux.png","slack.png","hackerRank2.png"];
+    var aa =0;
+    var bb =1;
+    var cc =2;
+    var dd =3;
+    var ee =4;
+    var ff =5;
+
+
+   /* var gg =6;*/
+    let next2;
 
 
 
 
+
+
+
+    function changeImage2() {
+        $("#intellij").attr("src","assets/images/"+skill2[ff]);
+        $("#vsCode").attr("src","assets/images/"+skill2[ee]);
+        $("#gitHub").attr("src","assets/images/"+skill2[dd]);
+        $("#linux").attr("src","assets/images/"+skill2[cc]);
+        $("#slack").attr("src","assets/images/"+skill2[bb]);
+        $("#hackRank").attr("src","assets/images/"+skill2[aa]);
+
+
+        aa++;
+        bb++;
+        cc++;
+        dd++;
+        ee++;
+        ff++;
+
+
+        if(aa == skill2.length){
+            aa = 0;
+        }
+
+        if(bb == skill2.length){
+            bb = 0;
+        }
+
+        if(cc == skill2.length){
+            cc = 0;
+        }
+
+        if(dd == skill2.length){
+            dd = 0;
+        }
+
+        if(ee == skill2.length){
+            ee = 0;
+        }
+
+        if(ff == skill2.length){
+            ff = 0;
+        }
+       /* if(g == skill1.length){
+            g = 0;
+        }*/
+
+
+    }
+
+
+    $("#next2").click(function () {
+        next2 = "#next2";
+       changeImage2()
+    })
+
+
+    function changeImage22() {
+
+
+
+
+        $("#intellij").attr("src","assets/images/"+skill2[aa]);
+        $("#vsCode").attr("src","assets/images/"+skill2[bb]);
+        $("#gitHub").attr("src","assets/images/"+skill2[cc]);
+        $("#linux").attr("src","assets/images/"+skill2[dd]);
+        $("#slack").attr("src","assets/images/"+skill2[ee]);
+        $("#hackRank").attr("src","assets/images/"+skill2[ff]);
+
+        aa++;
+        bb++;
+        cc++;
+        dd++;
+        ee++;
+        ff++;
+
+
+
+        if(aa == skill2.length){
+            aa = 0;
+        }
+
+        if(bb == skill2.length){
+            bb = 0;
+        }
+
+        if(cc == skill2.length){
+            cc = 0;
+        }
+
+        if(dd == skill2.length){
+            dd = 0;
+        }
+
+        if(ee == skill2.length){
+            ee = 0;
+        }
+
+        if(ff == skill2.length){
+            ff = 0;
+        }
+
+
+        /* if(g == skill1.length){
+             g = 0;
+         }*/
+
+
+    }
+
+    $("#previous2").click(function () {
+        changeImage22()
+    })
+
+    function selectImage(){
+
+    }
+
+
+
+
+    $("#previous2").mousedown(function () {
+
+        $("#previous2").css("width", "11%");
+    })
+
+    $("#previous2").mouseup(function () {
+        $("#previous2").css("width", "10%");
+    })
+
+
+
+    $("#next2").mousedown(function () {
+
+        $("#next2").css("width", "11%");
+    })
+
+    $("#next2").mouseup(function () {
+        $("#next2").css("width", "10%");
+    })
+
+
+
+
+    function displayID(e1) {
+            alert(e1.value);
+    }
+    displayID();
 
 
 
