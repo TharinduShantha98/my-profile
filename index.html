@@ -293,15 +293,15 @@
         <section>
             <h2>Technical Skills</h2>
             <div>
-                <img src="assets/images/previous.png" alt="previous image" >
-                <img src="assets/images/java.png" alt="java image" >
-                <img src="assets/images/mysql.png" alt="mysql image" >
-                <img src="assets/images/python.png" alt="python image" >
-                <img src="assets/images/javaScript.png" alt="javaScript image" >
-                <img src="assets/images/nodejs.png" alt="nodejs image" >
-                <img src="assets/images/html.png" alt="html image" >
-                <img src="assets/images/hibernate.png" alt="hibernate image" >
-                <img src="assets/images/next.png" alt="hibernate image" >
+                <img src="assets/images/previous.png" alt="previous image" id="previous1" >
+                <img src="assets/images/java.png" alt="java image" id="java" >
+                <img src="assets/images/mysql.png" alt="mysql image"  id="mysql">
+                <img src="assets/images/python.png" alt="python image" id="python" >
+                <img src="assets/images/javaScript.png" alt="javaScript image" id="javaScript" >
+                <img src="assets/images/nodejs.png" alt="nodejs image" id="nodeJs">
+                <img src="assets/images/html.png" alt="html image" id="html" >
+                <img src="assets/images/hibernate.png" alt="hibernate image" id="hibernate">
+                <img src="assets/images/next.png" alt="next image"  id="next" >
 
             </div>
 
@@ -627,6 +627,86 @@
 
 
 </footer>
+
+
+
+<script src="assets/js/jquery/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    let skill1 = ["java.png","mysql.png","python.png","javaScript.png","nodejs.png","html.png","hibernate.png"];
+    var a =0;
+    var b =1;
+    var c =2;
+    var d =3;
+    var e =4;
+    var f =5;
+    var g =6;
+
+
+
+
+    function changeColor() {
+        $("#java").attr("src","assets/images/"+skill1[g]);
+        $("#mysql").attr("src","assets/images/"+skill1[f]);
+        $("#python").attr("src","assets/images/"+skill1[e]);
+        $("#javaScript").attr("src","assets/images/"+skill1[d]);
+        $("#nodeJs").attr("src","assets/images/"+skill1[c]);
+        $("#html").attr("src","assets/images/"+skill1[b]);
+        $("#hibernate").attr("src","assets/images/"+skill1[a]);
+
+
+        a++;
+        b++;
+        c++;
+        d++;
+        e++;
+        f++;
+        g++;
+
+
+
+        if(a == skill1.length){
+            a = 0;
+        }
+
+        if(b == skill1.length){
+            b = 0;
+        }
+
+        if(c == skill1.length){
+            c = 0;
+        }
+
+        if(d == skill1.length){
+            d = 0;
+        }
+
+        if(e == skill1.length){
+            e = 0;
+        }
+
+        if(f == skill1.length){
+            f = 0;
+        }
+        if(g == skill1.length){
+            g = 0;
+        }
+
+
+    }
+
+    setInterval(changeColor,1500);
+
+
+
+
+
+
+
+
+</script>
+
 
 
 </body>
