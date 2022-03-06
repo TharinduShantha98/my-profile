@@ -161,6 +161,14 @@
             color: white !important;
         }
 
+        #cart{
+            height: 25vh;
+            overflow-y:  auto;
+            border: solid 2px black;
+        }
+
+
+
 
 
 
@@ -464,9 +472,6 @@
 
             </div>
 
-
-
-
             <div class="input-group mb-3">
                 <label  class="form-label fw-bold">Item Sub total fee</label>
                 <input type="text" class="form-control ms-2"  id="itemTotalPrice" aria-label="Amount (to the nearest dollar)">
@@ -481,17 +486,31 @@
             <section class="col-lg-8">
                 <p class="text-center fw-bold  fs-3 m-0 text-primary"> Order Cart</p>
 
-                <div>
-                    <label  class="form-label text-center fw-bold  ms-4 ">Order Id </label>
-                    <label  class="form-label text-center fw-bold  ms-4 " id="lblOrderId">O-100 </label>
-                    <button type="button" class="btn btn-danger mb-2">Delete</button>
-                    <button type="button" class="btn btn-warning mb-2">Update</button>
+
+                <section class="row">
+                    <section class="col-lg-6">
+                        <div>
+                            <label  class="form-label text-center fw-bold  ms-4 ">Order Id </label>
+                            <label  class="form-label text-center fw-bold  ms-4 " id="lblOrderId">O-100 </label>
+
+                            <button type="button" class="btn btn-danger mb-2" id="btnDelOrder">Delete</button>
+                            <button type="button" class="btn btn-warning mb-2" id="btnUpdOrder">Update</button>
+                        </div>
+                    </section>
 
 
-                </div>
+                    <section class="col-lg-6">
 
-                <div class="table-responsive">
-                    <table class="table">
+                        <input type="text" class="form-control "  id="searchOrder" placeholder="order"  aria-label="searchOrder" aria-describedby="basic-addon2">
+                    </section>
+
+
+                </section>
+
+
+
+                <div class="table-responsive" id="cart">
+                    <table class="table" >
                         <thead class="bg-primary">
                         <tr class="table-light opacity-75 ">
                             <th scope="col" class="">ItemCode</th>
@@ -1030,6 +1049,8 @@
             getDateAndTime();
             allItemProfit = allItemProfit + countSaleProfit(cartDTO.getItemCode());
             console.log(allItemProfit);
+            tableRowClickCart();
+            clearOrderTextFieldPart2();
 
         }else {
 
@@ -1037,7 +1058,81 @@
 
 
 
+
+
+
+
+
     })
+
+
+    function tableRowClickCart() {
+
+        $("#orderCartTable>tr").click(function () {
+            let itemCode =  $(this).children().eq(0).text();
+
+            for(let i =0; i < cartArray.length; i++){
+                if(itemCode ==  cartArray[i].getItemCode()){
+
+                   $("#itemIdOrder").val(cartArray[i].getItemCode());
+                   $("#itemNameOrder").val(cartArray[i].getItemName());
+                   $("#itemPriceOrder").val(cartArray[i].getUnitPrice());
+                   $("#saleItemQty").val(cartArray[i].getSaleQty());
+                   $("#itemTotalPrice").val(cartArray[i].getPrice());
+
+
+
+                   for(let j =0; j < items.length;j++){
+                       if(cartArray[i].getItemCode()== items[j].getId()){
+                           $("#itemQtyOrder").val(items[i].getQuantity());
+                           $("#itemPackSizeOrder").val(items[i].getPackSize());
+
+
+                       }
+
+                   }
+
+
+                }
+            }
+
+
+        })
+
+
+    }
+
+
+    $("#btnDelOrder").click(function () {
+
+        if(confirm("Are you sure you want delete this order ?")){
+
+            let itemName = $("#itemIdOrder").val();
+
+            for(let i =0; i < cartArray.length; i++){
+                if(itemName == cartArray[i].getItemCode()){
+                    cartArray.splice(i,1);
+
+                }
+            }
+
+
+            addOrderCartRow();
+
+
+        }
+
+    })
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1220,6 +1315,14 @@
         $("#cusTelOrder").val("");
         $("#cusEmailOrder").val("");
 
+
+        $("#allItemTotalFee").val("");
+
+
+    }
+
+
+    function clearOrderTextFieldPart2() {
         $("#itemIdOrder").val("");
         $("#itemNameOrder").val("");
         $("#itemQtyOrder").val("");
@@ -1229,9 +1332,6 @@
 
         $("#saleItemQty").val("");
         $("#itemTotalPrice").val("");
-        $("#allItemTotalFee").val("");
-
-
     }
 
 
