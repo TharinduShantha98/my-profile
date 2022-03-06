@@ -491,7 +491,7 @@
                     <section class="col-lg-6">
                         <div>
                             <label  class="form-label text-center fw-bold  ms-4 ">Order Id </label>
-                            <label  class="form-label text-center fw-bold  ms-4 " id="lblOrderId">O-100 </label>
+                            <label  class="form-label text-center fw-bold  ms-4 " id="lblOrderId">O-100</label>
 
                             <button type="button" class="btn btn-danger mb-2" id="btnDelOrder">Delete</button>
                             <button type="button" class="btn btn-warning mb-2" id="btnUpdOrder">Update</button>
@@ -1126,18 +1126,68 @@
 
     $("#searchOrder").keyup(function (event) {
 
-        let temp = new Array();
+
 
             if(event.keyCode == 13){
-                let orderId =  $("#searchOrder").val();
 
-                for(let i =0; i < orderDetail.length; i++){
-                    if(orderId == orderDetail[i].getOrderId()){
-                            temp.push(orderDetail[i]);
+                let temp = new Array();
+
+                let orderId =  $("#searchOrder").val();
+                console.log("orderid "+ orderId);
+
+
+                let a = 0;
+                for(let b =0; b < orderDetail.length; b++){
+                    if(orderId == orderDetail[b].getOrderId()){
+
+                            console.log(a);
+                            a++;
+
+
+
+                            temp.push(orderDetail[b]);
+
+
+
+
+
+                            console.log("temp" + temp[0].getItemCode());
 
                     }
 
                 }
+
+                let customerId;
+
+                for(let i =0; i < order.length; i++){
+                    if(orderId == order[i].getOrderId()){
+                        customerId = order[i].getCustomerId();
+
+
+                    }
+
+
+                }
+
+                console.log("customer id " + customerId);
+
+
+                let itemName;
+                $("#orderCartTable").empty();
+                for(let i =0; i < temp.length;i++){
+
+                    for(let j =0; j < items.length; j++){
+                           if(temp[i].getItemCode() ==  items[j].getId()){
+                               itemName =  items[j].getItemName();
+                           }
+                    }
+
+                    let newRow = `<tr><td>${temp[i].getItemCode()}</td></td><td>${customerId}</td><td>${itemName}
+                </td><td>${temp[i].getUnitPrice()}</td><td>${temp[i].getQty()}</td><td>${temp[i].getSale()}</td></tr>`;
+                    $("#orderCartTable").append(newRow);
+
+                }
+
 
 
                 
