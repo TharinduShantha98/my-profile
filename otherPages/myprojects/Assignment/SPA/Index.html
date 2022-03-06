@@ -501,7 +501,7 @@
 
                     <section class="col-lg-6">
 
-                        <input type="text" class="form-control "  id="searchOrder" placeholder="order"  aria-label="searchOrder" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control "  id="searchOrder" placeholder="Search orderId"  aria-label="searchOrder" aria-describedby="basic-addon2">
                     </section>
 
 
@@ -1058,11 +1058,6 @@
 
 
 
-
-
-
-
-
     })
 
 
@@ -1113,6 +1108,9 @@
                 if(itemName == cartArray[i].getItemCode()){
                     cartArray.splice(i,1);
 
+
+
+
                 }
             }
 
@@ -1126,8 +1124,66 @@
 
 
 
+    $("#searchOrder").keyup(function (event) {
+
+        let temp = new Array();
+
+            if(event.keyCode == 13){
+                let orderId =  $("#searchOrder").val();
+
+                for(let i =0; i < orderDetail.length; i++){
+                    if(orderId == orderDetail[i].getOrderId()){
+                            temp.push(orderDetail[i]);
+
+                    }
+
+                }
 
 
+                
+
+
+
+
+
+            }
+
+
+
+
+    })
+
+
+
+
+    $("#btnUpdOrder").click(function () {
+        let itemName = $("#itemIdOrder").val();
+
+
+
+        if(confirm("Are you sure you want this order update ?")){
+            for(let i =0; i < cartArray.length; i++){
+                if(itemName == cartArray[i].getItemCode()){
+                    cartArray[i].setItemCode($("#itemIdOrder").val());
+                    cartArray[i].setItemName($("#itemNameOrder").val());
+                    cartArray[i].setUnitPrice($("#itemPriceOrder").val());
+                    cartArray[i].setSaleQty($("#saleItemQty").val());
+                    cartArray[i].setPrice($("#allItemTotalFee").val());
+
+                }
+            }
+
+
+            addOrderCartRow();
+            addSumTotalPrice();
+
+
+
+        }
+
+
+
+    })
 
 
 
