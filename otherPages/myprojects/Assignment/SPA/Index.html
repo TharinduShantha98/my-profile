@@ -167,6 +167,11 @@
             border: solid 2px black;
         }
 
+        #validationQty{
+            position: relative;
+            bottom: 20px;
+        }
+
 
 
 
@@ -460,7 +465,9 @@
                     <label class="form-label fw-bold m-0 textColour2">Qty</label>
                     <div  class="input-group mb-3">
                         <input type="number" class="form-control "  id="saleItemQty" placeholder="Qty"  aria-label="qty" aria-describedby="basic-addon2">
+
                     </div>
+                    <label class="form-label  " id="validationQty">11111111111111111111111</label>
 
                 </section>
 
@@ -902,6 +909,13 @@
 /*-------------------------------Customer Order part ----------------------------------*/
 
 
+    //$("#addToCart").prop("disabled","true");
+    $("#itemPay").prop("disabled","true");
+    $("#btnDelOrder").prop('disabled',true);
+    $("#btnUpdOrder").prop('disabled',true);
+
+
+
     function addCustomerIdForOrderPart() {
         var str  = '';
         for(var i = 0; i < customers.length; i++){
@@ -998,10 +1012,45 @@
         let priceNum = parseInt(itemUnitPrice);
 
         if(event.keyCode == 13){
+            let itemQty = $("#itemQtyOrder").val();
+            let itemQtyNum = parseInt(itemQty);
+
             let qty = $("#saleItemQty").val();
-            let itemPrice =  qty * priceNum;
-            $("#itemTotalPrice").val(itemPrice);
-            $("#itemTotalPrice").focus();
+
+            if(qty.length >=1){
+                if(itemQtyNum > qty){
+                    let itemPrice =  qty * priceNum;
+                    $("#validationQty").text("");
+                    $("#itemTotalPrice").val(itemPrice);
+                    $("#itemTotalPrice").focus();
+
+                }else{
+                    $("#validationQty").text("please input amount lower than :"+ itemQtyNum);
+                    $("#validationQty").css("color", "red");
+                    $("#validationQty").css("font-weight", "bold");
+
+                }
+
+            }else{
+
+                $("#validationQty").text("please input qty");
+                $("#validationQty").css("color", "red");
+                $("#validationQty").css("font-weight", "bold");
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
     })
@@ -1028,6 +1077,9 @@
         let unitPrice  =  $("#itemPriceOrder").val();
         let saleQty =  $("#saleItemQty").val();
         let price  =  $("#itemTotalPrice").val();
+
+
+        $("#itemPay").prop("disabled",false);
 
 
         let cartDTO = new CartDTO();
@@ -1065,6 +1117,10 @@
 
         $("#orderCartTable>tr").click(function () {
             let itemCode =  $(this).children().eq(0).text();
+
+
+            $("#btnDelOrder").prop('disabled',false);
+            $("#btnUpdOrder").prop('disabled',false);
 
             for(let i =0; i < cartArray.length; i++){
                 if(itemCode ==  cartArray[i].getItemCode()){
@@ -1108,14 +1164,15 @@
                 if(itemName == cartArray[i].getItemCode()){
                     cartArray.splice(i,1);
 
-
-
-
                 }
             }
 
+            $("#btnDelOrder").prop('disabled',true);
+            $("#btnUpdOrder").prop('disabled',true);
 
             addOrderCartRow();
+            tableRowClickCart();
+
 
 
         }
@@ -1125,8 +1182,6 @@
 
 
     $("#searchOrder").keyup(function (event) {
-
-
 
             if(event.keyCode == 13){
 
@@ -1222,12 +1277,11 @@
 
                 }
             }
-
-
+            $("#btnDelOrder").prop('disabled',true);
+            $("#btnUpdOrder").prop('disabled',true);
             addOrderCartRow();
             addSumTotalPrice();
-
-
+            tableRowClickCart();
 
         }
 
@@ -1439,6 +1493,7 @@
         $("#saleItemQty").val("");
         $("#itemTotalPrice").val("");
     }
+
 
 
 
