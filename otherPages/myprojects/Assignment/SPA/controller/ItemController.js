@@ -1,5 +1,5 @@
 /*==============item part =======================*/
-// $("#addItem").prop('disabled',true);
+$("#addItem").prop('disabled',true);
 $("#itemCode").val("I00-100");
 
 
@@ -31,6 +31,7 @@ $("#addItem").click(function () {
         clearTextField();
         addItemIdForOrderPart();
         generateItemId();
+        clearTextFieldStyle();
     }else{
 
     }
@@ -245,11 +246,10 @@ function generateItemId(){
 let itemIdRegx = /^(I00)[-][0-9]{3,9}$/;
 let itemNameRegx = /^[A-z]{3,15}$/;
 let itemUnitPriceRegx = /^[0-9]{1,9}$/;
-let itemPackSizeRegx = /^[0-9]+(l|g|kg|ml)$/;
 let itemBuyingPriceRegx = /^[0-9]{1,9}$/;
+let itemPackSizeRegx = /^[0-9]+(l|g|kg|ml)$/;
 let itemQtyRegx = /^[0-9]{1,9}$/;
 
-/*
 
     $('#itemCode,#itemName,#itemUnitPrice,#itemPackSize,#itemBuyingPrice,#itemQty').keydown(function (eventOb) {
         if (eventOb.key == "Tab") {
@@ -316,7 +316,7 @@ let itemQtyRegx = /^[0-9]{1,9}$/;
 
     $("#itemUnitPrice").keyup(function (event) {
         let code = $("#itemUnitPrice").val();
-        let boolean = validation(code,event,"#itemUnitPrice","#itemPackSize",itemUnitPriceRegx);
+        let boolean = validation(code,event,"#itemUnitPrice","#itemBuyingPrice",itemUnitPriceRegx);
 
         if(boolean){
             $("#validationI3").text("");
@@ -332,7 +332,7 @@ let itemQtyRegx = /^[0-9]{1,9}$/;
 
     $("#itemPackSize").keyup(function (event) {
         let code = $("#itemPackSize").val();
-        let boolean = validation(code,event,"#itemPackSize","#itemBuyingPrice",itemPackSizeRegx);
+        let boolean = validation(code,event,"#itemPackSize","#itemQty",itemPackSizeRegx);
 
         if(boolean){
             $("#validationI4").text("");
@@ -347,7 +347,7 @@ let itemQtyRegx = /^[0-9]{1,9}$/;
 
     $("#itemBuyingPrice").keyup(function (event) {
         let code = $("#itemBuyingPrice").val();
-        let boolean = validation(code,event,"#itemBuyingPrice","#itemQty",itemBuyingPriceRegx);
+        let boolean = validation(code,event,"#itemBuyingPrice","#itemPackSize",itemBuyingPriceRegx);
 
         if(boolean){
             $("#validationI5").text("");
@@ -366,7 +366,7 @@ let itemQtyRegx = /^[0-9]{1,9}$/;
 
         if(boolean){
             $("#validationI6").text("");
-          /!*  $("#addItem").prop('disabled',false);*!/
+          /*  $("#addItem").prop('disabled',false);*/
             checkButton();
         }else{
             $("#validationI6").text("only number")
@@ -391,7 +391,6 @@ let itemQtyRegx = /^[0-9]{1,9}$/;
 
         }
     }
-*/
 
 
 var position2 = 1;
@@ -407,6 +406,30 @@ function itemManageFun(){
 
 
 }
+
+
+function clearTextFieldStyle(){
+    let textField  = [];
+    textField.push("#itemCode");
+    textField.push("#itemName");
+    textField.push("#itemUnitPrice");
+    textField.push("#itemBuyingPrice");
+    textField.push("#itemQty");
+    textField.push("#itemPackSize");
+
+
+
+    for(let i=0; i < textField.length; i++){
+        $(textField[i]).css("border", "1px solid #ced4da");
+        $(textField[i]).css("box-shadow", "none");
+
+
+    }
+
+}
+
+
+
 
 
 setInterval(itemManageFun,100);

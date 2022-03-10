@@ -299,7 +299,7 @@ function clearCustomerTextField(){
 
 
 
-/*  let customerIdRegx = /^(C00)[-][0-9]{3,9}$/
+  let customerIdRegx = /^(C00)[-][0-9]{3,9}$/
   let cusFNameRegx = /^[A-z]{3,15}$/;
   let cusLNameRegx = /^[A-z]{3,15}$/;
   let cusAddressRegx = /^(No-)[1-9]{1,9}(\s)[A-z]{1,15}|[A-z]{0,20}$/;
@@ -446,7 +446,9 @@ function clearCustomerTextField(){
   })
 
 
-  /!*function checkButtonCustomerAdd() {
+  function checkButtonCustomerAdd() {
+
+
       if(($("#CustomerFName").val() != "") &&  ($("#customerLName").val() != "") &&  ($("#customerAddress").val() != "") &&
           ($("#customerEmail").val() != "") &&  ($("#customerTelNum").val() != "")){
           console.log("false");
@@ -456,7 +458,7 @@ function clearCustomerTextField(){
           $("#addCustomer").prop('disabled',true);
           console.log("true");
       }
-  }*!/
+  }
 
 
 
@@ -470,7 +472,7 @@ function clearCustomerTextField(){
           $("#addCustomer").prop('disabled',true);
           console.log("true");
       }
-  }*/
+  }
 
 /* -------------------customer validation part end------------------*/
 

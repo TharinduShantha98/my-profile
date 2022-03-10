@@ -270,7 +270,7 @@
                 <div class="card text-white bg-secondary mb-3 d-inline-block col-lg-2 ms-lg-05 designBox col-md-6 col-sm-12" style="max-width: 18rem;">
                     <div class="card-header">Order</div>
                     <div class="card-body">
-                        <h5 class="card-title">Today orders</h5>
+                        <h5 class="card-title">All orders</h5>
                         <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
                         <br>
                         <p class="fs-3 fw-bold" id="todayOrders">10</p>
@@ -292,9 +292,9 @@
                 <div class="card text-white bg-danger mb-3 d-inline-block col-lg-2 ms-lg-05 designBox col-md-6 col-sm-12" style="max-width: 18rem;">
                     <div class="card-header">Item</div>
                     <div class="card-body">
-                        <h5 class="card-title" id="allItems">All Items</h5>
+                        <h5 class="card-title" >All Items</h5>
                         <br>
-                        <p  class="fw-bold fs-3">124</p>
+                        <p  class="fw-bold fs-3 id=allItems">124</p>
                         <br>
                         <br>
 
@@ -911,6 +911,71 @@
     /*
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*-------------------------------Customer Order part ----------------------------------*/
 
 
@@ -1438,6 +1503,9 @@
         clearOrderTextField();
         calAllProfit();
         calAllTodayOrder();
+        calAllCustomers();
+        calAllItems();
+
 
 
 
@@ -1544,10 +1612,13 @@
     function calAllProfit(){
 
         let allProfit =0;
-
         for(let i =0; i< order.length; i++){
-            allProfit = allProfit + order[i].getProfit();
 
+            let profit =  order[i].getProfit();
+            let profitNum  =  parseInt(profit);
+
+            allProfit = allProfit + profitNum;
+            console.log("all profit ------ " + allProfit);
         }
 
         $("#businessProfit").text(allProfit);
@@ -1557,53 +1628,45 @@
 
 
     function calAllTodayOrder() {
-        let allTodayOrder =0;
-        let dateAndTime =  new Date();
-        let day = dateAndTime.getDate();
-        let month =  dateAndTime.getMonth();
-        let year =  dateAndTime.getFullYear();
-
-        let today = day + "-" + month + "-" + year;
-
-
         let sum = 0;
         for(let i =0 ; i < order.length;i++){
-            if(today == order[i].getDateAndTime()){
-                sum++;
-
-            }
-
-
+            sum++
         }
 
-
         $("#todayOrders").text(sum);
-
-
-
-
 
 
     }
 
 
 
+    function calAllCustomers(){
+        let sum = 0;
+
+        for(let i =0; i < customers.length; i++){
+            sum++;
+        }
+
+
+        $("#allCustomers").text(sum);
+
+
+    }
 
 
 
+    function calAllItems() {
+        let sum = 0;
+        for(let i =0; i < items.length; i++){
+            sum++;
+        }
+
+
+        $("#allItems").text(sum);
 
 
 
-
-
-
-
-
-
-
-
-
-
+    }
 
 
 
