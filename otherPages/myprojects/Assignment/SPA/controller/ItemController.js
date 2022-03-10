@@ -1,6 +1,10 @@
 /*==============item part =======================*/
 $("#addItem").prop('disabled',true);
+$("#updateItem").prop('disabled',true);
+$("#deleteItem").prop('disabled',true);
+
 $("#itemCode").val("I00-100");
+
 
 
 $("#addItem").click(function () {
@@ -32,6 +36,7 @@ $("#addItem").click(function () {
         addItemIdForOrderPart();
         generateItemId();
         clearTextFieldStyle();
+        $("#addItem").prop('disabled',true);
     }else{
 
     }
@@ -68,6 +73,11 @@ $("#addItem").click(function () {
                     items[i].setQuantity($("#itemQty").val());
                 }
             }
+
+
+
+            $("#updateItem").prop('disabled',true);
+            $("#deleteItem").prop('disabled',true);
         }else{
 
 
@@ -77,6 +87,7 @@ $("#addItem").click(function () {
         itemTableStyle();
         clearTextField();
         generateItemId();
+        clearTextFieldStyle();
 
 
     })
@@ -101,6 +112,11 @@ function itemTableRowClick(){
             $("#itemPackSize").val(packSize);
             $("#itemBuyingPrice").val(buyingPrice);
             $("#itemQty").val(qty);
+
+
+
+            $("#updateItem").prop('disabled',false);
+            $("#deleteItem").prop('disabled',false);
         }else{
 
 
@@ -161,6 +177,11 @@ $("#deleteItem").click(function () {
         itemTableRowClick();
         clearTextField();
         generateItemId();
+        clearTextFieldStyle();
+        $("#updateItem").prop('disabled',true);
+        $("#deleteItem").prop('disabled',true);
+
+
 
     }else{
 
@@ -393,20 +414,6 @@ let itemQtyRegx = /^[0-9]{1,9}$/;
     }
 
 
-var position2 = 1;
-var text = $("#itemManage").text();
-function itemManageFun(){
-    let outPut2 = text.substr(0,position2);
-    $("#itemManage").text(outPut2);
-    position2++;
-
-    if(position2 == text.length){
-        position2 = 1;
-    }
-
-
-}
-
 
 function clearTextFieldStyle(){
     let textField  = [];
@@ -427,6 +434,36 @@ function clearTextFieldStyle(){
     }
 
 }
+
+
+
+$("#clearText").click(function () {
+    clearTextField();
+    clearTextFieldStyle();
+
+
+})
+
+
+
+
+
+var position2 = 1;
+var text = $("#itemManage").text();
+function itemManageFun(){
+    let outPut2 = text.substr(0,position2);
+    $("#itemManage").text(outPut2);
+    position2++;
+
+    if(position2 == text.length){
+        position2 = 1;
+    }
+
+
+}
+
+
+
 
 
 

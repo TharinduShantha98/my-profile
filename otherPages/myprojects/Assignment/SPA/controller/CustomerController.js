@@ -1,6 +1,9 @@
 /*===================================================customer part=============================*/
-// $("#addCustomer").prop('disabled',true);
+$("#addCustomer").prop('disabled',true);
+$("#updateCustomer").prop('disabled',true);
+$("#deleteCustomer").prop('disabled',true);
 $("#customerId").val("C00-100");
+//$("#customerId").attr('disabled', true);
 
 
 
@@ -37,6 +40,8 @@ $("#addCustomer").click(function () {
         addCustomerIdForOrderPart();
         generateCustomerId();
         clearCustomerTextField();
+        clearTextFieldStyleForCustomer();
+        $("#addCustomer").prop('disabled',true);
 
     }else{
 
@@ -86,11 +91,18 @@ $("#addCustomer").click(function () {
                 }
 
             }
+
+            $("#updateCustomer").prop('disabled',true);
+            $("#deleteCustomer").prop('disabled',true);
+
+
+
             addTableRow();
             tableRowStyle();
             clearCustomerTextField();
             generateCustomerId();
             customerTableRowClick();
+            clearTextFieldStyleForCustomer();
 
 
         }else {
@@ -122,11 +134,18 @@ $("#addCustomer").click(function () {
                 }
 
             }
+
+            $("#updateCustomer").prop('disabled',true);
+            $("#deleteCustomer").prop('disabled',true);
+
+
+
             addTableRow();
             tableRowStyle();
             clearCustomerTextField();
             generateCustomerId();
             customerTableRowClick();
+            clearTextFieldStyleForCustomer();
 
         }else{
 
@@ -163,7 +182,8 @@ function customerTableRowClick(){
             rowIndex  = this.rowIndex;
             // console.log("rowIndex " + rowIndex);
 
-
+            $("#updateCustomer").prop('disabled',false);
+            $("#deleteCustomer").prop('disabled',false);
 
         }else {
 
@@ -308,9 +328,20 @@ function clearCustomerTextField(){
 
 
 
+$('#customerId,#customerFName,#customerLName,#customerAddress,#customerTelNum,#customerEmail').keydown(function (eventOb) {
+    if (eventOb.key == "Tab") {
+        eventOb.preventDefault();
+
+    }
+})
+
+
+
   function validationCustomer(testRegex, event,id,nextId,correctRegex){
 
       let test = correctRegex.test(testRegex);
+
+
       if(test){
           $(id).css("border", "1px solid  green");
           $(id).css("box-shadow", "0px 0px 10px #5ad25a");
@@ -392,7 +423,7 @@ function clearCustomerTextField(){
 
   $("#customerAddress").keyup(function (event) {
       let code = $("#customerAddress").val();
-      let boolean = validationCustomer(code,event,"#customerAddress","#customerEmail",cusAddressRegx);
+      let boolean = validationCustomer(code,event,"#customerAddress","#customerTelNum",cusAddressRegx);
 
       if(boolean){
           $("#validationC3").text("");
@@ -410,7 +441,7 @@ function clearCustomerTextField(){
   $("#customerEmail").keyup(function (event) {
 
       let code = $("#customerEmail").val();
-      let boolean = validationCustomer(code,event,"#customerEmail","#customerTelNum",cusEmailRegx);
+      let boolean = validationCustomer(code,event,"#customerEmail","#addCustomer",cusEmailRegx);
 
       if(boolean){
           $("#validationC4").text("");
@@ -428,7 +459,7 @@ function clearCustomerTextField(){
   $("#customerTelNum").keyup(function (event) {
 
       let code = $("#customerTelNum").val();
-      let boolean = validationCustomer(code,event,"#customerTelNum","#addCustomer",cusTelNumRegx);
+      let boolean = validationCustomer(code,event,"#customerTelNum","#customerEmail",cusTelNumRegx);
 
       if(boolean){
           $("#validationC5").text("");
@@ -473,6 +504,45 @@ function clearCustomerTextField(){
           console.log("true");
       }
   }
+
+
+
+
+
+
+
+function clearTextFieldStyleForCustomer(){
+
+    let textFieldCustomer  = [];
+
+    textFieldCustomer.push("#customerId");
+    textFieldCustomer.push("#customerFName");
+    textFieldCustomer.push("#customerLName");
+    textFieldCustomer.push("#customerAddress");
+    textFieldCustomer.push("#customerEmail");
+    textFieldCustomer.push("#customerTelNum");
+
+
+
+    for(let i=0; i < textFieldCustomer.length; i++){
+        $(textFieldCustomer[i]).css("border", "1px solid #ced4da");
+        $(textFieldCustomer[i]).css("box-shadow", "none");
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* -------------------customer validation part end------------------*/
 
