@@ -76,7 +76,7 @@ for view , <a href= "otherPages\myprojects\Assignment\SPA\Index.html"> clickMe</
 
  <img src="assets\images\assigmentview.png" width="800" height="200" border="solid 1px green">
      
-
+click assigment view button of my portfolio
 
 
 ##  Sites that can be view
