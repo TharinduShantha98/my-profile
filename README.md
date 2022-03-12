@@ -11,7 +11,7 @@ so in this site include my home , about me , skills , education , my project his
   
 
 
-
+#First step...
 ## Created step
 In This repository, I create Portfolio. As a first,  I created  site map.🗺✨
 
@@ -60,6 +60,19 @@ After, I implemented  project step by step. between learning HTML and CSS.
 ## Used technologies
 
 Only HTML And CSS
+
+
+# Second Step
+In the second Step, I learn Javascript step by step.
+under that, I found knowledge
+how do work with bootstrap jQuery and javaScript
+
+under that stage i created IN memory POS system 
+
+for view , <a href= "otherPages\myprojects\Assignment\SPA\Index.html"> clickMe</a>
+     
+
+
 
 ##  Sites that can be view
 
