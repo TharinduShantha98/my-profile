@@ -11,7 +11,9 @@ so in this site include my home , about me , skills , education , my project his
   
 
 
-#First step...
+# First step...
+
+
 ## Created step
 In This repository, I create Portfolio. As a first,  I created  site map.🗺✨
 
@@ -70,6 +72,9 @@ how do work with bootstrap jQuery and javaScript
 under that stage i created IN memory POS system 
 
 for view , <a href= "otherPages\myprojects\Assignment\SPA\Index.html"> clickMe</a>
+
+
+ <img src="assets\images\work2.png" width="800" height="200" border="solid 1px green">
      
 
 
