@@ -74,7 +74,7 @@ under that stage i created IN memory POS system
 for view , <a href= "otherPages\myprojects\Assignment\SPA\Index.html"> clickMe</a>
 
 
- <img src="assets\images\work2.png" width="800" height="200" border="solid 1px green">
+ <img src="assets\images\assigmentview.png" width="800" height="200" border="solid 1px green">
      
 
 
