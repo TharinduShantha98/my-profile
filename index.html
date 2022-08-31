@@ -156,73 +156,56 @@
 
 
 
+        @media all and (min-width: 650px) and (max-width: 768px){
 
-        body>main>section:nth-child(5)>section:nth-child(1)>h1{
-            font-size: 8vw;
+            body>main>section:nth-child(1)>section:nth-child(2)>div>p{
+                position: absolute;
+                width: 80%;
+                height: 100%;
+                font-size: 2vw;
+                font-family: 'Open Sans', sans-serif;
+                margin: auto;
+                top:0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                text-align: center;
+            }
+
+            .projects{
+                height: 80% !important;
+
+            }
+
+            body>main>section:nth-child(4)>article:nth-child(2)>div>figure>figcaption>p:nth-child(2){
+                font-size: 1.5vw !important;
+                font-family: 'Open Sans', sans-serif;
+                text-align: center;
+
+            }
+
+
+
         }
 
-        body>main>section:nth-child(5){
-            position: relative;
-            height: 87vh;
-            /* border: solid 1px crimson;*/
+
+
+        @media all and (min-width: 360px) and (max-width: 425px){
+            .projects{
+                height: 70% !important;
+
+            }
+
+
+            body>main>section:nth-child(4)>article:nth-child(2)>div>figure>figcaption>p:nth-child(2){
+                font-size: 3vw !important;
+                font-family: 'Open Sans', sans-serif;
+                text-align: center;
+
+            }
 
         }
 
-        body>main>section:nth-child(5)>section:nth-child(1){
-            position: absolute;
-            /*background-color: #870642;*/
-            top: 0;
-            right: 0;
-            left: 0;
-            margin: auto;
-            text-align: center;
-        }
-
-        /*   body>main>section:nth-child(5)>section:nth-child(1)>h1{
-               margin: 0;
-               font-size: 6vh;
-               letter-spacing: 15px;
-               font-weight: bold;
-               color: #f6f2f2;
-
-           }*/
-
-        body>main>section:nth-child(5)>section:nth-child(2){
-            position: relative;
-
-            height: 80%;
-            width: 100%;
-            top: 22%;
-            display: grid;
-            grid-template-columns: auto auto ;
-
-            /*align-items: center;
-            justify-content: space-between;
-            flex-direction: column;*/
-        }
-
-        body>main>section:nth-child(5)>section:nth-child(2)>div{
-            position: relative;
-            left: 0%;
-            width: 100%;
-            height: 88%;
-        }
-
-        body>main>section:nth-child(5)>section:nth-child(2)>div>figure>img{
-            width: 20vw;
-            height: 20vw;
-        }
-
-        /*   ===================contact===============*/
-
-
-        footer>section>section:nth-child(1)>h1{
-            font-size: 8vw;
-        }
-
-        footer>section>section:nth-child(3){
-            width: 68%;
-        }
 
 
 
@@ -467,9 +450,9 @@
             <section  class="reveal">
                 <h1 class="headingOfPart">Project</h1>
             </section>
-            <div>
-                <div  class="reveal">
-                    <figure>
+            <div >
+                <div  class="reveal projects">
+                    <figure >
                         <img src="assets/images/allProject.png" alt="all project ">
                         <figcaption>
                             <p><b>18 <sup>+</sup></b></p>
@@ -479,7 +462,7 @@
 
                 </div>
 
-                <div  class="reveal">
+                <div  class="reveal projects">
                     <figure>
                         <img src="assets/images/standalone.png" alt="all project ">
                         <figcaption>
@@ -491,7 +474,7 @@
 
                 </div >
 
-                <div  class="reveal">
+                <div  class="reveal projects">
                     <figure>
                         <img src="assets/images/webDevelopment.png" alt="all project ">
                         <figcaption>
@@ -503,7 +486,7 @@
 
                 </div>
 
-                <div  class="reveal">
+                <div  class="reveal projects">
                     <figure>
                         <img src="assets/images/mobileApplication.png" alt="all project ">
                         <figcaption>
@@ -636,8 +619,8 @@
             <div class="reveal">
                 <figure>
                     <img src="assets/images/webApplication.png" alt="web development" >
-                    <figcaption>
-                        Web application development
+                    <figcaption class="tittle">
+                        MERN Stack development
                     </figcaption>
                 </figure>
             </div>
@@ -645,8 +628,8 @@
             <div class="reveal" >
                 <figure>
                     <img src="assets/images/javaApplication.png" alt="web development" >
-                    <figcaption>
-                        java application development
+                    <figcaption class="tittle">
+                        Spring Boot development
                     </figcaption>
                 </figure>
             </div>
@@ -654,7 +637,7 @@
             <div class="reveal">
                 <figure>
                     <img src="assets/images/uiUxDesign.png" alt="web development">
-                    <figcaption>
+                    <figcaption class="tittle">
                         UI/UX design
                     </figcaption>
                 </figure>
@@ -663,7 +646,7 @@
             <div class="reveal" >
                 <figure>
                     <img src="assets/images/businessAnalysis.png" alt="web development" >
-                    <figcaption>
+                    <figcaption class="tittle">
                         business analysis
                     </figcaption>
                 </figure>
@@ -685,7 +668,7 @@
         </section>
 
         <section>
-            <div >
+            <div id="location" >
                 <p><a href="mailto: tharindushantha4@gmail.com"><b> Email</b> </a> : tharindushantha4@gmail.com </p>
                 <p><a href="tel: +94769773032"><b> Phone </b> </a> : +94769773932 </p>
                 <p> Address : Aluthgama westen province Sri lanaka </p>
