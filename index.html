@@ -142,6 +142,91 @@
 
 
 
+        .reveal{
+            transform: translateY(150px);
+            opacity: 0;
+            transition: 1s all ease;
+
+
+        }
+        .reveal.active{
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+
+
+
+        body>main>section:nth-child(5)>section:nth-child(1)>h1{
+            font-size: 8vw;
+        }
+
+        body>main>section:nth-child(5){
+            position: relative;
+            height: 87vh;
+            /* border: solid 1px crimson;*/
+
+        }
+
+        body>main>section:nth-child(5)>section:nth-child(1){
+            position: absolute;
+            /*background-color: #870642;*/
+            top: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            text-align: center;
+        }
+
+        /*   body>main>section:nth-child(5)>section:nth-child(1)>h1{
+               margin: 0;
+               font-size: 6vh;
+               letter-spacing: 15px;
+               font-weight: bold;
+               color: #f6f2f2;
+
+           }*/
+
+        body>main>section:nth-child(5)>section:nth-child(2){
+            position: relative;
+
+            height: 80%;
+            width: 100%;
+            top: 22%;
+            display: grid;
+            grid-template-columns: auto auto ;
+
+            /*align-items: center;
+            justify-content: space-between;
+            flex-direction: column;*/
+        }
+
+        body>main>section:nth-child(5)>section:nth-child(2)>div{
+            position: relative;
+            left: 0%;
+            width: 100%;
+            height: 88%;
+        }
+
+        body>main>section:nth-child(5)>section:nth-child(2)>div>figure>img{
+            width: 20vw;
+            height: 20vw;
+        }
+
+        /*   ===================contact===============*/
+
+
+        footer>section>section:nth-child(1)>h1{
+            font-size: 8vw;
+        }
+
+        footer>section>section:nth-child(3){
+            width: 68%;
+        }
+
+
+
+
 
     </style>
 
@@ -234,11 +319,11 @@
     <!-- about me -->
     <section class="about_me">
         <div style="position: relative; top: 5px">
-            <h1 class="headingOfPart">About me </h1>
+            <h1 class="headingOfPart reveal ">About me </h1>
         </div>
 
 
-        <section class="about_me_description">
+        <section class="about_me_description reveal">
             <div>
                 <p><span class="span2_AboutMe">I'm</span> <span class="span1_AboutMe">full
                     stack developer and web designer </span>in #Sri lanka. <br><br>
@@ -254,24 +339,24 @@
             </div>
 
         </section>
-        <section class="about_me_styleImage">
+        <section class="about_me_styleImage reveal">
             <img src="assets/images/one.png" alt="design one image">
         </section>
 
         <section>
-            <div id="download">
+            <div id="download" class="reveal">
                 <p>Download CV</p></div>
 
             <address>
                 <ol>
-                    <li><a href=""><img src="assets/images/WhatsApp.png" alt="design one image" width="50"></a></li>
-                    <li><a href=""><img src="assets/images/facebook.png" alt="design one image" width="50"> </a></li>
-                    <li><a href=""><img src="assets/images/linkedin.png" alt="design one image" width="50"></a></li>
-                    <li><a href=""><img src="assets/images/instragram.png" alt="design one image" width="50"></a></li>
-                    <li><a href="https://github.com/TharinduShantha98"> <img src="assets/images/github.png"
+                    <li><a href=""><img src="assets/images/WhatsApp.png" class="reveal" alt="design one image" width="50"></a></li>
+                    <li><a href=""><img src="assets/images/facebook.png" class="reveal" alt="design one image" width="50"> </a></li>
+                    <li><a href=""><img src="assets/images/linkedin.png" class="reveal" alt="design one image" width="50"></a></li>
+                    <li><a href=""><img src="assets/images/instragram.png" class="reveal" alt="design one image" width="50"></a></li>
+                    <li><a href="https://github.com/TharinduShantha98"> <img src="assets/images/github.png" class="reveal"
                                                                              alt="design one image" width="50"> </a>
                     </li>
-                    <li><a href=""><img src="assets/images/twitter.png" alt="design one image" width="50"></a></li>
+                    <li><a href=""><img src="assets/images/twitter.png" class="reveal" alt="design one image" width="50"></a></li>
 
 
                 </ol>
@@ -286,13 +371,13 @@
     </section>
     <!-- Skills -->
     <section>
-        <section>
+        <section class="reveal">
             <h1 class="headingOfPart">Skills</h1>
 
         </section>
         <section>
-            <h2>Technical Skills</h2>
-            <div>
+            <h2 class="reveal">Technical Skills</h2>
+            <div class="reveal">
                 <img src="assets/images/previous.png" alt="previous image" id="previous1" >
                 <img src="assets/images/java.png" alt="java image" id="java" >
                 <img src="assets/images/mysql.png" alt="mysql image"  id="mysql">
@@ -307,9 +392,9 @@
 
         </section>
         <section>
-            <h2>Most frequently used tools</h2>
+            <h2 class="reveal">Most frequently used tools</h2>
 
-            <div>
+            <div class="reveal">
                 <img src="assets/images/previous.png" alt="previous image" id="previous2" >
                 <img src="assets/images/IntelliJ.png" alt="intellij idea" id="intellij" >
                 <img src="assets/images/vscode.png" alt="vscode idea" id="vsCode">
@@ -331,26 +416,26 @@
 
     <!-- Education-->
     <section>
-        <section>
-            <h1 class="headingOfPart">Education</h1>
+        <section  class="reveal">
+            <h1 class="headingOfPart reveal">Education</h1>
         </section>
 
         <section>
             <img src="assets/images/degree.png" alt="degree image" width="100">
-            <div>
+            <div  class="reveal">
                 <p><b>Institute of software <br> Engineering (IJSE)</b></p>
                 <p> software engineering undergraduate <br> of Institute of software engineering </p>
             </div>
 
             <img src="assets/images/goal.png" alt="goal image">
-            <div>
+            <div  class="reveal">
                 <p><b>K/ GNANODAYA M.V</b></p>
                 <p>Completed GCE (Advanced Level) Examination
                     <time>2019</time>
                     in <b> Science stream </b></p>
             </div>
 
-            <div>
+            <div  class="reveal">
                 <p><b>K/ ARIYAVANSHA M.V</b></p>
                 <p>Completed GCE (Ordinary Level) Examination
                     <time>2014</time>
@@ -379,11 +464,11 @@
     <!-- project-->
     <section>
         <section>
-            <section>
+            <section  class="reveal">
                 <h1 class="headingOfPart">Project</h1>
             </section>
             <div>
-                <div>
+                <div  class="reveal">
                     <figure>
                         <img src="assets/images/allProject.png" alt="all project ">
                         <figcaption>
@@ -394,7 +479,7 @@
 
                 </div>
 
-                <div>
+                <div  class="reveal">
                     <figure>
                         <img src="assets/images/standalone.png" alt="all project ">
                         <figcaption>
@@ -404,9 +489,9 @@
 
                     </figure>
 
-                </div>
+                </div >
 
-                <div>
+                <div  class="reveal">
                     <figure>
                         <img src="assets/images/webDevelopment.png" alt="all project ">
                         <figcaption>
@@ -418,7 +503,7 @@
 
                 </div>
 
-                <div>
+                <div  class="reveal">
                     <figure>
                         <img src="assets/images/mobileApplication.png" alt="all project ">
                         <figcaption>
@@ -436,9 +521,9 @@
 
         </section>
 
-        <article>
+        <article >
 
-            <div>
+            <div class="reveal">
                 <figure>
                     <img src="assets/images/project3.png" alt="project01 image" >
                     <figcaption>
@@ -459,7 +544,7 @@
                 </figure>
             </div>
 
-            <div>
+            <div class="reveal">
                 <figure>
                     <img src="assets/images/project2.png" alt="project02 image">
                     <figcaption>
@@ -484,7 +569,7 @@
                 </figure>
             </div>
 
-            <div>
+            <div class="reveal">
                 <figure>
                     <img src="assets/images/project1.png" alt="project03 image">
                     <figcaption>
@@ -510,31 +595,31 @@
 
         <section>
             <section>
-                <h1>According projects, My top Skills </h1>
+                <h1 class="reveal">According projects, My top Skills </h1>
             </section>
 
             <div>
-                <div>Java <div>
-                    <div></div>
+                <div class="reveal">Java <div>
+                    <div class="reveal"></div>
+                </div ></div>
+                <div class="reveal">My sql <div>
+                    <div class="reveal"></div>
                 </div></div>
-                <div>My sql <div>
-                    <div></div>
+                <div class="reveal">Java fx <div>
+                    <div class="reveal"></div>
                 </div></div>
-                <div>Java fx <div>
-                    <div></div>
+                <div class="reveal">Java Script <div>
+                    <div class="reveal"></div>
                 </div></div>
-                <div>Java Script <div>
-                    <div></div>
+                <div class="reveal">CSS <div>
+                    <div class="reveal"></div>
                 </div></div>
-                <div>CSS <div>
-                    <div></div>
-                </div></div>
-                <div>HTML <div>
-                    <div></div>
+                <div class="reveal">HTML <div>
+                    <div class="reveal"></div>
                 </div></div>
             </div>
-            <img src="assets/images/one.png" alt="design ">
-            <div>
+            <img src="assets/images/one.png" alt="design " class="reveal">
+            <div class="reveal">
                 <p><a href="otherPages/AssigmentViews.html" >Assignment view</a></p>
             </div>
         </section>
@@ -544,11 +629,11 @@
     <section>
         <section>
             <!--three.png need this for div-->
-            <h1 class="headingOfPart">Services</h1>
+            <h1 class="headingOfPart reveal">Services</h1>
 
         </section>
         <section>
-            <div>
+            <div class="reveal">
                 <figure>
                     <img src="assets/images/webApplication.png" alt="web development" >
                     <figcaption>
@@ -557,7 +642,7 @@
                 </figure>
             </div>
 
-            <div >
+            <div class="reveal" >
                 <figure>
                     <img src="assets/images/javaApplication.png" alt="web development" >
                     <figcaption>
@@ -566,7 +651,7 @@
                 </figure>
             </div>
 
-            <div>
+            <div class="reveal">
                 <figure>
                     <img src="assets/images/uiUxDesign.png" alt="web development">
                     <figcaption>
@@ -575,7 +660,7 @@
                 </figure>
             </div>
 
-            <div >
+            <div class="reveal" >
                 <figure>
                     <img src="assets/images/businessAnalysis.png" alt="web development" >
                     <figcaption>
@@ -592,7 +677,7 @@
 
     <section>
         <section>
-            <h1>Contact</h1>
+            <h1 >Contact</h1>
         </section>
 
         <section>
@@ -600,7 +685,7 @@
         </section>
 
         <section>
-            <div>
+            <div >
                 <p><a href="mailto: tharindushantha4@gmail.com"><b> Email</b> </a> : tharindushantha4@gmail.com </p>
                 <p><a href="tel: +94769773032"><b> Phone </b> </a> : +94769773932 </p>
                 <p> Address : Aluthgama westen province Sri lanaka </p>
@@ -634,6 +719,28 @@
 <script src="assets/js/jquery/jquery-3.6.0.min.js"></script>
 
 <script>
+
+    function reveal() {
+        let reveals = document.querySelectorAll(".reveal");
+
+        for (let i = 0; i < reveals.length; i++) {
+            let windowHeight = window.innerHeight;
+            let elementTop = reveals[i].getBoundingClientRect().top;
+            let elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            } else {
+                reveals[i].classList.remove("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
+
+
+
+
 
     let skill1 = ["java.png","mysql.png","python.png","javaScript.png","nodejs.png","html.png","hibernate.png"];
     var a =0;
