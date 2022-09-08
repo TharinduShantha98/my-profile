@@ -147,12 +147,80 @@
             opacity: 0;
             transition: 1s all ease;
 
-
         }
         .reveal.active{
             transform: translateY(0);
             opacity: 1;
         }
+
+        #cartContainer{
+            width: 90%;
+            height: 80%;
+       //     background-color: #80d444;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            flex-direction: row;
+            overflow-x: scroll;
+        }
+
+
+        .cardParent{
+            margin-left: 2%;
+      //      background-color: #0dcaf0;
+            width: 30%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .cartHeader{
+         /*   position: relative;*/
+            width: 300px;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+      //      background-color: #ee4c4c;
+
+            align-items: center;
+            justify-content: center;
+
+
+        }
+        .projectsImg{
+            /*position: relative;*/
+            width: 300px;
+            height:200px;
+
+
+        }
+
+        .cardMainTitle{
+            font-size: 5vh;
+            font-weight: bold;
+            color: #45dc77;
+
+
+        }
+        .projectDescription{
+            font-size: 2vh;
+            font-weight: bold;
+            color: #edf1ee;
+            text-align: center;
+
+        }
+        .projectsFigure{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 90%;
+        //    background-color: #0dcaf0;
+
+
+        }
+
+
 
 
 
@@ -207,8 +275,314 @@
         }
 
 
+        @media all and (min-width: 769px) and (max-width: 1024px){
+            #cartContainer{
+                width: 80%;
+                height: 80%;
+          //     background-color: #80d444;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                flex-direction: column;
+                overflow-y: scroll;
+            }
 
 
+            .cardParent{
+                margin-left: 2%;
+                margin-top: 2%;
+           //  background-color: #0dcaf0;
+                width: 70%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid  #0ae0ce;
+
+            }
+
+            .cartHeader{
+                /*   position: relative;*/
+                width: 100%;
+                height: 50%;
+                display: flex;
+                flex-direction: column;
+                margin-top: 15%;
+          //      background-color: #ee4c4c;
+
+                align-items: center;
+                justify-content: center;
+
+
+            }
+            .projectsImg{
+                /*position: relative;*/
+                width: 220px;
+                height:170px;
+
+
+            }
+
+            .cardMainTitle{
+                font-size: 5vh;
+                font-weight: bold;
+                color: #45dc77;
+
+
+            }
+            .projectDescription{
+                font-size: 2vh;
+                font-weight: bold;
+                color: #edf1ee;
+                margin-top: 10%;
+                text-align: center;
+
+            }
+            .projectsFigure{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 90%;
+            //    background-color: #0dcaf0;
+
+
+            }
+
+
+        }
+
+
+        @media all and (min-width: 426px) and (max-width: 768px){
+
+            #cartContainer{
+                width: 80%;
+                height: 80%;
+            //     background-color: #80d444;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                flex-direction: column;
+                overflow-y: scroll;
+            }
+
+
+            .cardParent{
+                margin-left: 2%;
+                margin-top: 2%;
+            //  background-color: #0dcaf0;
+                width: 70%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid  #0ae0ce;
+
+            }
+
+            .cartHeader{
+                /*   position: relative;*/
+                width: 100%;
+                height: 50%;
+                display: flex;
+                flex-direction: column;
+                margin-top: 15%;
+            //      background-color: #ee4c4c;
+
+                align-items: center;
+                justify-content: center;
+
+
+            }
+            .projectsImg{
+                /*position: relative;*/
+                width: 220px;
+                height:170px;
+
+
+            }
+
+            .cardMainTitle{
+                font-size: 5vh;
+                font-weight: bold;
+                color: #45dc77;
+
+
+            }
+            .projectDescription{
+                font-size: 2vh;
+                font-weight: bold;
+                color: #edf1ee;
+                margin-top: 10%;
+                text-align: center;
+
+            }
+            .projectsFigure{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 90%;
+            //    background-color: #0dcaf0;
+
+
+            }
+
+
+
+        }
+
+
+
+        @media all and (min-width: 320px) And (max-width: 425px) {
+            #cartContainer{
+                width: 80%;
+                height: 90%;
+            //     background-color: #80d444;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                flex-direction: column;
+                overflow-y: scroll;
+            }
+
+
+            .cardParent{
+                margin-left: 2%;
+                margin-top: 2%;
+            //  background-color: #0dcaf0;
+                width: 90%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid  #0ae0ce;
+
+            }
+
+            .cartHeader{
+                /*   position: relative;*/
+                width: 100%;
+                height: 50%;
+                display: flex;
+                flex-direction: column;
+                margin-top: 15%;
+            //      background-color: #ee4c4c;
+
+                align-items: center;
+                justify-content: center;
+
+
+            }
+            .projectsImg{
+                /*position: relative;*/
+                width: 200px;
+                height:170px;
+
+
+            }
+
+            .cardMainTitle{
+                font-size: 5vh;
+                font-weight: bold;
+                color: #45dc77;
+
+
+            }
+            .projectDescription{
+                font-size: 2vh;
+                font-weight: bold;
+                color: #edf1ee;
+                margin-top: 14%;
+                text-align: center;
+
+            }
+            .projectsFigure{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 90%;
+            //    background-color: #0dcaf0;
+
+
+            }
+
+
+
+
+        }
+
+
+        @media all and (max-width: 320px){
+            #cartContainer{
+                width: 80%;
+                height: 90%;
+            //     background-color: #80d444;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                flex-direction: column;
+                overflow-y: scroll;
+            }
+
+
+            .cardParent{
+                margin-left: 2%;
+                margin-top: 2%;
+            //  background-color: #0dcaf0;
+                width: 90%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid  #0ae0ce;
+
+            }
+
+            .cartHeader{
+                /*   position: relative;*/
+                width: 100%;
+                height: 50%;
+                display: flex;
+                flex-direction: column;
+                margin-top: 15%;
+            //      background-color: #ee4c4c;
+
+                align-items: center;
+                justify-content: center;
+
+
+            }
+            .projectsImg{
+                /*position: relative;*/
+                width: 180px;
+                height:170px;
+
+
+            }
+
+            .cardMainTitle{
+                font-size: 5vh;
+                font-weight: bold;
+                color: #45dc77;
+
+
+            }
+            .projectDescription{
+                font-size: 2vh;
+                font-weight: bold;
+                color: #edf1ee;
+                margin-top: 14%;
+                text-align: center;
+
+            }
+            .projectsFigure{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 90%;
+            //    background-color: #0dcaf0;
+
+
+            }
+
+
+
+        }
 
 
     </style>
@@ -404,13 +778,13 @@
         </section>
 
         <section>
-            <img src="assets/images/degree.png" alt="degree image" width="100">
+            <img src="assets/images/degree.png" alt="degree image" width="100" class="reveal">
             <div  class="reveal">
                 <p><b>Institute of software <br> Engineering (IJSE)</b></p>
                 <p> software engineering undergraduate <br> of Institute of software engineering </p>
             </div>
 
-            <img src="assets/images/goal.png" alt="goal image">
+            <img src="assets/images/goal.png" alt="goal image" class="reveal">
             <div  class="reveal">
                 <p><b>K/ GNANODAYA M.V</b></p>
                 <p>Completed GCE (Advanced Level) Examination
@@ -425,15 +799,15 @@
                 </p>
 
             </div>
-            <img src="assets/images/firstStep.png" alt="design image " width="100">
-            <img src="assets/images/two.png" alt="design image ">
-            <div></div>
+            <img src="assets/images/firstStep.png" alt="design image " width="100" class="reveal">
+            <img src="assets/images/two.png" alt="design image " class="reveal">
+            <div class="reveal"></div>
 
 
         </section>
 
         <!--    ============animation=============-->
-        <section>
+        <section class="reveal">
             <div></div>
             <div></div>
             <div></div>
@@ -504,9 +878,12 @@
 
         </section>
 
-        <article >
+        <article class="projects">
+            <div class="reveal " id="cartContainer" >
 
-            <div class="reveal">
+            </div>
+
+            <!-- <div class="reveal">
                 <figure>
                     <img src="assets/images/project3.png" alt="project01 image" >
                     <figcaption>
@@ -525,34 +902,33 @@
                         </p>
                     </figcaption>
                 </figure>
-            </div>
+            </div>-->
+            <!--  <div class="reveal">
+                  <figure>
+                      <img src="assets/images/project2.png" alt="project02 image">
+                      <figcaption>
+                          <p>
+                              <b>Database Management System MY SQL and Transaction
+                                  <time>(2021)</time>
+                              </b>
+                          </p>
+                          <p>
+                              This project is boiler fram management system<br>
+                              in this project,<br> we improved Knowledge
+                              what is software architecture.
 
-            <div class="reveal">
-                <figure>
-                    <img src="assets/images/project2.png" alt="project02 image">
-                    <figcaption>
-                        <p>
-                            <b>Database Management System MY SQL and Transaction
-                                <time>(2021)</time>
-                            </b>
-                        </p>
-                        <p>
-                            This project is boiler fram management system<br>
-                            in this project,<br> we improved Knowledge
-                            what is software architecture.
+                              In this project,<br> i used database (MY SQL ) and used one design pattern (singleton).<br><br>
 
-                            In this project,<br> i used database (MY SQL ) and used one design pattern (singleton).<br><br>
-
-                            I used MVC architecture for these project.<br> but I mvc extened little bit Because this
-                            project is large.
+                              I used MVC architecture for these project.<br> but I mvc extened little bit Because this
+                              project is large.
 
 
-                        </p>
-                    </figcaption>
-                </figure>
-            </div>
+                          </p>
+                      </figcaption>
+                  </figure>
+              </div>-->
 
-            <div class="reveal">
+          <!--  <div class="reveal">
                 <figure>
                     <img src="assets/images/project1.png" alt="project03 image">
                     <figcaption>
@@ -572,7 +948,7 @@
                 </figure>
 
 
-            </div>
+            </div>-->
 
         </article>
 
@@ -702,6 +1078,185 @@
 <script src="assets/js/jquery/jquery-3.6.0.min.js"></script>
 
 <script>
+
+    //========================================
+
+
+    const cardContainer = $("#cartContainer");
+
+
+    function skillViewComponent(skill) {
+        console.log("Skill called");
+
+        var ratingCreated = "";
+
+        console.log(typeof skill.rating);
+
+       /* for (var i = 0; i < skill.rating; i++) {
+            console.log("i"+i);
+            ratingCreated = ratingCreated + `<div class="ratingCircles rated"></div>`;
+        }
+
+        for (var j = skill.rating; 5 > j; j++) {
+            console.log("j" + j);
+            ratingCreated = ratingCreated + `<div class="ratingCircles"></div>`;
+        }*/
+
+        return `<div class="cardParent">
+                   <div class="cartHeader">
+                        <div class="imagePart">
+                            <img class="projectsImg" src="${skill.imageUrl}" alt="">
+                        </div>
+                        <div class="projectTittle">
+                            <span class="cardMainTitle">${skill.title}</span>
+                        </div>
+                   </div>
+                    <p class="projectDescription">${skill.description}</p>
+                </div>`;
+    }
+
+
+
+
+
+
+    const projects  = [
+        {
+            title: "Object<br>Oriented<br>Programing<br>in java",
+            time: 2021,
+            imageUrl: "assets/images/project3.png",
+            description:
+                " This project is vehicle parking system<br> build by java language\n" +
+                "                            In this project, <br>\n" +
+                "                            we improved knowledge for <br>object oriented programing in java.<br><br>\n" +
+                "\n" +
+                "                            in this project guideline <br> we cant use collection class in java.",
+        },
+        {
+            title: "Database Management System MY SQL and Transaction",
+            time: 2021,
+            imageUrl: "assets/images/project2.png",
+            description:
+                "This project is boiler farm management system<br>\n" +
+                "                            in this project,<br> we improved Knowledge\n" +
+                "                            what is software architecture.\n" +
+                "\n" +
+                "                            In this project,<br> i used database (MY SQL ) and used one design pattern (singleton).<br><br>\n" +
+                "\n" +
+                "                            I used MVC architecture for these project.<br> but I mvc extened little bit Because this\n" +
+                "                            project is large.",
+        },
+        {
+            title: "Software architecture <br>and design <br> pattern",
+            projects: 6,
+            rating: 5,
+            imageUrl: "assets/images/project1.png",
+            description:
+                "This project is POS system. in this project,<br><br>\n" +
+                "                            i improved Knowledge what is layered architecture and<br>\n" +
+                "                            how is important to software developer?<br>\n" +
+                "                            this project created by using java language ",
+        },
+
+        {
+            title: "ORM Concepts <br>using <br>hibernate +<br> MYSql",
+            projects: 6,
+            rating: 5,
+            imageUrl: "assets/images/hibernateproject (1).png",
+            description:
+                "This project is MY PROFILE . in this project,<br><br>\n" +
+                "                            i improved Knowledge what is layered architecture and<br>\n" +
+                "                            how is important to software developer?<br>\n" +
+                "                            this project created by using java language ",
+        },
+
+        {
+            title: "Web <br>development project with <br>my profile",
+            projects: 6,
+            rating: 5,
+            imageUrl: "assets/images/web.png",
+             description:
+                 "This project is student manage system. in this project,<br><br>\n" +
+                 "                            i improved Knowledge what is HTML CSS AND JAVASCRIPT<br>\n" +
+                 "                            how is important to software developer?<br>\n" +
+                 "                            develop website",
+        },
+
+        {
+            title: "JAVA <br>SERVLET<br> AND<br> TOM CAT",
+            projects: 6,
+            rating: 5,
+            imageUrl: "./assets/images/javaEE.png",
+             description:
+                 "This project is POS system. in this project,<br><br>\n" +
+                 "                            I improved Knowledge what is java servlet and Tom cat and<br>\n" +
+                 "                            how is important to software developer?<br>\n" +
+                 "                            for build Enterprise level application ",
+        },
+
+        {
+            title: "Spring <br>FrameWork <br><br><br>",
+            projects: 6,
+            rating: 5,
+            imageUrl: "./assets/images/spring.png",
+             description:
+                 "This project is vehicle rental system BACK-END. in this project,<br><br>\n" +
+                 "                            i improved Knowledge what is FRAMEWORK and SPRING <br>\n" +
+                 "                            how is important to software developer?<br>\n" +
+                 "                            this project created by using java language ",
+        },
+
+
+        {
+            title: "REACT <br><br><br><br>",
+            projects: 6,
+            rating: 5,
+            imageUrl: "./assets/images/carRentalReact.png",
+             description:
+                 "This project is vehicle rental system FRONT-END. in this project,<br><br>\n" +
+                 "                            i improved Knowledge what is REACT <br>\n" +
+                 "                            how is important to software developer?<br>\n" +
+                 "                            this project created by using java language ",
+        },
+
+
+        {
+            title: "Socket programming in java<br><br>",
+            projects: 6,
+            rating: 5,
+            imageUrl: "./assets/images/chatApp.png",
+             description:
+                 "This project is CHAT APP . in this project,<br><br>\n" +
+                 "                            i improved Knowledge what SOCKET PROGRAMMING  <br>\n" +
+                 "                            how is important to software developer?<br>\n" +
+                 "                            this project created by using java language ",
+        },
+
+
+
+
+
+
+    ]
+
+
+    projects.forEach((skill) => {
+        cardContainer.append(skillViewComponent(skill));
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //===========================================
 
     function reveal() {
         let reveals = document.querySelectorAll(".reveal");

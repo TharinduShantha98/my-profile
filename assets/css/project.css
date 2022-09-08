@@ -81,16 +81,29 @@ body>main>section:nth-child(4)>article:nth-child(2){
     height: calc((100%/4)*2);
     width: 100%;
     top: calc(100%/4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /*border: solid 1px gold;*/
+  /*  background-color: #0a53be;*/
 }
 
-body>main>section:nth-child(4)>article:nth-child(2)>div{
-    position: absolute;
-    width: 25%;
+/*body>main>section:nth-child(4)>article:nth-child(2)>div{
+   !* position: absolute;*!
+    width: 85%;
     height: 80%;
-}
+    background-color: #80d444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    overflow: scroll;
 
-body>main>section:nth-child(4)>article:nth-child(2)>div>figure{
+}*/
+
+
+
+/*body>main>section:nth-child(4)>article:nth-child(2)>div>figure{
     margin: 0;
     text-align: left;
 }
@@ -143,7 +156,7 @@ body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(2){
     right: 0;
     left: 0;
     top: 0;
-    /* bottom: 0;*/
+    !* bottom: 0;*!
     margin: auto;
 }
 
@@ -154,7 +167,7 @@ body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(3){
 
 
 
-}
+}*/
 
 /*======second, End article area===============*/
 

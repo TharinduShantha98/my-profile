@@ -337,7 +337,7 @@
          flex-direction: column;*/
     }
 
-    body>main>section:nth-child(4)>article:nth-child(2)>div{
+   /* body>main>section:nth-child(4)>article:nth-child(2)>div{
         position: absolute;
         width: 80%;
         height: 29%;
@@ -390,7 +390,7 @@
         font-weight: normal;
         font-size: 4.5vw;
 
-    }
+    }*/
 
 
 
@@ -454,7 +454,7 @@
 
     }
 
-    body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(1)>figure>figcaption>p:nth-child(1){
+   /* body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(1)>figure>figcaption>p:nth-child(1){
         font-size: 3vh;
 
     }
@@ -466,7 +466,7 @@
     body>main>section:nth-child(4)>article:nth-child(2)>div:nth-child(3)>figure>figcaption>p:nth-child(1){
         font-size: 3vh;
 
-    }
+    }*/
 
 
     /* ===========================end project=========================*/
